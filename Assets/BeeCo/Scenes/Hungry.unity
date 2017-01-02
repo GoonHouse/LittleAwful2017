@@ -368,23 +368,6 @@ Prefab:
       propertyPath: m_Name
       value: Player4
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012890429266, guid: c445b6be19762744c828e105ed3ec1d8,
-        type: 2}
-      propertyPath: watchKey
-      value: 274
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011678980696, guid: c445b6be19762744c828e105ed3ec1d8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011678980696, guid: c445b6be19762744c828e105ed3ec1d8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011678980696, guid: c445b6be19762744c828e105ed3ec1d8, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -135
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c445b6be19762744c828e105ed3ec1d8, type: 2}
   m_IsPrefabParent: 0
