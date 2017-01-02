@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Osterich : MonoBehaviour {
     /* when we press a button we need to:
@@ -29,9 +30,14 @@ public class Osterich : MonoBehaviour {
     public Transform anchorHead;
     public Transform anchorNeck;
     public Transform anchorBody;
+    public Transform anchorBeak;
 
     public bool isMouthOpen = false;
     public bool isExtending = false;
+
+    public List<Marble> stomach = new List<Marble>();
+
+    public float score = 0;
 
     // Use this for initialization
     void Start () {
@@ -57,6 +63,20 @@ public class Osterich : MonoBehaviour {
              */
         }
 	}
+
+    public void Eat(Marble thing) {
+        stomach.Add(thing);
+        thing.eater = this;
+
+        var renderers = thing.gameObject.GetComponents<Renderer>();
+        foreach (Renderer renderer in renderers) {
+            renderer.enabled = false;
+        }
+
+        thing.transform.SetParent(anchorBeak, true);
+
+        score += thing.value;
+    }
 
     void UpdateHeadPosition() {
         float distCovered = (Time.time - extendTime) * extendSpeed;

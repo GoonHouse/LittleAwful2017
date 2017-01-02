@@ -536,7 +536,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013972736902}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -662,8 +662,11 @@ MonoBehaviour:
   anchorHead: {fileID: 4000010449545832}
   anchorNeck: {fileID: 4000010719345838}
   anchorBody: {fileID: 4000011678980696}
+  anchorBeak: {fileID: 4000010790476816}
   isMouthOpen: 0
   isExtending: 0
+  stomach: []
+  score: 0
 --- !u!135 &135000012562039178
 SphereCollider:
   m_ObjectHideFlags: 1
