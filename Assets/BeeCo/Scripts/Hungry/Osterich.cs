@@ -68,7 +68,7 @@ public class Osterich : MonoBehaviour {
         stomach.Add(thing);
         thing.eater = this;
 
-        var renderers = thing.gameObject.GetComponents<Renderer>();
+        var renderers = thing.gameObject.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers) {
             renderer.enabled = false;
         }
