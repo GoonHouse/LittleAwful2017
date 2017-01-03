@@ -9,7 +9,7 @@ Material:
   m_Name: Ground
   m_Shader: {fileID: 4800000, guid: f5d25459062e91443becac56d585df78, type: 3}
   m_ShaderKeywords: _EMISSION _LIGHTMODE_DEFAULT _NORMALMAP _USE_M_TEX _USE_NORMAL_MAP
-    _USE_SPECULAR
+    _USE_RIM _USE_SPECULAR
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -139,7 +139,7 @@ Material:
       second: 0.02
     - first:
         name: _RimSize
-      second: 8
+      second: 1.17
     - first:
         name: _Shininess
       second: 5
@@ -172,7 +172,7 @@ Material:
       second: 1
     - first:
         name: _UseRim
-      second: 0
+      second: 1
     - first:
         name: _UseSpecular
       second: 1
@@ -188,10 +188,10 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _RimColor
-      second: {r: 1, g: 0, b: 1, a: 0.122}
+      second: {r: 0, g: 1, b: 0.533, a: 0.122}
     - first:
         name: _ShadowColor
       second: {r: 0, g: 0, b: 1, a: 1}
     - first:
         name: _SpecularColor
-      second: {r: 1, g: 0, b: 0.734, a: 0.409}
+      second: {r: 1, g: 0, b: 0.734, a: 0.14}

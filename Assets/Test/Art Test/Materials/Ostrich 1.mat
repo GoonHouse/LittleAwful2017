@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Ostrich 1
-  m_Shader: {fileID: 4800000, guid: f5d25459062e91443becac56d585df78, type: 3}
-  m_ShaderKeywords: _EMISSION _LIGHTMODE_DEFAULT _NORMALMAP _USE_M_TEX _USE_RIM _USE_SPECULAR
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION _LIGHTMODE_TRESHOLD _USE_M_TEX _USE_RIM
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: 79a1597b6e9e7e746a0674bc067a4b74, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 408f75886ef382a45937429cfa858897, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -108,13 +108,13 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0
     - first:
         name: _GlossyReflections
       second: 1
     - first:
         name: _LThreshold
-      second: 0.664
+      second: 0.5
     - first:
         name: _LightLevelsDiffuse
       second: 2.58
@@ -123,7 +123,7 @@ Material:
       second: 3
     - first:
         name: _LightMode
-      second: 0
+      second: 1
     - first:
         name: _Metallic
       second: 0
@@ -134,11 +134,14 @@ Material:
         name: _OcclusionStrength
       second: 1
     - first:
+        name: _OutlineSize
+      second: 0.002
+    - first:
         name: _Parallax
       second: 0.02
     - first:
         name: _RimSize
-      second: 8
+      second: 1.13
     - first:
         name: _Shininess
       second: 5
@@ -174,23 +177,26 @@ Material:
       second: 1
     - first:
         name: _UseSpecular
-      second: 1
+      second: 0
     - first:
         name: _ZWrite
       second: 1
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
+        name: _OutlineColor
+      second: {r: 1, g: 0, b: 1, a: 1}
+    - first:
         name: _RimColor
-      second: {r: 1, g: 0, b: 1, a: 0.2784314}
+      second: {r: 1, g: 0, b: 1, a: 0.072}
     - first:
         name: _ShadowColor
-      second: {r: 0, g: 0, b: 0, a: 0.37}
+      second: {r: 0, g: 0, b: 0, a: 0}
     - first:
         name: _SpecularColor
-      second: {r: 1, g: 1, b: 0, a: 0.8039216}
+      second: {r: 1, g: 1, b: 1, a: 1}
