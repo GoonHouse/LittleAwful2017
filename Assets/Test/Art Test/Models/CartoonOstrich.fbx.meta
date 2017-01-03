@@ -1,15 +1,71 @@
 fileFormatVersion: 2
 guid: ef1a9be9cbf744646a7d9dda5aab16b0
-timeCreated: 1483408695
+timeCreated: 1483464793
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
+    100000: Armature
+    100002: Butt
+    100004: //RootNode
+    100006: Chest
+    100008: Foot.Left
+    100010: Foot.Left_end
+    100012: Foot.Right
+    100014: Foot.Right_end
+    100016: Head
+    100018: Hip.Left
+    100020: Hip.Right
+    100022: Jaw.Lower
+    100024: Jaw.Lower_end
+    100026: Jaw.Upper
+    100028: Jaw.Upper_end
+    100030: Leg.Left
+    100032: Leg.Right
+    100034: Neck.001
+    100036: Neck.002
+    100038: Neck.003
+    100040: Neck.004
+    100042: Neck.005
+    100044: Neck.006
+    100046: Neck.007
+    100048: Ostrich
+    100050: Tail
+    100052: Tail_end
+    100054: Thigh.Left
+    100056: Thigh.Right
+    400000: Armature
+    400002: Butt
+    400004: //RootNode
+    400006: Chest
+    400008: Foot.Left
+    400010: Foot.Left_end
+    400012: Foot.Right
+    400014: Foot.Right_end
+    400016: Head
+    400018: Hip.Left
+    400020: Hip.Right
+    400022: Jaw.Lower
+    400024: Jaw.Lower_end
+    400026: Jaw.Upper
+    400028: Jaw.Upper_end
+    400030: Leg.Left
+    400032: Leg.Right
+    400034: Neck.001
+    400036: Neck.002
+    400038: Neck.003
+    400040: Neck.004
+    400042: Neck.005
+    400044: Neck.006
+    400046: Neck.007
+    400048: Ostrich
+    400050: Tail
+    400052: Tail_end
+    400054: Thigh.Left
+    400056: Thigh.Right
+    4300000: Ostrich
+    9500000: //RootNode
+    13700000: Ostrich
   materials:
     importMaterials: 1
     materialName: 0
@@ -34,7 +90,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 10
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -68,7 +124,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
