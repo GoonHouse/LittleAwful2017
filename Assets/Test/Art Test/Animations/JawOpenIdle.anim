@@ -25,11 +25,23 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -61.1, y: 0.001, z: -0.001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
-  m_SampleRate: 60
+  m_SampleRate: 3
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -37,6 +49,12 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - path: 904323375
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1428374928
       attribute: 4
       script: {fileID: 0}
       classID: 4
@@ -109,6 +127,51 @@ AnimationClip:
     path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
     classID: 4
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -61.1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    classID: 4
+    script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2
@@ -138,6 +201,36 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
