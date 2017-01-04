@@ -1,5 +1,8 @@
 using UnityEngine;
 
+// from: https://gist.github.com/cjddmut/d789b9eb78216998e95c
+// reference: http://easings.net/
+
 /*
  * Created by C.J. Kimberlin (http://cjkimberlin.com)
  * 
