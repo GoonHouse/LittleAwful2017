@@ -357,9 +357,9 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
-  m_StartWidth: 1
-  m_EndWidth: 1
+  m_Time: 1
+  m_StartWidth: 2
+  m_EndWidth: 0
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -948,9 +948,9 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
-  m_StartWidth: 1
-  m_EndWidth: 1
+  m_Time: 1
+  m_StartWidth: 2
+  m_EndWidth: 0
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -1520,7 +1520,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66d91f6ceea6cc548a84a6fd2991867d, type: 2}
+  - {fileID: 2100000, guid: 5670a2844ed9b0c45bc2f6085a0217f2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1536,9 +1536,9 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
-  m_StartWidth: 1
-  m_EndWidth: 1
+  m_Time: 1
+  m_StartWidth: 2
+  m_EndWidth: 0
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -1789,9 +1789,9 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
-  m_StartWidth: 1
-  m_EndWidth: 1
+  m_Time: 1
+  m_StartWidth: 2
+  m_EndWidth: 0
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   startTime: 0
   spawnDistance: 3
   worldUnitDims: {x: 12, y: 10}
-  worldDimensions: {x: 7, y: 4}
+  worldDimensions: {x: 7, y: 6}
   worldMargins: {x: 3.5, y: 2}
   worldOffset: {x: 0, y: 0}
 --- !u!1001 &1638351324
