@@ -22,7 +22,7 @@ GameObject:
   - 33: {fileID: 33000011543508372}
   - 135: {fileID: 135000012069436714}
   - 23: {fileID: 23000013984929128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RaceBird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
