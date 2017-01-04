@@ -55,7 +55,7 @@ public class RaceGod : MonoBehaviour {
         for( int x = 0; x < worldDimensions.x; x++ ) {
             for( int z = 0; z < worldDimensions.y; z++ ) {
                 GameObject unit = Instantiate( gridObject, Vector3.zero, gridObject.transform.rotation ) as GameObject;
-                var coordinate = x.ToString() + "_" + z.ToString();
+                var coordinate = x + "_" + z;
                 var pos = new Vector3(
                     x * (worldUnitDims.x + worldMargins.x) + worldOffset.x,
                     0,

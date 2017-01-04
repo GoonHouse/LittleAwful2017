@@ -4,76 +4,91 @@ using System.Collections;
 public class RaceBird : MonoBehaviour {
     public RaceBrain brain;
 
-    public int lane;
-    public int position;
+    public Vector2 gridPosition = new Vector2(0, 0);
 
-    public Vector2 moveDist = new Vector2(14.5f, 13.7f);
-
-    public Vector2 minExtents = new Vector2(1, 0);
-    public Vector2 maxExtents = new Vector2(4, 7);
+    public float laneSwitchTime = 0.5f;
 
     // Use this for initialization
     void Start () {
-        SetPosition(lane, position);
-
+        SetPosition();
     }
 	
 	// Update is called once per frame
 	void Update () {
         if ( brain.BrainLeft() ) {
-            MoveIfPossible(lane - 1, position);
+            MoveIfPossible(0, 1);
         } else if ( brain.BrainRight() ) {
-            MoveIfPossible(lane + 1, position);
+            MoveIfPossible(0, -1);
         }
 
 
         if ( brain.BrainGo() ) {
-            MoveIfPossible(lane, position + 1);
+            MoveIfPossible(1, 0);
         } else if ( brain.BrainStop() ) {
-            MoveIfPossible(lane, position - 1);
+            MoveIfPossible(-1, 0);
         }
     }
 
-    void SetPosition(int newLane, int newPosition) {
+    void SetPosition() {
         var rg = God.main.GetComponent<RaceGod>();
-        rg.grid.Add(newLane.ToString() + "_" + newPosition.ToString(), this.gameObject);
-        this.lane = newLane;
-        this.position = newPosition;
+        rg.grid.Add(gridPosition.x + "_" + gridPosition.y, this.gameObject);
     }
 
-    void ClearPosition(int newLane, int newPosition) {
+    void ClearPosition() {
         var rg = God.main.GetComponent<RaceGod>();
-        rg.grid.Remove(newLane.ToString() + "_" + newPosition.ToString());
+        rg.grid.Remove(gridPosition.x + "_" + gridPosition.y);
     }
 
-    bool CanMove(int moveLane, int movePosition) {
+    bool CanMove( Vector2 newPos ) {
         var rg = God.main.GetComponent<RaceGod>();
         bool canMove = true;
         
+        
         // is it occupied?
         GameObject doesExist;
-        rg.grid.TryGetValue(moveLane.ToString() + "_" + movePosition.ToString(), out doesExist);
+        rg.grid.TryGetValue(
+            newPos.x + "_" + newPos.y,
+            out doesExist
+        );
+
         canMove = (canMove && (doesExist == null));
 
         // is it within boundaries?
-        canMove = (canMove && ( moveLane >= minExtents.x && moveLane <= maxExtents.x ));
-        canMove = (canMove && ( movePosition >= minExtents.y && movePosition <= maxExtents.y));
+        canMove = ( canMove && ( newPos.x >= 0.0f && newPos.x < rg.worldDimensions.x ) );
+        canMove = ( canMove && ( newPos.y >= 0.0f && newPos.y < rg.worldDimensions.y ) );
 
         return canMove;
     }
 
-    bool MoveIfPossible(int moveLane, int movePosition) {
-        if( CanMove(moveLane, movePosition)) {
-            var t = GetComponent<Transform>();
-            var pos = t.position;
-            var mvec = new Vector2(lane - moveLane, movePosition - position);
-            ClearPosition(lane, position);
-            lane = moveLane;
-            position = movePosition;
-            pos.x += mvec.y * moveDist.x;
-            pos.z += mvec.x * moveDist.y;
-            t.position = pos;
-            SetPosition(lane, position);
+    bool MoveIfPossible(int relX, int relY) {
+        var newPos = new Vector2(
+            gridPosition.x + relX,
+            gridPosition.y + relY
+        );
+        if( CanMove( newPos ) ) {
+            ClearPosition();
+
+            // find where we need to tween to
+            var rg = God.main.GetComponent<RaceGod>();
+            GameObject targetLocation;
+            var trygetmove = newPos.x + "_" + newPos.y;
+            rg.spawnedGrid.TryGetValue(
+                newPos.x + "_" + newPos.y,
+                out targetLocation
+            );
+
+            if( !targetLocation ) {
+                Debug.Log( this.name + " tried to move to: " + trygetmove );
+            }
+
+            // set our tween target to a position + an offset
+            var loc = targetLocation.transform.position;
+            loc.y += 10.0f;
+            GetComponent<Tweener>().SetTarget( loc, Quaternion.identity, laneSwitchTime);
+
+            // physically relocate ourselves
+            gridPosition = newPos;
+            SetPosition();
             return true;
         } else {
             return false;
