@@ -2041,9 +2041,9 @@ MonoBehaviour:
     type: 2}
   playersAlive: 0
   startTime: 0
-  spawnDistance: 3
+  spawnDistance: 28
   worldUnitDims: {x: 12, y: 10}
-  worldDimensions: {x: 30, y: 6}
+  worldDimensions: {x: 7, y: 6}
   worldMargins: {x: 3.5, y: 2}
   worldOffset: {x: 0, y: 0}
   hazardMoveSpeed: 2
