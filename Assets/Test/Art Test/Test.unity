@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 18391269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -556,6 +556,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &718191078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 718191080}
+  - 114: {fileID: 718191079}
+  m_Layer: 0
+  m_Name: Bend Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &718191079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718191078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ba439ad486b32408a934c8de6155b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_curveOrigin: {fileID: 1513650436}
+  m_referenceDirection: {fileID: 718191080}
+  m_curvature: 0
+  m_xScale: 1
+  m_zScale: 1
+  m_flatMargin: 0
+  m_horizonWaveFrequency: 0
+--- !u!4 &718191080
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718191078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
 --- !u!1 &838820270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1618,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1513650431}
   m_LocalRotation: {x: 0.23319075, y: 0, z: 0, w: 0.972431}
-  m_LocalPosition: {x: 7.69, y: 10.86, z: 1.73}
+  m_LocalPosition: {x: -0.08, y: 3.33, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 26.97, y: 0, z: 0}
   m_Children: []
