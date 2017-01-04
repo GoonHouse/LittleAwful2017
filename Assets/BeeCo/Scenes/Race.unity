@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTarget: {fileID: 0}
-  easeType: 28
+  easeType: 17
   defaultTime: 0
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -357,7 +357,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.25
   m_StartWidth: 2
   m_EndWidth: 0
   m_Colors:
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTarget: {fileID: 0}
-  easeType: 28
+  easeType: 17
   defaultTime: 0
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -948,7 +948,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.25
   m_StartWidth: 2
   m_EndWidth: 0
   m_Colors:
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTarget: {fileID: 0}
-  easeType: 28
+  easeType: 17
   defaultTime: 2
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -1514,8 +1514,8 @@ TrailRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1217649347}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1536,7 +1536,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.25
   m_StartWidth: 2
   m_EndWidth: 0
   m_Colors:
@@ -1751,7 +1751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTarget: {fileID: 0}
-  easeType: 28
+  easeType: 17
   defaultTime: 0
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -1789,7 +1789,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.25
   m_StartWidth: 2
   m_EndWidth: 0
   m_Colors:
