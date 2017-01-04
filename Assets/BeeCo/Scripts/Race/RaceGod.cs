@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class RaceGod : MonoBehaviour {
     public GameObject gridObject;
+    public GameObject hazardBaseObject;
+    public GameObject hazardObject;
     public GameObject debugMarker;
 
     public Dictionary<string, GameObject> grid = new Dictionary<string, GameObject>();
@@ -17,6 +19,8 @@ public class RaceGod : MonoBehaviour {
     public Vector2 worldDimensions = new Vector2(7, 4);
     public Vector2 worldMargins = new Vector2(2, 1);
     public Vector2 worldOffset;
+
+    public float hazardMoveSpeed = 2.0f;
 
     /*
      * intensity = determined by: ( Time.time - startTime )
@@ -48,8 +52,29 @@ public class RaceGod : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if( Input.GetKeyDown( KeyCode.Space ) ){
+            SpawnWave();
+        }
 	}
+
+    void SpawnWave() {
+        var positions = new List<GameObject>();
+
+        for( int z = 0; z < worldDimensions.y; z++ ) {
+            var pos = new Vector3(
+                ( worldDimensions.x + spawnDistance ) * ( worldUnitDims.x + worldMargins.x ) + worldOffset.x,
+                0,
+                z * ( worldUnitDims.y + worldMargins.y ) + worldOffset.y
+            );
+            GameObject unit = Instantiate( hazardBaseObject, Vector3.zero, hazardBaseObject.transform.rotation ) as GameObject;
+            unit.transform.localPosition = pos;
+
+            positions.Add( unit );
+            God.SpawnChild( hazardObject, unit );
+        }
+
+        var maxSpots = worldDimensions.y - FindObjectsOfType<RaceBird>().Length - 1;
+    }
 
     void CreateWorld() {
         for( int x = 0; x < worldDimensions.x; x++ ) {
