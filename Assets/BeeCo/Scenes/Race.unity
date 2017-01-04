@@ -181,6 +181,8 @@ MonoBehaviour:
   lane: 2
   position: 1
   moveDist: {x: 14.5, y: 13.7}
+  minExtents: {x: 1, y: 0}
+  maxExtents: {x: 4, y: 7}
 --- !u!96 &56449746
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -468,6 +470,8 @@ MonoBehaviour:
   lane: 3
   position: 1
   moveDist: {x: 14.5, y: 13.7}
+  minExtents: {x: 1, y: 0}
+  maxExtents: {x: 4, y: 7}
 --- !u!96 &669633958
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -755,6 +759,8 @@ MonoBehaviour:
   lane: 1
   position: 1
   moveDist: {x: 14.5, y: 13.7}
+  minExtents: {x: 1, y: 0}
+  maxExtents: {x: 4, y: 7}
 --- !u!96 &1217649353
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -979,6 +985,8 @@ MonoBehaviour:
   lane: 4
   position: 1
   moveDist: {x: 14.5, y: 13.7}
+  minExtents: {x: 1, y: 0}
+  maxExtents: {x: 4, y: 7}
 --- !u!96 &1469574967
 TrailRenderer:
   m_ObjectHideFlags: 0
