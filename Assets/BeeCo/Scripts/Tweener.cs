@@ -34,10 +34,26 @@ public class Tweener : MonoBehaviour {
         UpdateTween();
 	}
 
+    public float LerpOutExpo( float b, float e, float p ) {
+        return ( p == 0 ) ? b : ( e - b ) * Mathf.Pow( 2, 10 * ( p - 1 ) ) + b;
+    }
+
     void UpdateTween() {
         if( !done ) {
             if( Time.time <= this.targetTime ) {
                 var travelRatio = ( Time.time - this.startTime ) / ( this.targetTime - this.startTime);
+                travelRatio = Mathf.SmoothStep( 0.0f, 1.0f, travelRatio );
+
+                /*
+                var pos = transform.position;
+                
+                pos.x = LerpOutExpo( startPosition.x, targetPosition.x, travelRatio );
+                pos.y = LerpOutExpo( startPosition.y, targetPosition.y, travelRatio );
+                pos.z = LerpOutExpo( startPosition.z, targetPosition.z, travelRatio );
+
+                transform.position = pos;
+                */
+
                 transform.position = Vector3.Lerp( startPosition, targetPosition, travelRatio );
                 transform.rotation = Quaternion.Lerp( startRotation, targetRotation, travelRatio );
             } else {
