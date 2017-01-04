@@ -8,6 +8,8 @@ public class RaceBird : MonoBehaviour {
 
     public float laneSwitchTime = 0.5f;
 
+    public bool alive = true;
+
     // Use this for initialization
     void Start () {
         SetPosition();

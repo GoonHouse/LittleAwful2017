@@ -2,8 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class Tweener : MonoBehaviour {
-    public GameObject debugTarget;
-
     public EasingFunction.Ease easeType = EasingFunction.Ease.EaseInOutBack;
     private EasingFunction.Function easeFunc;
 
@@ -30,10 +28,6 @@ public class Tweener : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if( Input.GetKeyDown( KeyCode.Space ) ) {
-            SetTarget( debugTarget );
-        }
-
         UpdateTween();
 	}
 
