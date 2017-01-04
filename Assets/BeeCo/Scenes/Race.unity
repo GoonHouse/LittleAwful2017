@@ -670,8 +670,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 24, y: 90, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1535222068}
+  m_RootOrder: 4
 --- !u!1001 &489067414
 Prefab:
   m_ObjectHideFlags: 0
@@ -1555,7 +1555,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1081317543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1564,8 +1564,8 @@ Transform:
   - {fileID: 56449739}
   - {fileID: 669633951}
   - {fileID: 1469574960}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1535222068}
+  m_RootOrder: 3
 --- !u!1 &1109498522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1784,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010520193406, guid: 17f0ef356673a1c42a31a97368d574df, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010520193406, guid: 17f0ef356673a1c42a31a97368d574df, type: 2}
       propertyPath: m_LocalRotation.y
@@ -1792,7 +1792,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010520193406, guid: 17f0ef356673a1c42a31a97368d574df, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010520193406, guid: 17f0ef356673a1c42a31a97368d574df, type: 2}
       propertyPath: m_LocalRotation.w
@@ -2041,8 +2041,10 @@ Transform:
   - {fileID: 1729164258}
   - {fileID: 1109498523}
   - {fileID: 693785045}
+  - {fileID: 1081317544}
+  - {fileID: 437478264}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1001 &1558304019
 Prefab:
   m_ObjectHideFlags: 0
@@ -2080,7 +2082,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012858075888, guid: 2ec27c128e6bd2344a86e06f509d8ec1, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec27c128e6bd2344a86e06f509d8ec1, type: 2}
