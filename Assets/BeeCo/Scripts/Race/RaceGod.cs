@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class RaceGod : MonoBehaviour {
     public GameObject gridObject;
+    public GameObject hazardBaseObject;
     public GameObject hazardObject;
-    public GameObject hazardHazardObject;
     public GameObject debugMarker;
 
     public Dictionary<string, GameObject> grid = new Dictionary<string, GameObject>();
@@ -66,11 +66,11 @@ public class RaceGod : MonoBehaviour {
                 0,
                 z * ( worldUnitDims.y + worldMargins.y ) + worldOffset.y
             );
-            GameObject unit = Instantiate( hazardObject, Vector3.zero, hazardObject.transform.rotation ) as GameObject;
+            GameObject unit = Instantiate( hazardBaseObject, Vector3.zero, hazardBaseObject.transform.rotation ) as GameObject;
             unit.transform.localPosition = pos;
 
             positions.Add( unit );
-            God.SpawnChild( hazardHazardObject, unit );
+            God.SpawnChild( hazardObject, unit );
         }
 
         var maxSpots = worldDimensions.y - FindObjectsOfType<RaceBird>().Length - 1;
