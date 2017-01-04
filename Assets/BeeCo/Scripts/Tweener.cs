@@ -4,6 +4,9 @@ using System.Collections;
 public class Tweener : MonoBehaviour {
     public GameObject debugTarget;
 
+    public EasingFunction.Ease easeType = EasingFunction.Ease.EaseInOutBack;
+    private EasingFunction.Function easeFunc;
+
     public float defaultTime;
 
     public Vector3 startPosition;
@@ -22,8 +25,8 @@ public class Tweener : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        easeFunc = EasingFunction.GetEasingFunction( easeType );
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,15 +37,28 @@ public class Tweener : MonoBehaviour {
         UpdateTween();
 	}
 
-    public float LerpOutExpo( float b, float e, float p ) {
-        return ( p == 0 ) ? b : ( e - b ) * Mathf.Pow( 2, 10 * ( p - 1 ) ) + b;
+    Vector3 ApplyEase( Vector3 startVec, Vector3 targetVec, float ratio ) {
+        return new Vector3(
+            easeFunc( startVec.x, targetVec.x, ratio ),
+            easeFunc( startVec.y, targetVec.y, ratio ),
+            easeFunc( startVec.z, targetVec.z, ratio )
+        );
+    }
+
+    Quaternion ApplyEase( Quaternion startQuat, Quaternion targetQuat, float ratio ) {
+        return new Quaternion(
+            easeFunc( startQuat.x, targetQuat.x, ratio ),
+            easeFunc( startQuat.y, targetQuat.y, ratio ),
+            easeFunc( startQuat.z, targetQuat.z, ratio ),
+            easeFunc( startQuat.w, targetQuat.w, ratio )
+        );
     }
 
     void UpdateTween() {
         if( !done ) {
             if( Time.time <= this.targetTime ) {
                 var travelRatio = ( Time.time - this.startTime ) / ( this.targetTime - this.startTime);
-                travelRatio = Mathf.SmoothStep( 0.0f, 1.0f, travelRatio );
+                //travelRatio = Mathf.SmoothStep( 0.0f, 1.0f, travelRatio );
 
                 /*
                 var pos = transform.position;
@@ -53,9 +69,8 @@ public class Tweener : MonoBehaviour {
 
                 transform.position = pos;
                 */
-
-                transform.position = Vector3.Lerp( startPosition, targetPosition, travelRatio );
-                transform.rotation = Quaternion.Lerp( startRotation, targetRotation, travelRatio );
+                transform.position = ApplyEase( startPosition, targetPosition, travelRatio );
+                transform.rotation = ApplyEase( startRotation, targetRotation, travelRatio );
             } else {
                 transform.position = targetPosition;
                 transform.rotation = targetRotation;
