@@ -37,8 +37,9 @@ GameObject:
   - 33: {fileID: 33000010286188950}
   - 65: {fileID: 65000011484429102}
   - 23: {fileID: 23000013621246990}
+  - 114: {fileID: 114000010091131624}
   m_Layer: 0
-  m_Name: HazardPart
+  m_Name: PlateHazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,3 +120,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114000010091131624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014224751460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d364c7b51ae5c34c89abea4c93834ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleSpawns:
+  - {fileID: 1000012798648402, guid: 21b5f83f672dd0549af82ec24accf3b7, type: 2}
+  - {fileID: 1000012798648402, guid: 6e39867e6db2d9b4aa5b2218246e305e, type: 2}
+  chanceOfSpawn: 1
+  doScale: 0

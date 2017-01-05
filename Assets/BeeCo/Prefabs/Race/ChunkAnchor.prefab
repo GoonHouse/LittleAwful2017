@@ -276,10 +276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ed4457e1fe049429a7dae3b6f645ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardBaseObject: {fileID: 1000014224751460, guid: b54d441c6d2a51f48aa8114c810cdaf6,
+  plateHazard: {fileID: 1000014224751460, guid: b54d441c6d2a51f48aa8114c810cdaf6,
     type: 2}
-  hazardObject: {fileID: 1000012798648402, guid: 21b5f83f672dd0549af82ec24accf3b7,
-    type: 2}
+  plateNeat: {fileID: 1000014224751460, guid: ec0d6db624d358847b18df502f167eba, type: 2}
 --- !u!114 &114000011695770830
 MonoBehaviour:
   m_ObjectHideFlags: 1

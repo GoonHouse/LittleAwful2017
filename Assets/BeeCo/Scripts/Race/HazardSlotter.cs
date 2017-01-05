@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class HazardSlotter : MonoBehaviour {
-    public GameObject hazardBaseObject;
-    public GameObject hazardObject;
+    public GameObject plateHazard;
+    public GameObject plateNeat;
 
     private RaceGod rg;
 
@@ -17,20 +17,35 @@ public class HazardSlotter : MonoBehaviour {
 
         //var maxSpots = rg.worldDimensions.y - FindObjectsOfType<RaceBird>().Length - 1;
         var spawns = GetSpawnList();
-        for( int i = 0; i < spawns.Count - 1; i++ ) {
+
+        // @TODO: inform this range from living players and intensity
+        // the intensity of the round should map such that:
+        //      all are dropped frequently in the early game
+        // but the player count ensures that players-1 always get dropped
+        int numToDrop = Random.Range( 2, 4 );
+
+        for( int i = 0; i < spawns.Count; i++ ) {
             var pos = new Vector3(
                 0,
                 0,
                 spawns[i] * ( rg.worldUnitDims.y + rg.worldMargins.y ) + rg.worldOffset.y
             );
-            
-            var unit = God.SpawnChild( hazardBaseObject, gameObject );
-            unit.transform.localPosition = pos;
-            //positions.Add( unit );
 
-            // place a hazard at every available position
-            God.SpawnChild( hazardObject, unit );
+            GameObject unit;
+
+            // instead of dropping, anything around this threshold is good
+            if( i >= numToDrop ) {
+                unit = God.SpawnChild( plateHazard, gameObject );
+            } else {
+                unit = God.SpawnChild( plateNeat, gameObject );
+            }
+            
+            unit.transform.localPosition = pos;
+            unit.name = i + " " + unit.name;
+            //positions.Add( unit );
         }
+
+        // @TODO: if we do not spawn anything here, add pressure to RaceGod
     }
 
     List<int> GetSpawnList() {
@@ -44,9 +59,6 @@ public class HazardSlotter : MonoBehaviour {
         }
         shuffleDex.Shuffle();
 
-        // @TODO: inform this range from living players and intensity
-        int numToDrop = Random.Range( 2, 4 );
-        shuffleDex.RemoveRange( 0, numToDrop );
         return shuffleDex;
     }
 }
