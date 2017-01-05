@@ -84,3 +84,22 @@ public class God : MonoBehaviour {
         return Mathf.Round(value * mult) / mult;
     }
 }
+
+
+public static class BeeCoExtensions {
+    public static float Round( this float value, int digits = 2 ) {
+        float mult = Mathf.Pow( 10.0f, (float) digits );
+        return Mathf.Round( value * mult ) / mult;
+    }
+
+    public static void Shuffle<T>( this System.Collections.Generic.IList<T> list ) {
+        int n = list.Count;
+        while( n > 1 ) {
+            n--;
+            int k = Random.Range( 0, n + 1 );
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
+    }
+}
