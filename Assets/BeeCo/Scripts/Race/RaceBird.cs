@@ -106,6 +106,10 @@ public class RaceBird : MonoBehaviour {
     }
 
     void OnTriggerEnter( Collider other ) {
-        Debug.Log( gameObject.name + " just touched a " + other.gameObject.name );
+        if( other.gameObject.tag == "ForceBack" ) {
+            if( ! MoveIfPossible( -1, 0 ) ) {
+                Debug.Log( gameObject.name + " could not move backwards from hitting a " + other.gameObject.name );
+            }
+        }
     }
 }
