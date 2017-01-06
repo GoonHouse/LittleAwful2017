@@ -233,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleSpawns:
   - {fileID: 1000012512651040, guid: 0425bc514dacb804eb29ad9e573b0b05, type: 2}
+  - {fileID: 1000013916938114, guid: fb8231e7f7731de40bf94a8182c2ce49, type: 2}
   chanceOfSpawn: 1
   doScale: 0
 --- !u!114 &114000010638338350
@@ -263,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleSpawns:
   - {fileID: 1000012512651040, guid: 0425bc514dacb804eb29ad9e573b0b05, type: 2}
+  - {fileID: 1000013916938114, guid: fb8231e7f7731de40bf94a8182c2ce49, type: 2}
   chanceOfSpawn: 1
   doScale: 0
 --- !u!114 &114000011691051448
@@ -291,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleSpawns:
+  - {fileID: 1000013916938114, guid: fb8231e7f7731de40bf94a8182c2ce49, type: 2}
   - {fileID: 1000012512651040, guid: 0425bc514dacb804eb29ad9e573b0b05, type: 2}
   chanceOfSpawn: 1
   doScale: 0
@@ -307,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleSpawns:
   - {fileID: 1000012512651040, guid: 0425bc514dacb804eb29ad9e573b0b05, type: 2}
+  - {fileID: 1000013916938114, guid: fb8231e7f7731de40bf94a8182c2ce49, type: 2}
   chanceOfSpawn: 1
   doScale: 0
 --- !u!114 &114000013834430488

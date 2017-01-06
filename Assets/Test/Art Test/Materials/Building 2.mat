@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Position
-  m_Shader: {fileID: 4800000, guid: eb034d201b6ce99499510583e5a4c5c7, type: 3}
-  m_ShaderKeywords: _EMISSION _LIGHTMODE_TRESHOLD
+  m_Name: Building 2
+  m_Shader: {fileID: 4800000, guid: 5f026e3bb2de378479c8dd7d6c3cbdce, type: 3}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -48,17 +48,11 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1f75a2cc32889874595345c047ca4e69, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
-        name: _NormalMap
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -77,17 +71,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
-        name: _Brightness
-      second: 1
-    - first:
         name: _BumpScale
       second: 1
-    - first:
-        name: _Bumpiness
-      second: 1
-    - first:
-        name: _CullMode
-      second: 2
     - first:
         name: _Cutoff
       second: 0.5
@@ -102,21 +87,9 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0
     - first:
         name: _GlossyReflections
-      second: 1
-    - first:
-        name: _LThreshold
-      second: 0.5
-    - first:
-        name: _LightLevelsDiffuse
-      second: 3
-    - first:
-        name: _LightLevelsSpecular
-      second: 3
-    - first:
-        name: _LightMode
       second: 1
     - first:
         name: _Metallic
@@ -128,20 +101,8 @@ Material:
         name: _OcclusionStrength
       second: 1
     - first:
-        name: _OutlineSize
-      second: 0.08
-    - first:
         name: _Parallax
       second: 0.02
-    - first:
-        name: _RimSize
-      second: 3
-    - first:
-        name: _Shininess
-      second: 20
-    - first:
-        name: _Smoothness
-      second: 0.01
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -152,25 +113,7 @@ Material:
         name: _SrcBlend
       second: 1
     - first:
-        name: _ToonyFy
-      second: 0
-    - first:
         name: _UVSec
-      second: 0
-    - first:
-        name: _UseCustomShadow
-      second: 0
-    - first:
-        name: _UseMTex
-      second: 0
-    - first:
-        name: _UseNormalMap
-      second: 0
-    - first:
-        name: _UseRim
-      second: 0
-    - first:
-        name: _UseSpecular
       second: 0
     - first:
         name: _ZWrite
@@ -178,19 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.459, g: 1, b: 0.21379304, a: 0.091}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _OutlineColor
-      second: {r: 0.509, g: 1, b: 0, a: 0.309}
-    - first:
-        name: _RimColor
-      second: {r: 0.26, g: 0.19, b: 0.16, a: 1}
-    - first:
-        name: _ShadowColor
-      second: {r: 0, g: 0, b: 0, a: 0.37}
-    - first:
-        name: _SpecularColor
-      second: {r: 1, g: 1, b: 1, a: 1}
