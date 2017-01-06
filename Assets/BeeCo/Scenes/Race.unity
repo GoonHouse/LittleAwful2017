@@ -228,7 +228,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66d91f6ceea6cc548a84a6fd2991867d, type: 2}
+  - {fileID: 2100000, guid: 111aec3f26a89e944b890ebff96e350c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -528,6 +528,16 @@ Prefab:
       propertyPath: m_ConnectedAnchor.y
       value: 0.51340574
       objectReference: {fileID: 0}
+    - target: {fileID: 23000011496814786, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 51eee50f3af94cb4486e1b6afc293135, type: 2}
+    - target: {fileID: 137000012080117972, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d4901026499f01468df2956bf56f0c2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4a401367db713045a6589e3a73ebf63, type: 2}
   m_IsPrefabParent: 0
@@ -782,6 +792,16 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: -7.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 23000011496814786, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f4c2bae31833c04ab034ae81ac17097, type: 2}
+    - target: {fileID: 137000012080117972, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4081bec0bb0877428de32bd0434f9c6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4a401367db713045a6589e3a73ebf63, type: 2}
   m_IsPrefabParent: 0
@@ -918,7 +938,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66d91f6ceea6cc548a84a6fd2991867d, type: 2}
+  - {fileID: 2100000, guid: 20c73022034a60b428e5865a3300edbb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1282,6 +1302,16 @@ Prefab:
       propertyPath: m_ConnectedAnchor.y
       value: 0.51340604
       objectReference: {fileID: 0}
+    - target: {fileID: 137000012080117972, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 933dc8342a2b51943b462b74c51174a3, type: 2}
+    - target: {fileID: 23000011496814786, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d9021c1edcbaeb04fa828cf73fe7a8c8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4a401367db713045a6589e3a73ebf63, type: 2}
   m_IsPrefabParent: 0
@@ -1735,7 +1765,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66d91f6ceea6cc548a84a6fd2991867d, type: 2}
+  - {fileID: 2100000, guid: e7e3b9b1447f92f47adae39af45aa199, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
