@@ -62,6 +62,14 @@ public class RaceBird : MonoBehaviour {
         return canMove;
     }
 
+    void ForceMove(int relX, int relY) {
+        var newPos = new Vector2(
+            gridPosition.x + relX,
+            gridPosition.y + relY
+        );
+
+    }
+
     bool MoveIfPossible(int relX, int relY) {
         var newPos = new Vector2(
             gridPosition.x + relX,
@@ -95,5 +103,9 @@ public class RaceBird : MonoBehaviour {
         } else {
             return false;
         }
+    }
+
+    void OnTriggerEnter( Collider other ) {
+        Debug.Log( gameObject.name + " just touched a " + other.gameObject.name );
     }
 }
