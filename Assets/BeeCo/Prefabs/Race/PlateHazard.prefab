@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleSpawns:
-  - {fileID: 1000012798648402, guid: 21b5f83f672dd0549af82ec24accf3b7, type: 2}
+  - {fileID: 1000014119781448, guid: 21b5f83f672dd0549af82ec24accf3b7, type: 2}
   - {fileID: 1000012398438320, guid: a71a2b1112db93648bde0096cfab191e, type: 2}
   - {fileID: 1000010147635926, guid: 574a22cc14233aa4b9059eafed008b97, type: 2}
   chanceOfSpawn: 1
