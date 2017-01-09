@@ -180,7 +180,7 @@ MonoBehaviour:
   possibleSpawns:
   - {fileID: 1000010315425952, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
   - {fileID: 1000010315425952, guid: 4b518e22362346d4ea285a2d357d51c9, type: 2}
-  - {fileID: 1000010315425952, guid: 5a595f01e21373945b0deb1cf27849ba, type: 2}
+  - {fileID: 1000012397953854, guid: 5a595f01e21373945b0deb1cf27849ba, type: 2}
   - {fileID: 1000010315425952, guid: fcd426668b841004883ede8271b82fb6, type: 2}
   - {fileID: 1000010315425952, guid: 28917b2d08e1baf43845e40e95ebe091, type: 2}
   - {fileID: 1000010315425952, guid: 80aedf13f22fe7f41a1d062ed4422e74, type: 2}
