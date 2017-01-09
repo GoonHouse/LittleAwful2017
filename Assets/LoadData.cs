@@ -1,0 +1,73 @@
+﻿using UnityEngine;
+using System.Collections;
+
+using UnityEngine.UI;
+
+public class LoadData : MonoBehaviour {
+
+    private SaveDatum sd = null;
+
+    public GameObject ui_music_volume = null;
+    public GameObject ui_effects_volume = null;
+    public GameObject ui_ircNick = null;
+    public GameObject ui_ircPass = null;
+    public GameObject ui_ircChannel = null;
+    public GameObject ui_ircServer = null;
+    public GameObject ui_ircPort = null;
+
+    public GameObject ui_options_panel = null;
+
+    // Use this for initialization
+    void Start () {
+
+        sd = God.main.GetComponent<SaveData>().loadedSave;
+
+        ui_music_volume.GetComponent<Slider>().normalizedValue = sd.musicVolume;
+        ui_effects_volume.GetComponent<Slider>().normalizedValue = sd.effectsVolume;
+
+        ui_ircNick.GetComponentInParent<InputField>().text = sd.ircNick;
+        ui_ircNick.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircNickChangeCheck(); });
+        ui_ircPass.GetComponentInParent<InputField>().text = sd.ircPass;
+        ui_ircPass.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircPassChangeCheck(); });
+        ui_ircChannel.GetComponentInParent<InputField>().text = sd.ircChannel;
+        ui_ircChannel.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircChannelChangeCheck(); });
+        ui_ircServer.GetComponentInParent<InputField>().text = sd.ircServer;
+        ui_ircServer.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircServerChangeCheck(); });
+        ui_ircPort.GetComponentInParent<InputField>().text = sd.ircPort.ToString();
+        ui_ircPort.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircPortChangeCheck(); });
+
+        ui_options_panel.SetActive(false);
+    }
+
+    public void uiMusicVolumeChangeCheck() {
+        sd.musicVolume = ui_music_volume.GetComponent<Slider>().normalizedValue;
+    }
+
+    public void uiEffectsVolumeChangeCheck() {
+        sd.effectsVolume = ui_effects_volume.GetComponent<Slider>().normalizedValue;
+    }
+
+    public void ircNickChangeCheck() {
+        sd.ircNick = ui_ircNick.GetComponentInParent<InputField>().text;
+    }
+
+    public void ircPassChangeCheck() {
+        sd.ircPass = ui_ircPass.GetComponentInParent<InputField>().text;
+    }
+
+    public void ircChannelChangeCheck() {
+        sd.ircChannel= ui_ircChannel.GetComponentInParent<InputField>().text;
+    }
+
+    public void ircServerChangeCheck() {
+        sd.ircServer = ui_ircServer.GetComponentInParent<InputField>().text;
+    }
+
+    public void ircPortChangeCheck() {
+        var default_port = 6667;
+        var port = God.StrToIntDef(ui_ircPort.GetComponentInParent<InputField>().text, default_port);
+        sd.ircPort = port >= 1 && port <= 65535 ? port : default_port;
+        ui_ircPort.GetComponentInParent<InputField>().text = port.ToString();
+    }
+
+}

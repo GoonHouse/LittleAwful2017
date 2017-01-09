@@ -6,6 +6,10 @@ using System.IO;
 
 [System.Serializable]
 public class SaveDatum {
+
+    // Do not add defaults here, use Unity Editor!
+    // "These are sane values!" ~@EntranceJew
+
     // Meta Save Info
     public bool isAutoSave = false;
     public System.DateTime created = System.DateTime.UtcNow;
@@ -17,6 +21,7 @@ public class SaveDatum {
     public string playerName;
 
     // Game Settings
+    // Changes from the UI are not reflected in the God object, but via SetAudiolevels.SetMusicLevel()
     public float musicVolume = 1.0f;
     public float effectsVolume = 1.0f;
 

@@ -83,6 +83,14 @@ public class God : MonoBehaviour {
         float mult = Mathf.Pow(10.0f, (float)digits);
         return Mathf.Round(value * mult) / mult;
     }
+
+    // http://stackoverflow.com/questions/15522347/c-sharp-function-for-converting-string-to-int-with-default-value-parameter
+    public static int StrToIntDef(string s, int @default) {
+        int number;
+        if (int.TryParse(s, out number))
+            return number;
+        return @default;
+    }
 }
 
 
@@ -102,4 +110,5 @@ public static class BeeCoExtensions {
             list[n] = value;
         }
     }
+
 }
