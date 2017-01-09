@@ -195,6 +195,12 @@ MonoBehaviour:
   gridPosition: {x: 0, y: 1}
   laneSwitchTime: 0.12
   alive: 1
+  cokeMax: 5
+  cokeCurrent: 5
+  timeLastUsedCoke: 0
+  timeToRecoverCoke: 5
+  timePerCokeRecovery: 1
+  timeLastGeneratedCoke: 0
 --- !u!114 &56449743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,6 +977,12 @@ MonoBehaviour:
   gridPosition: {x: 0, y: 2}
   laneSwitchTime: 0.12
   alive: 1
+  cokeMax: 5
+  cokeCurrent: 5
+  timeLastUsedCoke: 0
+  timeToRecoverCoke: 5
+  timePerCokeRecovery: 1
+  timeLastGeneratedCoke: 0
 --- !u!114 &669633955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1625,6 +1637,12 @@ MonoBehaviour:
   gridPosition: {x: 0, y: 0}
   laneSwitchTime: 0.12
   alive: 1
+  cokeMax: 5
+  cokeCurrent: 5
+  timeLastUsedCoke: 0
+  timeToRecoverCoke: 5
+  timePerCokeRecovery: 1
+  timeLastGeneratedCoke: 0
 --- !u!114 &1217649350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,6 +1897,12 @@ MonoBehaviour:
   gridPosition: {x: 0, y: 3}
   laneSwitchTime: 0.12
   alive: 1
+  cokeMax: 5
+  cokeCurrent: 5
+  timeLastUsedCoke: 0
+  timeToRecoverCoke: 5
+  timePerCokeRecovery: 1
+  timeLastGeneratedCoke: 0
 --- !u!114 &1469574964
 MonoBehaviour:
   m_ObjectHideFlags: 0

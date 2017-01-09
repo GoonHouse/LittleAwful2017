@@ -8,7 +8,23 @@ public class RaceBird : MonoBehaviour {
 
     public float laneSwitchTime = 0.5f;
 
+    // whether or not the bird has been busted
     public bool alive = true;
+
+    // the maximum amount of coke the bird has obtained
+    public int cokeMax = 5;
+    // how much coke the bird has to spend
+    public int cokeCurrent = 5;
+
+    // the last point in time coke was used
+    public float timeLastUsedCoke;
+    // how much time must pass before coke is restored
+    public float timeToRecoverCoke = 5.0f;
+    // once we are allowed to generate coke, how much time per unit to restore?
+    public float timePerCokeRecovery = 1.0f;
+
+    // when we last generated a coke
+    public float timeLastGeneratedCoke;
 
     // Use this for initialization
     void Start () {
@@ -25,9 +41,38 @@ public class RaceBird : MonoBehaviour {
 
 
         if ( brain.BrainGo() ) {
-            MoveIfPossible(1, 0);
+            CokeBoost();
         } else if ( brain.BrainStop() ) {
             MoveIfPossible(-1, 0);
+        }
+
+        // do we get more cocanium?
+        CokeUpdate();
+    }
+
+    void CokeUpdate() {
+        var missingCoke = cokeMax - cokeCurrent;
+        if( Time.time > ( timeLastUsedCoke + timeToRecoverCoke ) ) {
+            if( Time.time > ( timeLastGeneratedCoke + timePerCokeRecovery ) && missingCoke > 0 ) {
+                timeLastGeneratedCoke = Time.time;
+                OnGetCoke();
+            }
+        }
+    }
+
+    void OnGetCoke() {
+        if( cokeCurrent < cokeMax ) {
+            cokeCurrent += 1;
+        }
+    }
+
+    bool CokeBoost() {
+        if( cokeCurrent > 0 && MoveIfPossible( 1, 0 ) ) {
+            cokeCurrent -= 1;
+            timeLastUsedCoke = Time.time;
+            return true;
+        } else {
+            return false;
         }
     }
 
