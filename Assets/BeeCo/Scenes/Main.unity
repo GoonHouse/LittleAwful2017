@@ -226,7 +226,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &26760977
@@ -1052,7 +1052,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 2.700702, y: 0.23907, z: -3.9321272}
+  m_ConnectedAnchor: {x: 2.700702, y: 0.23907, z: -3.9321275}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2005,7 +2005,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000001153104, y: 0.6084385, z: -0.0000026524067}
+  m_ConnectedAnchor: {x: 0.0000011531032, y: 0.6084379, z: -0.0000010728836}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -2602,7 +2602,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000081877516, y: 0.5908599, z: 0.0000007301568}
+  m_ConnectedAnchor: {x: -0.0000020124442, y: 0.5908598, z: 0.00000205636}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -3336,7 +3336,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000005469809, y: 0.43368983, z: 0.00000033900145}
+  m_ConnectedAnchor: {x: 0.0000005469806, y: 0.4336907, z: -0.0000011324884}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -4853,7 +4853,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000013634593, y: 1.1175934, z: -0.000000059604645}
+  m_ConnectedAnchor: {x: 0.0000014677609, y: 1.1175951, z: -0.0000017285347}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -7572,7 +7572,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000005198043, y: 0.6084372, z: 0.000000074505806}
+  m_ConnectedAnchor: {x: -0.00000029975917, y: 0.60843855, z: -0.0000028014183}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -8343,7 +8343,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000057369186, y: 1.1175951, z: -0.0000017285347}
+  m_ConnectedAnchor: {x: 0.00000057369135, y: 1.1175938, z: -0.00000035762787}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -8584,7 +8584,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000002103952, y: 0.5134054, z: 0.0000024884941}
+  m_ConnectedAnchor: {x: -0.00000021039507, y: 0.51340604, z: 0.00000090897095}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -9317,7 +9317,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000072632906, y: 0.56696516, z: -0.00000032037497}
+  m_ConnectedAnchor: {x: 0.000000726328, y: 0.5669652, z: 0.0000012740493}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -10013,7 +10013,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000062148655, y: 0.43368956, z: 0.0000023171308}
+  m_ConnectedAnchor: {x: 0.0000006214864, y: 0.43368992, z: 0.000001166016}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -11197,8 +11197,72 @@ Transform:
   - {fileID: 505714112}
   - {fileID: 845498458}
   - {fileID: 1877824530}
+  - {fileID: 1932511530}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1001 &1488203292
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1477119702}
+    m_Modifications:
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.985
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.9231279
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.4092865
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.923128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010315425952, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+      propertyPath: m_Name
+      value: EatAtJoes (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013204762994, guid: 6a370fa73f633254fb36110b8f507cf8,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33f0d33f098d9e24e9fb5c7fa273ef9e, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6a370fa73f633254fb36110b8f507cf8, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1491038543
 GameObject:
   m_ObjectHideFlags: 0
@@ -11332,7 +11396,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000085602795, y: 0.5908603, z: 0.000000029802319}
+  m_ConnectedAnchor: {x: -0.00000070859284, y: 0.59086, z: 0.0000034868713}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -14385,7 +14449,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000010990626, y: 0.56696534, z: -0.0000015050173}
+  m_ConnectedAnchor: {x: -0.0000010990631, y: 0.5669653, z: 0.00000017881393}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -14905,7 +14969,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000068367444, y: 0.513405, z: 0.0000014156104}
+  m_ConnectedAnchor: {x: 0.00000068367405, y: 0.513406, z: 0.00000004470349}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -15300,6 +15364,11 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1932511530 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000010359243948, guid: 6a370fa73f633254fb36110b8f507cf8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1488203292}
 --- !u!1 &1936037005
 GameObject:
   m_ObjectHideFlags: 0

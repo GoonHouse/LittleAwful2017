@@ -1,0 +1,202 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Awfuljamlogo
+  m_Shader: {fileID: 4800000, guid: 3e9d72e4910778549bc4717cbb594571, type: 3}
+  m_ShaderKeywords: _EMISSION _LIGHTMODE_DEFAULT _NORMALMAP _USE_M_TEX
+  m_LightmapFlags: 1
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _BumpMap
+      second:
+        m_Texture: {fileID: 2800000, guid: 79a1597b6e9e7e746a0674bc067a4b74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DetailAlbedoMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DetailMask
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DetailNormalMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _EmissionMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 014eeacaa7de97d49b836f673de8706e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MetallicGlossMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormalMap
+      second:
+        m_Texture: {fileID: 2800000, guid: 79a1597b6e9e7e746a0674bc067a4b74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _OcclusionMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _ParallaxMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _ToonShade
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Brightness
+      second: 1
+    - first:
+        name: _BumpScale
+      second: 1
+    - first:
+        name: _Bumpiness
+      second: 1
+    - first:
+        name: _CullMode
+      second: 2
+    - first:
+        name: _Cutoff
+      second: 0.5
+    - first:
+        name: _DetailNormalMapScale
+      second: 1
+    - first:
+        name: _DstBlend
+      second: 0
+    - first:
+        name: _GlossMapScale
+      second: 1
+    - first:
+        name: _Glossiness
+      second: 0.5
+    - first:
+        name: _GlossyReflections
+      second: 1
+    - first:
+        name: _LThreshold
+      second: 0.664
+    - first:
+        name: _LightLevelsDiffuse
+      second: 2.58
+    - first:
+        name: _LightLevelsSpecular
+      second: 3
+    - first:
+        name: _LightMode
+      second: 0
+    - first:
+        name: _Metallic
+      second: 0
+    - first:
+        name: _Mode
+      second: 0
+    - first:
+        name: _OcclusionStrength
+      second: 1
+    - first:
+        name: _OutlineSize
+      second: 0.006
+    - first:
+        name: _Parallax
+      second: 0.02
+    - first:
+        name: _RimSize
+      second: 2.5
+    - first:
+        name: _Shininess
+      second: 5
+    - first:
+        name: _Smoothness
+      second: 0.01
+    - first:
+        name: _SmoothnessTextureChannel
+      second: 0
+    - first:
+        name: _SpecularHighlights
+      second: 1
+    - first:
+        name: _SrcBlend
+      second: 1
+    - first:
+        name: _ToonyFy
+      second: 1
+    - first:
+        name: _UVSec
+      second: 0
+    - first:
+        name: _UseCustomShadow
+      second: 0
+    - first:
+        name: _UseMTex
+      second: 1
+    - first:
+        name: _UseNormalMap
+      second: 0
+    - first:
+        name: _UseRim
+      second: 0
+    - first:
+        name: _UseSpecular
+      second: 0
+    - first:
+        name: _ZWrite
+      second: 1
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.16911763, g: 0.16911763, b: 0.16911763, a: 1}
+    - first:
+        name: _EmissionColor
+      second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _OutlineColor
+      second: {r: 1, g: 0, b: 1, a: 1}
+    - first:
+        name: _RimColor
+      second: {r: 1, g: 0, b: 1, a: 0.278}
+    - first:
+        name: _ShadowColor
+      second: {r: 0, g: 0, b: 0, a: 0.37}
+    - first:
+        name: _SpecularColor
+      second: {r: 0, g: 1, b: 1, a: 0.397}
