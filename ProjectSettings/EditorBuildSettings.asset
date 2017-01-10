@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BeeCo/Scenes/Main.unity
   - enabled: 1
+    path: Assets/BeeCo/Scenes/Race.unity
+  - enabled: 0
     path: Assets/BeeCo/Scenes/Hungry.unity
