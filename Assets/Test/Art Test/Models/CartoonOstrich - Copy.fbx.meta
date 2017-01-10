@@ -1,0 +1,331 @@
+fileFormatVersion: 2
+guid: cd3538aea9e3a9b40b5a6c3768e852b9
+timeCreated: 1484019939
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Butt
+    100004: //RootNode
+    100006: Chest
+    100008: Foot.Left
+    100010: Foot.Left_end
+    100012: Foot.Right
+    100014: Foot.Right_end
+    100016: Head
+    100018: Hip.Left
+    100020: Hip.Right
+    100022: Jaw.Lower
+    100024: Jaw.Lower_end
+    100026: Jaw.Upper
+    100028: Jaw.Upper_end
+    100030: Leg.Left
+    100032: Leg.Right
+    100034: Neck.001
+    100036: Neck.002
+    100038: Neck.003
+    100040: Neck.004
+    100042: Neck.005
+    100044: Neck.006
+    100046: Neck.007
+    100048: Ostrich
+    100050: Tail
+    100052: Tail_end
+    100054: Thigh.Left
+    100056: Thigh.Right
+    400000: Armature
+    400002: Butt
+    400004: //RootNode
+    400006: Chest
+    400008: Foot.Left
+    400010: Foot.Left_end
+    400012: Foot.Right
+    400014: Foot.Right_end
+    400016: Head
+    400018: Hip.Left
+    400020: Hip.Right
+    400022: Jaw.Lower
+    400024: Jaw.Lower_end
+    400026: Jaw.Upper
+    400028: Jaw.Upper_end
+    400030: Leg.Left
+    400032: Leg.Right
+    400034: Neck.001
+    400036: Neck.002
+    400038: Neck.003
+    400040: Neck.004
+    400042: Neck.005
+    400044: Neck.006
+    400046: Neck.007
+    400048: Ostrich
+    400050: Tail
+    400052: Tail_end
+    400054: Thigh.Left
+    400056: Thigh.Right
+    4300000: Ostrich
+    9500000: //RootNode
+    13700000: Ostrich
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: '
+
+      Imported file ''CartoonOstrich - Copy'' conversion failed: Required human bone
+      ''LeftUpperLeg'' not found
+
+
+'
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Chest
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck.001
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck.002
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck.007
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Jaw.Lower
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: CartoonOstrich - Copy(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Armature
+      position: {x: -0.000000011133606, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+      transformModified: 1
+    - name: Butt
+      position: {x: 1.1575926e-17, y: 0.055331707, z: 0.002949618}
+      rotation: {x: -0.6041819, y: 0, z: -0, w: 0.79684645}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Tail
+      position: {x: -0, y: 0.024987113, z: 5.9604643e-10}
+      rotation: {x: 0.12799601, y: 0, z: -0, w: 0.9917747}
+      scale: {x: 1, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Tail_end
+      position: {x: -0, y: 0.014934498, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Chest
+      position: {x: 1.1575926e-17, y: 0.0553317, z: 0.002949624}
+      rotation: {x: 0.6021092, y: 0, z: -0, w: 0.79841375}
+      scale: {x: 1, y: 1.0000004, z: 1.0000001}
+      transformModified: 1
+    - name: Neck.001
+      position: {x: -1.0587912e-24, y: 0.02282515, z: 5.9604643e-10}
+      rotation: {x: 0.000000019415042, y: 0.94493586, z: -0.32725558, w: -0.000000086621306}
+      scale: {x: 1, y: 1.0000004, z: 1}
+      transformModified: 1
+    - name: Neck.002
+      position: {x: 2.7264117e-16, y: 0.011175934, z: 0.0000000011920929}
+      rotation: {x: 0.16936342, y: -0.00000003132732, z: 0.000000020189699, w: 0.9855537}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Neck.003
+      position: {x: -1.7530046e-16, y: 0.0060843676, z: -0.0000000011920929}
+      rotation: {x: 0.08907283, y: 0.00000015039566, z: 0.000000021236614, w: 0.99602515}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Neck.004
+      position: {x: -8.8584315e-16, y: 0.0056696534, z: 0.0000000011920929}
+      rotation: {x: -0.000000010336037, y: 0.9915177, z: 0.1299715, w: 0.0000003152471}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Neck.005
+      position: {x: -6.192085e-16, y: 0.005908598, z: -0.0000000023841857}
+      rotation: {x: -0.16721714, y: 0.00000011753079, z: 0.00000001993383, w: 0.98592013}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Neck.006
+      position: {x: 3.811648e-23, y: 0.005134053, z: 0}
+      rotation: {x: 0.054698005, y: 3.5473933e-14, z: -1.943264e-15, w: 0.99850297}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+      transformModified: 1
+    - name: Neck.007
+      position: {x: 6.52051e-25, y: 0.00433689, z: 0.0000000047683715}
+      rotation: {x: 0.14813542, y: -0.000000117894054, z: -0.000000017659112, w: 0.9889671}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Head
+      position: {x: 2.334427e-16, y: 0.004848796, z: 0.0000000023841857}
+      rotation: {x: 0.000000008171011, y: 0.98544943, z: 0.16996914, w: -0.00000019617282}
+      scale: {x: 1, y: 1.0000002, z: 1}
+      transformModified: 1
+    - name: Jaw.Lower
+      position: {x: 2.616416e-16, y: 0.009058976, z: 2.9802322e-10}
+      rotation: {x: -0.8301998, y: -0.000000017719884, z: -0.000000098967575, w: 0.557466}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Jaw.Lower_end
+      position: {x: -0, y: 0.019549778, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Jaw.Upper
+      position: {x: 2.616416e-16, y: 0.009058976, z: 2.9802322e-10}
+      rotation: {x: -0.62420374, y: 0.000001583082, z: -0.0000013590854, w: 0.7812616}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Jaw.Upper_end
+      position: {x: -0, y: 0.019642858, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hip.Left
+      position: {x: 1.1575926e-17, y: 0.055331722, z: 0.0029496145}
+      rotation: {x: 0.6863981, y: -0.6863981, z: -0.16987564, w: -0.16987564}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: Thigh.Left
+      position: {x: 4.4703483e-10, y: 0.011878799, z: -0.0000000011920929}
+      rotation: {x: 0.026057748, y: -0.026057761, z: -0.7066265, w: 0.70662653}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Leg.Left
+      position: {x: -9.921096e-10, y: 0.030753136, z: 0.0000000013342242}
+      rotation: {x: 0.00000009994742, y: 0.9095516, z: -0.415591, w: -0.00000012867345}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Foot.Left
+      position: {x: 0.0000000015933775, y: 0.028435566, z: 3.9204906e-10}
+      rotation: {x: 0.5265528, y: 0.00000039530684, z: 0.00000047554877, w: 0.8501424}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+      transformModified: 1
+    - name: Foot.Left_end
+      position: {x: -0, y: 0.009896724, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hip.Right
+      position: {x: 5.5879353e-11, y: 0.05533171, z: 0.0029496152}
+      rotation: {x: -0.4937647, y: -0.50615853, z: -0.49376464, w: 0.50615853}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Thigh.Right
+      position: {x: -1.0342724e-10, y: 0.0121845445, z: 0.000000003258718}
+      rotation: {x: -0.35190025, y: -0.33659062, z: 0.62185764, w: 0.61332375}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Leg.Right
+      position: {x: 3.163697e-10, y: 0.031009601, z: -0.000000001873808}
+      rotation: {x: -0.000000011919336, y: 0.91062176, z: -0.4132409, w: -0.00000033931863}
+      scale: {x: 1, y: 0.9999997, z: 1}
+      transformModified: 1
+    - name: Foot.Right
+      position: {x: 3.3275763e-10, y: 0.028435564, z: -7.650729e-10}
+      rotation: {x: 0.5265529, y: 0.0000004328659, z: 0.00000043106147, w: 0.8501424}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Foot.Right_end
+      position: {x: -0, y: 0.009896724, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Ostrich
+      position: {x: -0, y: -5.568942, z: 0.35032386}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
