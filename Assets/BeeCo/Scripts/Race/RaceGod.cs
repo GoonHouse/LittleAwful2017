@@ -2,8 +2,10 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum RaceState {
+    NoRace,
     PreHungry,
     Hungry,
     PostHungry,
@@ -13,7 +15,7 @@ public enum RaceState {
 }
 
 public class RaceGod : MonoBehaviour {
-    public RaceState raceState = RaceState.PreHungry;
+    public RaceState raceState = RaceState.NoRace;
 
     public GameObject debugMarker;
     public GameObject gridObject;
@@ -66,32 +68,60 @@ public class RaceGod : MonoBehaviour {
      *      how hazardous a configuration is, is based on intensity + rng boundaries
      * after a certain amount of time, we need to make the chance of spawning things 100%
      */
+    void Awake() {
+        SceneManager.sceneLoaded += TheLevelWasLoaded;
+    }
+
+    void TheLevelWasLoaded(Scene scene, LoadSceneMode loadSceneMode) {
+        if( scene.name == "Race" ) {
+            // shortcut transforms
+            world = GameObject.Find( "World" ).transform;
+            motion = GameObject.Find( "Motion/Lanes" ).transform;
+
+            FindInstanceThings();
+
+            // determine world size
+            // TODO: the road prefab does not consider lane width & isn't variable
+            worldOffset = new Vector2(
+                worldUnitDims.x / 2.0f,
+                ( worldUnitDims.y / 2.0f ) - ( ( worldDimensions.y / 2.0f ) * ( worldUnitDims.y + worldMargins.y ) )
+            );
+            CreateWorld();
+
+            SpawnDebugMarker();
+
+            // spawn road chunks all the way up until the reference object
+            // UpdateWorldPosition();
+            // UpdateMotion();
+            UpdateSpawn();
+
+            raceState = RaceState.PreHungry;
+        }
+    }
+
+    void FindInstanceThings() {
+        policeLight = world.transform.Find( "PoliceLight" ).gameObject;
+        hudTime = GameObject.Find( "Canvas/TimeLabel/Time" ).GetComponent<Text>();
+        cameraRaceAnchor = world.transform.Find( "CameraAnchors/CameraRaceAnchor" ).gameObject;
+
+        var raceBirds = world.transform.Find( "BirdAnchors" ).gameObject.GetComponentsInChildren<RaceBird>();
+        foreach( RaceBird rb in raceBirds ) {
+            Debug.Log( "Found Player: " + rb.gameObject.name );
+            players.Add( rb.gameObject );
+        }
+    }
 
     // Use this for initialization
     void Start () {
-        // shortcut transforms
-        world = GameObject.Find( "World" ).transform;
-        motion = GameObject.Find( "Motion/Lanes" ).transform;
-
-        // determine world size
-        // TODO: the road prefab does not consider lane width & isn't variable
-        worldOffset = new Vector2(
-            worldUnitDims.x / 2.0f,
-            ( worldUnitDims.y / 2.0f ) - ( ( worldDimensions.y / 2.0f ) * ( worldUnitDims.y + worldMargins.y ) )
-        );
-        CreateWorld();
-
-        SpawnDebugMarker();
-
-        // spawn road chunks all the way up until the reference object
-        // UpdateWorldPosition();
-        // UpdateMotion();
-        UpdateSpawn();
+        // TheLevelWasLoaded( SceneManager.GetActiveScene(), LoadSceneMode.Single );
     }
 
     // Update is called once per frame
     void Update () {
         switch( raceState ) {
+            case RaceState.NoRace:
+                // not doing anything important
+                break;
             case RaceState.PreHungry:
                 // everything that sets the scene up better goes here
                 policeLight.SetActive( false );

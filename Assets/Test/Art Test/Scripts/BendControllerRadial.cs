@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 [ExecuteInEditMode]
@@ -27,6 +27,10 @@ public class BendControllerRadial : MonoBehaviour {
 
 	private Vector3 m_scale = Vector3.zero;
 
+    void Awake() {
+        m_curveOrigin = Camera.main.transform;
+    }
+
 	// Use this for initialization
 	void Start () {
 	
@@ -43,7 +47,11 @@ public class BendControllerRadial : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        // lost camera, find it
+        if( !m_curveOrigin ) {
+            m_curveOrigin = Camera.main.transform;
+        }
+
 		m_scale.x = m_xScale;
 		m_scale.z = m_zScale;
 

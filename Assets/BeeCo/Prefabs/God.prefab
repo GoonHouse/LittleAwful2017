@@ -22,6 +22,8 @@ GameObject:
   - 114: {fileID: 114000012259112508}
   - 114: {fileID: 114000010560708468}
   - 114: {fileID: 114000013395418298}
+  - 114: {fileID: 114000013307476828}
+  - 114: {fileID: 114000011933720802}
   m_Layer: 0
   m_Name: God
   m_TagString: Untagged
@@ -35,10 +37,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010749133318}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -67,6 +69,24 @@ MonoBehaviour:
     ircPort: 6667
   defaultSaveName: slot_1
   savesFound: []
+--- !u!114 &114000011933720802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010749133318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ba439ad486b32408a934c8de6155b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_curveOrigin: {fileID: 0}
+  m_referenceDirection: {fileID: 4000012858075888}
+  m_curvature: 34.35
+  m_xScale: 1
+  m_zScale: 1
+  m_flatMargin: 50
+  m_horizonWaveFrequency: 2
 --- !u!114 &114000012259112508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,6 +98,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b7ce9fb01a7c74f8fab7b425888acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000013307476828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010749133318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85f604972583544b98ec4b7b56dcb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raceState: 0
+  debugMarker: {fileID: 1000012006430688, guid: bfd93bc3e41164e41bcacf5902e2a289,
+    type: 2}
+  gridObject: {fileID: 1000014224751460, guid: 5071feaa455740342a0a3f08696e1a69, type: 2}
+  chunkAnchor: {fileID: 1000013472144046, guid: 5807f1094f4555a4e956f59c80c05f2d,
+    type: 2}
+  playersAlive: 0
+  startTime: 0
+  spawnDistance: 28
+  spawnProtectionDistance: 10
+  worldChunkWidth: 100
+  worldChunkOffset: -1
+  worldUnitDims: {x: 12, y: 10}
+  worldDimensions: {x: 7, y: 6}
+  worldMargins: {x: 3.5, y: 2}
+  worldOffset: {x: 0, y: 0}
+  worldSpawnTarget: World/TileSpawns
+  world: {fileID: 0}
+  motion: {fileID: 0}
+  spawnWaveCount: 0
+  hazardMoveSpeed: 1
+  players: []
+  policeLight: {fileID: 0}
+  hudTime: {fileID: 0}
+  cameraRaceAnchor: {fileID: 0}
+  timeForBirdsRelocate: 3
+  timePreRaceStart: 0
+  timePreRaceDuration: 3
+  timeHungryStart: 0
+  timeHungryDuration: 3
+  marblesTotal: 0
+  marblesActive: 0
 --- !u!114 &114000013395418298
 MonoBehaviour:
   m_ObjectHideFlags: 1
