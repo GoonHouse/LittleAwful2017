@@ -70,4 +70,8 @@ public class LoadData : MonoBehaviour {
         ui_ircPort.GetComponentInParent<InputField>().text = port.ToString();
     }
 
+    public void player234UseOptionsCheck(int i ) {
+        sd.player234Use = i;
+    }
+
 }
