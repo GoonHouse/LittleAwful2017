@@ -23,13 +23,13 @@ public class HandleRayClick : MonoBehaviour {
 	}
 
     public void OnMouseDown() {
-        if(!toggle_panel.activeSelf) {
+        if(toggle_panel && !toggle_panel.activeSelf) {
             GetComponent<Renderer>().material = click_mat;
         }
     }
 
     public void OnMouseUp() {
-        if (!toggle_panel.activeSelf) {
+        if (toggle_panel && !toggle_panel.activeSelf) {
             if (target_state != "") {  
                 SceneManager.LoadScene(target_state);
             }
