@@ -111,4 +111,13 @@ public static class BeeCoExtensions {
         }
     }
 
+    public static Transform FindAllChildren( this Transform parent, string name ) {
+        var allTransforms = parent.gameObject.GetComponentsInChildren<Transform>();
+        foreach( Transform child in allTransforms ) {
+            if( child.gameObject.name == name ) {
+                return child;
+            }
+        }
+        return null;
+    }
 }

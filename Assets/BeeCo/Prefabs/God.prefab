@@ -115,6 +115,7 @@ MonoBehaviour:
   gridObject: {fileID: 1000014224751460, guid: 5071feaa455740342a0a3f08696e1a69, type: 2}
   chunkAnchor: {fileID: 1000013472144046, guid: 5807f1094f4555a4e956f59c80c05f2d,
     type: 2}
+  cokeObject: {fileID: 1000014189543136, guid: a3cca014f1c3ce7418fdd95985ffe6bb, type: 2}
   playersAlive: 0
   startTime: 0
   spawnDistance: 28
@@ -134,11 +135,12 @@ MonoBehaviour:
   policeLight: {fileID: 0}
   hudTime: {fileID: 0}
   cameraRaceAnchor: {fileID: 0}
+  cokeSpawnAnchor: {fileID: 0}
   timeForBirdsRelocate: 3
   timePreRaceStart: 0
   timePreRaceDuration: 3
   timeHungryStart: 0
-  timeHungryDuration: 3
+  timeHungryDuration: 120
   marblesTotal: 0
   marblesActive: 0
 --- !u!114 &114000013395418298

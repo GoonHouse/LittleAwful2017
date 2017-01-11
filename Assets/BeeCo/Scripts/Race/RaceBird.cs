@@ -18,6 +18,8 @@ public class RaceBird : MonoBehaviour {
     // how much coke the bird has to spend
     public int cokeCurrent = 5;
 
+    public float timeToSwoonce = 0.5f;
+
     // the last point in time coke was used
     public float timeLastUsedCoke;
     // how much time must pass before coke is restored
@@ -28,10 +30,22 @@ public class RaceBird : MonoBehaviour {
     // when we last generated a coke
     public float timeLastGeneratedCoke;
 
+    private GameObject head;
+    private GameObject headStartPosition;
+
     // Use this for initialization
     void Start () {
         rg = God.main.GetComponent<RaceGod>();
-        //SetPosition();
+
+        // find our head
+        head = gameObject.transform.FindAllChildren( "Head" ).gameObject;
+        head.AddComponent<Tweener>();
+
+        // create an anchor for our head
+        var headMate = head.transform.parent.gameObject;
+        headStartPosition = new GameObject();
+        headStartPosition.transform.SetParent( headMate.transform );
+        headStartPosition.transform.localPosition = head.transform.localPosition;
     }
 	
 	// Update is called once per frame
@@ -43,6 +57,7 @@ public class RaceBird : MonoBehaviour {
             case RaceState.Hungry:
                 // check if we have run out of time
                 // check if all marbles consumed
+                InterpretBrainForHungry();
                 break;
             case RaceState.PostHungry:
                 break;
@@ -58,6 +73,53 @@ public class RaceBird : MonoBehaviour {
             default:
                 break;
         }
+    }
+
+    void InterpretBrainForHungry() {
+        if( brain.BrainGo() ) {
+            var cokes = GameObject.FindGameObjectsWithTag( "Edible" );
+            if( cokes.Length > 0 ) {
+                var closest = GetClosest( cokes );
+                var tw = head.GetComponent<Tweener>();
+                tw.SetTarget( closest, timeToSwoonce );
+                tw.onDone += RetractHead;
+                // head.transform.position = closest.transform.position;
+            }
+        }
+    }
+
+    void RetractHead() {
+        var tw = head.GetComponent<Tweener>();
+        tw.onDone -= RetractHead;
+        tw.SetTarget( headStartPosition, timeToSwoonce );
+    }
+
+    GameObject GetClosest( GameObject[] pool ) {
+        GameObject tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = transform.position;
+        foreach( GameObject t in pool ) {
+            float dist = Vector3.Distance( t.transform.position, currentPos );
+            if( dist < minDist ) {
+                tMin = t;
+                minDist = dist;
+            }
+        }
+        return tMin;
+    }
+
+    Transform GetClosest( Transform[] pool ) {
+        Transform tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = transform.position;
+        foreach( Transform t in pool ) {
+            float dist = Vector3.Distance( t.position, currentPos );
+            if( dist < minDist ) {
+                tMin = t;
+                minDist = dist;
+            }
+        }
+        return tMin;
     }
 
     void InterpretBrainForRace() {

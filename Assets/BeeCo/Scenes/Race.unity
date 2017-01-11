@@ -2164,7 +2164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1402970350
 Transform:
   m_ObjectHideFlags: 0
@@ -2179,7 +2179,7 @@ Transform:
   - {fileID: 566571732}
   - {fileID: 1725163636}
   m_Father: {fileID: 1535222068}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1001 &1469574959
 Prefab:
   m_ObjectHideFlags: 0
@@ -2428,6 +2428,7 @@ Transform:
   - {fileID: 2138663455}
   - {fileID: 294221283}
   - {fileID: 904518173}
+  - {fileID: 2085445424}
   - {fileID: 1402970350}
   - {fileID: 1667544805}
   m_Father: {fileID: 0}
@@ -2462,7 +2463,7 @@ Transform:
   - {fileID: 1479333609}
   - {fileID: 437478264}
   m_Father: {fileID: 1535222068}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1725163635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +4836,34 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!1 &2085445423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2085445424}
+  m_Layer: 0
+  m_Name: CokeSpawnAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085445424
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085445423}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1535222068}
+  m_RootOrder: 5
 --- !u!1 &2138663454
 GameObject:
   m_ObjectHideFlags: 0
