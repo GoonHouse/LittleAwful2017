@@ -14,7 +14,7 @@ public class HandleRayClick : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        default_mat = GetComponent<Renderer>().material;//        gameObject.GetComponent<Material>();
+        default_mat = GetComponent<Renderer>().material;
 	}
 	
 	// Update is called once per frame
@@ -23,18 +23,22 @@ public class HandleRayClick : MonoBehaviour {
 	}
 
     public void OnMouseDown() {
-        GetComponent<Renderer>().material = click_mat;
+        if(!toggle_panel.activeSelf) {
+            GetComponent<Renderer>().material = click_mat;
+        }
     }
 
     public void OnMouseUp() {
-        if(target_state != "") {
-            SceneManager.LoadScene(target_state);
-        }
-        if(quit) {
-            Application.Quit();
-        }
-        if(toggle_panel) {
-            toggle_panel.SetActive(!toggle_panel.activeSelf);
+        if (!toggle_panel.activeSelf) {
+            if (target_state != "") {  
+                SceneManager.LoadScene(target_state);
+            }
+            if(quit) {
+                Application.Quit();
+            }
+            if(toggle_panel) {
+                toggle_panel.SetActive(!toggle_panel.activeSelf);
+            }
         }
     }
 
