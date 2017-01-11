@@ -5277,6 +5277,8 @@ MonoBehaviour:
   target_state: 
   quit: 0
   toggle_panel: {fileID: 226465297}
+  disable_panels:
+  - {fileID: 226465297}
 --- !u!54 &468880369
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9363,6 +9365,8 @@ MonoBehaviour:
   target_state: Race
   quit: 0
   toggle_panel: {fileID: 0}
+  disable_panels:
+  - {fileID: 226465297}
 --- !u!54 &875738371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10693,6 +10697,8 @@ MonoBehaviour:
   target_state: 
   quit: 1
   toggle_panel: {fileID: 0}
+  disable_panels:
+  - {fileID: 226465297}
 --- !u!65 &999347653
 BoxCollider:
   m_ObjectHideFlags: 0
