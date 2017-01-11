@@ -24,7 +24,11 @@ public class SaveDatum {
     // Changes from the UI are not reflected in the God object, but via SetAudiolevels.SetMusicLevel()
     public float musicVolume = 1.0f;
     public float effectsVolume = 1.0f;
-    public int player234Use = 0; // 0 .. twitch, 1 .. AI, 2 .. human
+
+    // Player Settings
+    // 0 .. twitch, 1 .. AI, 2 .. human
+    // player 1 is defaulted to human in LoadData.cs
+    public int [] playerUse = new int[4];
 
     // Twitch Settings
     public string ircNick = "CocaineOstrich";
