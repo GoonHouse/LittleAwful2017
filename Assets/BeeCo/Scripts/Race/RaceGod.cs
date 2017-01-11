@@ -20,6 +20,7 @@ public class RaceGod : MonoBehaviour {
     public GameObject debugMarker;
     public GameObject gridObject;
     public GameObject chunkAnchor;
+    public GameObject cokeObject;
 
     public Dictionary<string, GameObject> grid = new Dictionary<string, GameObject>();
     public Dictionary<string, GameObject> spawnedGrid = new Dictionary<string, GameObject>();
@@ -49,6 +50,8 @@ public class RaceGod : MonoBehaviour {
     public GameObject policeLight;
     public Text hudTime;
     public GameObject cameraRaceAnchor;
+    public GameObject cokeSpawnAnchor;
+
     public float timeForBirdsRelocate = 3.0f;
 
     public float timePreRaceStart;
@@ -59,7 +62,12 @@ public class RaceGod : MonoBehaviour {
     public float timeHungryDuration = 60.0f;
 
     public int marblesTotal = 0;
+    public int marblesMinActive = 13;
     public int marblesActive = 0;
+    public int marblesRoundTotal = 60;
+
+    public float timeLastSpawnedMarble;
+    public float timeSpawnMarbleDelay = 0.5f;
 
     /*
      * intensity = determined by: ( Time.time - startTime )
@@ -103,10 +111,10 @@ public class RaceGod : MonoBehaviour {
         policeLight = world.transform.Find( "PoliceLight" ).gameObject;
         hudTime = GameObject.Find( "Canvas/TimeLabel/Time" ).GetComponent<Text>();
         cameraRaceAnchor = world.transform.Find( "CameraAnchors/CameraRaceAnchor" ).gameObject;
+        cokeSpawnAnchor = world.transform.Find( "CokeSpawnAnchor" ).gameObject;
 
         var raceBirds = world.transform.Find( "BirdAnchors" ).gameObject.GetComponentsInChildren<RaceBird>();
         foreach( RaceBird rb in raceBirds ) {
-            Debug.Log( "Found Player: " + rb.gameObject.name );
             players.Add( rb.gameObject );
         }
     }
@@ -135,6 +143,8 @@ public class RaceGod : MonoBehaviour {
                 }
 
                 hudTime.text = God.FormatTime(( timeHungryStart + timeHungryDuration ) - Time.time);
+
+                UpdateEnoughCoke();
 
                 // check if we are still hungry by time
                 if( Time.time > ( timeHungryStart + timeHungryDuration ) ) {
@@ -251,6 +261,15 @@ public class RaceGod : MonoBehaviour {
         var howManyToSpawn = (Mathf.CeilToInt( world.position.x / worldChunkWidth ) + spawnProtectionDistance) - spawnWaveCount;
         for( var i = 0; i <= howManyToSpawn; i++ ) {
             PopulateWave();
+        }
+    }
+
+    void UpdateEnoughCoke() {
+        if( marblesActive < marblesMinActive && marblesRoundTotal > 0 && Time.time > ( timeLastSpawnedMarble + timeSpawnMarbleDelay ) ) {
+            God.SpawnChild( cokeObject, cokeSpawnAnchor );
+            timeLastSpawnedMarble = Time.time;
+            marblesRoundTotal--;
+            marblesActive++;
         }
     }
 

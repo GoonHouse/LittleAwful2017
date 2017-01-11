@@ -20,6 +20,8 @@ public class Tweener : MonoBehaviour {
     public bool local = false;
     public bool childOnComplete = false;
 
+    public UnityEngine.Events.UnityAction onDone;
+
 	// Use this for initialization
 	void Start () {
         easeFunc = EasingFunction.GetEasingFunction( easeType );
@@ -86,6 +88,10 @@ public class Tweener : MonoBehaviour {
                 }
                 
                 done = true;
+
+                if( onDone != null ) {
+                    onDone();
+                }
             }
         }
     }
