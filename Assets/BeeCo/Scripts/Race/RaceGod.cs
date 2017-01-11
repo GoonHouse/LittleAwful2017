@@ -1,8 +1,20 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+
+public enum RaceState {
+    PreHungry,
+    Hungry,
+    PostHungry,
+    PreRace,
+    Race,
+    PostRace
+}
 
 public class RaceGod : MonoBehaviour {
+    public RaceState raceState = RaceState.PreHungry;
+
     public GameObject debugMarker;
     public GameObject gridObject;
     public GameObject chunkAnchor;
@@ -16,8 +28,8 @@ public class RaceGod : MonoBehaviour {
     public float spawnProtectionDistance = 7.0f;
 
     // how long the strips of road are
-    public float worldChunkWidth = 100.0f; 
-
+    public float worldChunkWidth = 100.0f;
+    public int worldChunkOffset = -3;
     public Vector2 worldUnitDims = new Vector2(12, 10);
     public Vector2 worldDimensions = new Vector2(7, 4);
     public Vector2 worldMargins = new Vector2(2, 1);
@@ -29,6 +41,23 @@ public class RaceGod : MonoBehaviour {
 
     public int spawnWaveCount = 0;
     public float hazardMoveSpeed = 2.0f;
+
+    public List<GameObject> players = new List<GameObject>();
+
+    public GameObject policeLight;
+    public Text hudTime;
+    public GameObject cameraRaceAnchor;
+    public float timeForBirdsRelocate = 3.0f;
+
+    public float timePreRaceStart;
+    public float timePreRaceDuration = 3.0f;
+
+    // hungry game logic
+    public float timeHungryStart;
+    public float timeHungryDuration = 60.0f;
+
+    public int marblesTotal = 0;
+    public int marblesActive = 0;
 
     /*
      * intensity = determined by: ( Time.time - startTime )
@@ -52,17 +81,121 @@ public class RaceGod : MonoBehaviour {
         );
         CreateWorld();
 
-        //SpawnDebugMarker();
+        SpawnDebugMarker();
 
         // spawn road chunks all the way up until the reference object
-        UpdateMotion();
+        // UpdateWorldPosition();
+        // UpdateMotion();
+        UpdateSpawn();
     }
 
     // Update is called once per frame
     void Update () {
-        UpdateWorldPosition();
-        // check if we need to spawn after we move the world
-        UpdateMotion();
+        switch( raceState ) {
+            case RaceState.PreHungry:
+                // everything that sets the scene up better goes here
+                policeLight.SetActive( false );
+
+                raceState = RaceState.Hungry;
+                break;
+            case RaceState.Hungry:
+                // collect the hungry edge
+                if( timeHungryStart <= 0.0f ) {
+                    timeHungryStart = Time.time;
+                }
+
+                hudTime.text = God.FormatTime(( timeHungryStart + timeHungryDuration ) - Time.time);
+
+                // check if we are still hungry by time
+                if( Time.time > ( timeHungryStart + timeHungryDuration ) ) {
+                    raceState = RaceState.PostHungry;
+                }
+
+                // check if all marbles consumed
+                break;
+            case RaceState.PostHungry:
+                TransitionHungryToRace();
+                break;
+            case RaceState.PreRace:
+                // we let update motion
+                // UpdateMotion();
+                if( timePreRaceStart <= 0.0f ) {
+                    timePreRaceStart = Time.time;
+                }
+
+                hudTime.text = God.FormatTime( ( timePreRaceStart + timePreRaceDuration ) - Time.time );
+
+                // check if we are still hungry by time
+                if( Time.time > ( timePreRaceStart + timePreRaceDuration ) ) {
+                    // disable HUD text
+                    hudTime.gameObject.SetActive( false );
+
+                    raceState = RaceState.Race;
+                }
+                break;
+            case RaceState.Race:
+                // update the world position
+                // update the track
+                UpdateWorldPosition();
+                UpdateSpawn();
+                break;
+            case RaceState.PostRace:
+                // winner emerges, tween them into the sunset
+                break;
+            default:
+                Debug.Log( "groose is loose" );
+                break;
+        }
+    }
+
+    int MapPlayersToStartPosition(int id) {
+        switch( id ) {
+            case 0:
+                return 0;
+            case 1:
+                return 2;
+            case 2:
+                return 3;
+            case 3:
+                return 5;
+            default:
+                return 1;
+        }
+    }
+
+    void TransitionHungryToRace() {
+        /*
+        when hungry game ends and race begins, we must:
+        1) reposition HUD elements
+        2) despawn all stray marbles
+        3) tween the birds into their appropriate race positions
+        */
+
+        // it's the cops
+        policeLight.SetActive( true );
+
+        // tween the birds into their appropriate race positions
+        var playerID = 0;
+        foreach( GameObject player in players ) {
+            /*
+            var tweener = player.GetComponent<Tweener>();
+            var targetGridPos =  + "_0";
+            GameObject gridPos;
+            spawnedGrid.TryGetValue( targetGridPos, out gridPos );
+            tweener.SetTarget( gridPos );
+            */
+            var rb = player.GetComponent<RaceBird>();
+            rb.ForceMoveTo( 0, MapPlayersToStartPosition( playerID ), timeForBirdsRelocate );
+
+            playerID++;
+        }
+
+        // move the camera
+        var ct = Camera.main.gameObject.GetComponent<Tweener>();
+        ct.SetTarget( cameraRaceAnchor, timeForBirdsRelocate );
+
+        // set round state
+        raceState = RaceState.PreRace;
     }
 
     void SpawnDebugMarker() {
@@ -84,23 +217,22 @@ public class RaceGod : MonoBehaviour {
         world.position = pos;
     }
 
-    // check if we need to spawn more waves
-    void UpdateMotion() {
-        // @TODO: simplify. really, this should only operate on the edge that howManyToSpawn > 0 but I complicated my math.
-        var distanceSpawned = worldChunkWidth * spawnWaveCount;
-        var distanceShouldSpawn = worldChunkWidth * ( spawnWaveCount - spawnProtectionDistance );
-        var howManyToSpawn = Mathf.CeilToInt( ( distanceSpawned - world.position.x ) / worldChunkWidth );
-        if( world.position.x >= distanceShouldSpawn ) {
-            for( var i = 0; i <= howManyToSpawn; i++ ) {
-                PopulateWave();
-            }
+    void UpdateSpawn() {
+        var howManyToSpawn = (Mathf.CeilToInt( world.position.x / worldChunkWidth ) + spawnProtectionDistance) - spawnWaveCount;
+        for( var i = 0; i <= howManyToSpawn; i++ ) {
+            PopulateWave();
         }
     }
 
     void PopulateWave() {
-        var chunk = God.SpawnAt( chunkAnchor, new Vector3( spawnWaveCount * worldChunkWidth, 0.0f, 0.0f ) );
+        var chunk = God.SpawnAt( chunkAnchor, new Vector3( (spawnWaveCount + worldChunkOffset) * worldChunkWidth, 0.0f, 0.0f ) );
         chunk.transform.SetParent( motion.transform );
         chunk.name = "Wave " + spawnWaveCount;
+
+        // don't put hazards on an initial stretch
+        if( spawnWaveCount + worldChunkOffset <= 0 ) {
+            Destroy( chunk.transform.Find( "HazardStripAnchor" ).gameObject );
+        }
 
         spawnWaveCount += 1;
     }

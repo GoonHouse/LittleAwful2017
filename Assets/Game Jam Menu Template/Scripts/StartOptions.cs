@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -32,7 +32,11 @@ public class StartOptions : MonoBehaviour {
 
 		//Get a reference to PlayMusic attached to UI object
 		playMusic = GetComponent<PlayMusic> ();
-	}
+
+        SceneManager.sceneLoaded += delegate {
+            TheLevelWasLoaded();
+        };
+    }
 
 
 	public void StartButtonClicked()
@@ -64,7 +68,7 @@ public class StartOptions : MonoBehaviour {
 	}
 
 	//Once the level has loaded, check if we want to call PlayLevelMusic
-	void OnLevelWasLoaded()
+	void TheLevelWasLoaded()
 	{
 		//if changeMusicOnStart is true, call the PlayLevelMusic function of playMusic
 		if (changeMusicOnStart)

@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class RaceBird : MonoBehaviour {
+    private RaceGod rg;
+
     public RaceBrain brain;
 
     public Vector2 gridPosition = new Vector2(0, 0);
@@ -28,26 +30,49 @@ public class RaceBird : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        SetPosition();
+        rg = God.main.GetComponent<RaceGod>();
+        //SetPosition();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if ( brain.BrainLeft() ) {
-            MoveIfPossible(0, 1);
-        } else if ( brain.BrainRight() ) {
-            MoveIfPossible(0, -1);
+        switch( rg.raceState ) {
+            case RaceState.PreHungry:
+                // ???
+                break;
+            case RaceState.Hungry:
+                // check if we have run out of time
+                // check if all marbles consumed
+                break;
+            case RaceState.PostHungry:
+                break;
+            case RaceState.PreRace:
+                break;
+            case RaceState.Race:
+                InterpretBrainForRace();
+                CokeUpdate();
+                break;
+            case RaceState.PostRace:
+                // winner emerges, tween them into the sunset
+                break;
+            default:
+                break;
+        }
+    }
+
+    void InterpretBrainForRace() {
+        if( brain.BrainLeft() ) {
+            MoveIfPossible( 0, 1 );
+        } else if( brain.BrainRight() ) {
+            MoveIfPossible( 0, -1 );
         }
 
 
-        if ( brain.BrainGo() ) {
+        if( brain.BrainGo() ) {
             CokeBoost();
-        } else if ( brain.BrainStop() ) {
-            MoveIfPossible(-1, 0);
+        } else if( brain.BrainStop() ) {
+            MoveIfPossible( -1, 0 );
         }
-
-        // do we get more cocanium?
-        CokeUpdate();
     }
 
     void CokeUpdate() {
@@ -77,17 +102,14 @@ public class RaceBird : MonoBehaviour {
     }
 
     void SetPosition() {
-        var rg = God.main.GetComponent<RaceGod>();
         rg.grid.Add(gridPosition.x + "_" + gridPosition.y, this.gameObject);
     }
 
     void ClearPosition() {
-        var rg = God.main.GetComponent<RaceGod>();
         rg.grid.Remove(gridPosition.x + "_" + gridPosition.y);
     }
 
     bool CanMove( Vector2 newPos ) {
-        var rg = God.main.GetComponent<RaceGod>();
         bool canMove = true;
         
         
@@ -107,12 +129,20 @@ public class RaceBird : MonoBehaviour {
         return canMove;
     }
 
-    void ForceMove(int relX, int relY) {
+    public void ForceMoveTo( int absX, int absY, float time = -1.0f ) {
+        var newPos = new Vector2(
+            absX,
+            absY
+        );
+        MoveTo( newPos, time );
+    }
+
+    public void ForceMove(int relX, int relY) {
         var newPos = new Vector2(
             gridPosition.x + relX,
             gridPosition.y + relY
         );
-
+        MoveTo( newPos );
     }
 
     bool MoveIfPossible(int relX, int relY) {
@@ -121,33 +151,40 @@ public class RaceBird : MonoBehaviour {
             gridPosition.y + relY
         );
         if( CanMove( newPos ) ) {
-            ClearPosition();
-
-            // find where we need to tween to
-            var rg = God.main.GetComponent<RaceGod>();
-            GameObject targetLocation;
-            var trygetmove = newPos.x + "_" + newPos.y;
-            rg.spawnedGrid.TryGetValue(
-                newPos.x + "_" + newPos.y,
-                out targetLocation
-            );
-
-            if( !targetLocation ) {
-                Debug.Log( this.name + " tried to move to: " + trygetmove );
-            }
-
-            // set our tween target to a position + an offset
-            var loc = targetLocation.transform.position;
-            loc.y += 10.0f;
-            GetComponent<Tweener>().SetTarget( loc, Quaternion.identity, laneSwitchTime);
-
-            // physically relocate ourselves
-            gridPosition = newPos;
-            SetPosition();
+            MoveTo( newPos );
             return true;
         } else {
             return false;
         }
+    }
+
+    void MoveTo( Vector2 newPos, float time = -1.0f ) {
+        if( time < 0.0f ) {
+            time = laneSwitchTime;
+        }
+        ClearPosition();
+
+        GameObject targetLocation;
+        var trygetmove = newPos.x + "_" + newPos.y;
+        rg.spawnedGrid.TryGetValue(
+            newPos.x + "_" + newPos.y,
+            out targetLocation
+        );
+
+        if( !targetLocation ) {
+            Debug.Log( this.name + " tried to move to: " + trygetmove );
+        }
+
+        targetLocation = targetLocation.transform.Find( "TweenAnchor" ).gameObject;
+
+        // set our tween target to a position + an offset
+        //var loc = targetLocation.transform.position;
+        //loc.y += 10.0f;
+        GetComponent<Tweener>().SetTarget( targetLocation, time );
+
+        // physically relocate ourselves
+        gridPosition = newPos;
+        SetPosition();
     }
 
     void OnTriggerEnter( Collider other ) {

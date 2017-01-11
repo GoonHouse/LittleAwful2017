@@ -11,15 +11,14 @@ public class Tweener : MonoBehaviour {
     public Quaternion startRotation;
     public float startTime;
 
-    public Vector3 targetPosition;
-    public Quaternion targetRotation;
+    public Transform targetTransform;
+    //public Vector3 targetPosition;
+    //public Quaternion targetRotation;
     public float targetTime;
 
     public bool done = true;
-
-    void Reset() {
-        
-    }
+    public bool local = false;
+    public bool childOnComplete = false;
 
 	// Use this for initialization
 	void Start () {
@@ -63,40 +62,52 @@ public class Tweener : MonoBehaviour {
 
                 transform.position = pos;
                 */
-                transform.position = ApplyEase( startPosition, targetPosition, travelRatio );
-                transform.rotation = ApplyEase( startRotation, targetRotation, travelRatio );
+
+                if( local ) {
+                    transform.localPosition = ApplyEase( startPosition, targetTransform.localPosition, travelRatio );
+                    transform.localRotation = ApplyEase( startRotation, targetTransform.localRotation, travelRatio );
+                } else {
+                    transform.position = ApplyEase( startPosition, targetTransform.position, travelRatio );
+                    transform.rotation = ApplyEase( startRotation, targetTransform.rotation, travelRatio );
+                }
             } else {
-                transform.position = targetPosition;
-                transform.rotation = targetRotation;
+                if( local ) {
+                    transform.localPosition = targetTransform.localPosition;
+                    transform.localRotation = targetTransform.localRotation;
+                } else {
+                    transform.position = targetTransform.position;
+                    transform.rotation = targetTransform.rotation;
+                }
+
+                if( childOnComplete && targetTransform != null ) {
+                    gameObject.transform.SetParent( targetTransform );
+                    transform.localPosition = Vector3.zero;
+                    transform.localRotation = Quaternion.identity;
+                }
+                
                 done = true;
             }
         }
     }
 
     public void SetTarget( GameObject target, float time = 1.0f ) {
-        SetTarget( target.transform.position, target.transform.rotation, time );
+        SetTarget( target.transform, time );
     }
 
     public void SetTarget( Transform target, float time = 1.0f ) {
-        SetTarget( target.position, target.rotation, time );
-    }
-
-    public void SetTarget( Vector3 newTargetPos, Quaternion newTargetRot, float time = 1.0f ) {
-        // Set beginning positions.
-        this.startPosition = transform.position;
-        this.startRotation = transform.rotation;
-        this.startTime = Time.time;
-        
-        // no rotation, set properly
-        /*
-        if( newTargetRot ) {
-            newTargetRot = transform.rotation;
+        targetTransform = target;
+        if( local ) {
+            this.startPosition = transform.localPosition;
+            this.startRotation = transform.localRotation;
+        } else {
+            this.startPosition = transform.position;
+            this.startRotation = transform.rotation;
         }
-        */
-        this.targetPosition = newTargetPos;
-        this.targetRotation = newTargetRot;
+        
+        this.startTime = Time.time;
         this.targetTime = this.startTime + time;
 
         done = false;
+        local = false;
     }
 }

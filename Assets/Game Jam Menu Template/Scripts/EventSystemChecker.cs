@@ -1,12 +1,19 @@
-﻿using System;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class EventSystemChecker : MonoBehaviour
 {
+    void Awake() {
+        SceneManager.sceneLoaded += delegate {
+            TheLevelWasLoaded();
+        };
+    }
+
 	//OnLevelWasLoaded is called after a new scene has finished loading
-	void OnLevelWasLoaded ()
+	void TheLevelWasLoaded ()
 	{
 		//If there is no EventSystem (needed for UI interactivity) present
 		if(!FindObjectOfType<EventSystem>())
