@@ -11,6 +11,7 @@ public class HandleRayClick : MonoBehaviour {
     public string target_state = "";
     public bool quit = false;
     public GameObject toggle_panel = null;
+    public GameObject [] disable_panels;
 
     // Use this for initialization
     void Start () {
@@ -19,17 +20,28 @@ public class HandleRayClick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        if (!this.IsActive()) {
+            GetComponent<Renderer>().material = default_mat;
+        }
+    }
+
+    public bool IsActive() {
+        foreach (GameObject panel in disable_panels) {
+            if(panel.activeSelf) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public void OnMouseDown() {
-        if(toggle_panel && !toggle_panel.activeSelf) {
+        if(this.IsActive()) {
             GetComponent<Renderer>().material = click_mat;
         }
     }
 
     public void OnMouseUp() {
-        if (toggle_panel && !toggle_panel.activeSelf) {
+        if(this.IsActive()) {
             if (target_state != "") {  
                 SceneManager.LoadScene(target_state);
             }
@@ -43,11 +55,15 @@ public class HandleRayClick : MonoBehaviour {
     }
 
     public void OnMouseEnter() {
-        GetComponent<Renderer>().material = hover_mat;
+        if (this.IsActive()) {
+            GetComponent<Renderer>().material = hover_mat;
+        }
     }
 
     public void OnMouseExit() {
-        GetComponent<Renderer>().material = default_mat;
+        if (this.IsActive()) {
+            GetComponent<Renderer>().material = default_mat;
+        }
     }
 
 }

@@ -21,6 +21,7 @@ public class LoadData : MonoBehaviour {
     void Start () {
 
         sd = God.main.GetComponent<SaveData>().loadedSave;
+        sd.playerUse [0] = 2; // Set player 1 to human
 
         ui_music_volume.GetComponent<Slider>().normalizedValue = sd.musicVolume;
         ui_effects_volume.GetComponent<Slider>().normalizedValue = sd.effectsVolume;
@@ -70,8 +71,17 @@ public class LoadData : MonoBehaviour {
         ui_ircPort.GetComponentInParent<InputField>().text = port.ToString();
     }
 
-    public void player234UseOptionsCheck(int i ) {
-        sd.player234Use = i;
+    public void player1UseOptionsCheck(int i) {
+        sd.playerUse[0] = i;
+    }
+    public void player2UseOptionsCheck(int i) {
+        sd.playerUse[1] = i;
+    }
+    public void player3UseOptionsCheck(int i) {
+        sd.playerUse[2] = i;
+    }
+    public void player4UseOptionsCheck(int i) {
+        sd.playerUse[3] = i;
     }
 
 }
