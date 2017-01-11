@@ -46,6 +46,7 @@ public class RaceBird : MonoBehaviour {
         headStartPosition = new GameObject();
         headStartPosition.transform.SetParent( headMate.transform );
         headStartPosition.transform.localPosition = head.transform.localPosition;
+        headStartPosition.transform.localRotation = head.transform.localRotation;
     }
 	
 	// Update is called once per frame
