@@ -66,7 +66,7 @@ public class Osterich : MonoBehaviour {
 
     public void Eat(Marble thing) {
         stomach.Add(thing);
-        thing.eater = this;
+        // thing.eater = this;
 
         var renderers = thing.gameObject.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers) {

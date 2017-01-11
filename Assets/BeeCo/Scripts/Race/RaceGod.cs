@@ -154,6 +154,7 @@ public class RaceGod : MonoBehaviour {
                 // check if all marbles consumed
                 break;
             case RaceState.PostHungry:
+                hudTime.text = "GET READY!";
                 TransitionHungryToRace();
                 break;
             case RaceState.PreRace:
@@ -266,10 +267,15 @@ public class RaceGod : MonoBehaviour {
 
     void UpdateEnoughCoke() {
         if( marblesActive < marblesMinActive && marblesRoundTotal > 0 && Time.time > ( timeLastSpawnedMarble + timeSpawnMarbleDelay ) ) {
-            God.SpawnChild( cokeObject, cokeSpawnAnchor );
+            var coke = God.SpawnChild( cokeObject, cokeSpawnAnchor );
+            coke.name = "Coke #" + marblesRoundTotal;
             timeLastSpawnedMarble = Time.time;
             marblesRoundTotal--;
             marblesActive++;
+        }
+
+        if( marblesActive <= 0 && marblesRoundTotal <= 0 ) {
+            raceState = RaceState.PostHungry;
         }
     }
 

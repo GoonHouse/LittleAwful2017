@@ -62,6 +62,7 @@ MonoBehaviour:
     playerName: 
     musicVolume: 1
     effectsVolume: 1
+    playerUse: 00000000000000000000000000000000
     ircNick: CocaineOstrich
     ircPass: iL0v3Coca1ne!
     ircChannel: '#sagamedev'
@@ -140,9 +141,13 @@ MonoBehaviour:
   timePreRaceStart: 0
   timePreRaceDuration: 3
   timeHungryStart: 0
-  timeHungryDuration: 120
+  timeHungryDuration: 60
   marblesTotal: 0
+  marblesMinActive: 13
   marblesActive: 0
+  marblesRoundTotal: 60
+  timeLastSpawnedMarble: 0
+  timeSpawnMarbleDelay: 0.5
 --- !u!114 &114000013395418298
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using System.Collections;
 public class Marble : MonoBehaviour {
     public float value = 1.00f;
 
-    public Osterich eater;
+    public RaceBird eater;
 
 	// Use this for initialization
 	void Start () {
@@ -16,10 +16,12 @@ public class Marble : MonoBehaviour {
 	    
 	}
 
+    /*
     void OnTriggerEnter(Collider obj) {
-        var ost = obj.gameObject.GetComponentInParent<Osterich>();
+        var ost = obj.gameObject.GetComponentInParent<RaceBird>();
         if( ost && ost.isMouthOpen && eater == null ) {
             ost.Eat(this);
         }
     }
+    */
 }

@@ -33,6 +33,9 @@ public class RaceBird : MonoBehaviour {
     private GameObject head;
     private GameObject headStartPosition;
 
+    public bool isTargeting = false;
+    public Marble targetMarble;
+
     // Use this for initialization
     void Start () {
         rg = God.main.GetComponent<RaceGod>();
@@ -59,8 +62,10 @@ public class RaceBird : MonoBehaviour {
                 // check if we have run out of time
                 // check if all marbles consumed
                 InterpretBrainForHungry();
+                TargetUpdate();
                 break;
             case RaceState.PostHungry:
+                RetractHead();
                 break;
             case RaceState.PreRace:
                 break;
@@ -77,10 +82,12 @@ public class RaceBird : MonoBehaviour {
     }
 
     void InterpretBrainForHungry() {
-        if( brain.BrainGo() ) {
+        if( brain.BrainGo() && !targetMarble && !isTargeting ) {
             var cokes = GameObject.FindGameObjectsWithTag( "Edible" );
             if( cokes.Length > 0 ) {
                 var closest = GetClosest( cokes );
+                isTargeting = true;
+                targetMarble = closest.GetComponent<Marble>();
                 var tw = head.GetComponent<Tweener>();
                 tw.SetTarget( closest, timeToSwoonce );
                 tw.onDone += RetractHead;
@@ -92,7 +99,26 @@ public class RaceBird : MonoBehaviour {
     void RetractHead() {
         var tw = head.GetComponent<Tweener>();
         tw.onDone -= RetractHead;
+        if( targetMarble && isTargeting ) {
+            targetMarble.transform.SetParent( head.transform );
+            targetMarble.eater = this;
+            targetMarble.tag = "Untagged";
+
+            tw.onDone += EatCoke;
+        }
+
+        isTargeting = false;
+
         tw.SetTarget( headStartPosition, timeToSwoonce );
+    }
+
+    void EatCoke() {
+        cokeMax += (int) targetMarble.value;
+        Debug.Log( gameObject.name + " is eating a coke: " + targetMarble.gameObject );
+        rg.marblesActive--;
+        Destroy( targetMarble.gameObject );
+        var tw = head.GetComponent<Tweener>();
+        tw.onDone -= EatCoke;
     }
 
     GameObject GetClosest( GameObject[] pool ) {
@@ -145,6 +171,16 @@ public class RaceBird : MonoBehaviour {
                 timeLastGeneratedCoke = Time.time;
                 OnGetCoke();
             }
+        }
+    }
+
+    void TargetUpdate() {
+        if( targetMarble && targetMarble.eater != null && isTargeting ) {
+            targetMarble = null;
+            isTargeting = false;
+            RetractHead();
+        } else if( !targetMarble && isTargeting ) {
+            RetractHead();
         }
     }
 
