@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: JawClose
+  m_Name: LegsIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -17,36 +17,36 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: -132.3, y: 0, z: 0}
-        inSlope: {x: 150.66899, y: 0, z: 0}
-        outSlope: {x: 150.66899, y: 0, z: 0}
+        value: {x: 0, y: -4.103, z: -90.00001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 0.33333334
-        value: {x: -82.077, y: 0, z: 0}
-        inSlope: {x: 150.66899, y: 0, z: 0}
-        outSlope: {x: 150.66899, y: 0, z: 0}
+      - time: 1
+        value: {x: 0, y: -4.103, z: -90.00001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
+    path: Armature/Hip.Left/Thigh.Left
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: -61.1, y: 0.001, z: -0.001}
-        inSlope: {x: -48.372025, y: 0, z: 0}
-        outSlope: {x: -48.372025, y: 0, z: 0}
+        value: {x: -0.73800004, y: -58.191, z: 91.173004}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 0.33333334
-        value: {x: -77.22401, y: 0.001, z: -0.001}
-        inSlope: {x: -48.372025, y: 0, z: 0}
-        outSlope: {x: -48.372025, y: 0, z: 0}
+      - time: 1
+        value: {x: -0.73800004, y: -58.191, z: 91.173004}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    path: Armature/Hip.Right/Thigh.Right
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -58,13 +58,13 @@ AnimationClip:
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
     genericBindings:
-    - path: 904323375
+    - path: 3055628385
       attribute: 4
       script: {fileID: 0}
       classID: 4
       customType: 14
       isPPtrCurve: 0
-    - path: 1428374928
+    - path: 3043954588
       attribute: 4
       script: {fileID: 0}
       classID: 4
@@ -76,7 +76,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -96,32 +96,32 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -132.3
-        inSlope: 150.66899
-        outSlope: 150.66899
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 10
-      - time: 0.33333334
-        value: -82.077
-        inSlope: 150.66899
-        outSlope: 150.66899
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
+    path: Armature/Hip.Left/Thigh.Left
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
+        value: -4.103
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 0.33333334
-        value: 0
+      - time: 1
+        value: -4.103
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -129,19 +129,19 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
+    path: Armature/Hip.Left/Thigh.Left
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
+        value: -90.00001
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 0.33333334
-        value: 0
+      - time: 1
+        value: -90.00001
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -149,39 +149,39 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
+    path: Armature/Hip.Left/Thigh.Left
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -61.1
-        inSlope: -48.372025
-        outSlope: -48.372025
+        value: -0.73800004
+        inSlope: 0
+        outSlope: 0
         tangentMode: 10
-      - time: 0.33333334
-        value: -77.22401
-        inSlope: -48.372025
-        outSlope: -48.372025
+      - time: 1
+        value: -0.73800004
+        inSlope: 0
+        outSlope: 0
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    path: Armature/Hip.Right/Thigh.Right
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0.001
+        value: -58.191
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 0.33333334
-        value: 0.001
+      - time: 1
+        value: -58.191
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -189,19 +189,19 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    path: Armature/Hip.Right/Thigh.Right
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -0.001
+        value: 91.173004
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 0.33333334
-        value: -0.001
+      - time: 1
+        value: 91.173004
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -209,7 +209,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    path: Armature/Hip.Right/Thigh.Right
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
@@ -219,8 +219,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
+    attribute: m_LocalEulerAngles.x
+    path: Armature/Hip.Left/Thigh.Left
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -230,37 +230,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Lower
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    path: Armature/Hip.Left/Thigh.Left
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -270,7 +240,37 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Armature/Chest/Neck.001/Neck.002/Neck.003/Neck.004/Neck.005/Neck.006/Neck.007/Head/Jaw.Upper
+    path: Armature/Hip.Left/Thigh.Left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Armature/Hip.Right/Thigh.Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Armature/Hip.Right/Thigh.Right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Armature/Hip.Right/Thigh.Right
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
