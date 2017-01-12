@@ -1,29 +1,62 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RaceBrainTwitch : RaceBrain {
-    public float chanceToLeft = 0.10f;
-    public float chanceToRight = 0.10f;
-    public float chanceToGo = 0.07f;
-    public float chanceToStop = 0.07f;
+    public List<bool> doLeft = new List<bool>();
+    public List<bool> doRight = new List<bool>();
+    public List<bool> doGo = new List<bool>();
+    public List<bool> doStop = new List<bool>();
 
     public override bool BrainLeft() {
-        return Random.value <= chanceToLeft;
+        if( doLeft.Count > 0 ) {
+            doLeft.RemoveAt( 0 );
+            return true;
+        }
+        return false;
     }
 
     public override bool BrainRight() {
-        return Random.value <= chanceToRight;
+        if( doRight.Count > 0 ) {
+            doRight.RemoveAt( 0 );
+            return true;
+        }
+        return false;
     }
 
     public override bool BrainGo() {
-        return Random.value <= chanceToGo;
+        if( doGo.Count > 0 ) {
+            doGo.RemoveAt( 0 );
+            return true;
+        }
+        return false;
     }
 
     public override bool BrainStop() {
-        return Random.value <= chanceToStop;
+        if( doStop.Count > 0 ) {
+            doStop.RemoveAt( 0 );
+            return true;
+        }
+        return false;
     }
 
     public override void DoSignal( string signal ) {
         Debug.Log( gameObject.name + " got a signal saying: " + signal );
+        switch( signal ) {
+            case "eat":
+            case "go":
+                doGo.Add( true );
+                break;
+            case "left":
+                doLeft.Add( true );
+                break;
+            case "right":
+                doRight.Add( true );
+                break;
+            case "back":
+            case "stop":
+                doStop.Add( true );
+                break;
+        }
     }
 }

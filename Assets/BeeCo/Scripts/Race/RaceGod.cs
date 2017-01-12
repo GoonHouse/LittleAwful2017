@@ -71,7 +71,7 @@ public class RaceGod : MonoBehaviour {
     public float timeLastSpawnedMarble;
     public float timeSpawnMarbleDelay = 0.5f;
 
-    public List<string> ircCommands = new List<string>{ "eat", "left", "right", "go", "back" };
+    public List<string> ircCommands = new List<string>{ "eat", "left", "right", "go", "back", "stop" };
 
     /*
      * intensity = determined by: ( Time.time - startTime )
