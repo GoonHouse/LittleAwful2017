@@ -58,6 +58,22 @@ public class RaceBird : MonoBehaviour {
         myGUI.score_max = cokeMax;
         myGUI.current_score = cokeMax;
     }
+
+    public void SetBrainFromInt( int brainType ) {
+        switch( brainType ) {
+            case 2: // Human
+                brain = new RaceBrainHuman();
+                break;
+            case 1: // AI
+                brain = new RaceBrainComputer();
+                break;
+            case 0: // twitch
+            default:
+                brain = new RaceBrainTwitch();
+                break;
+
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

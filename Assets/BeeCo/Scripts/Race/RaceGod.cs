@@ -119,10 +119,12 @@ public class RaceGod : MonoBehaviour {
             playerGUIs.Add( gui.gameObject );
         }
 
+        var theSave = God.main.GetComponent<SaveData>().loadedSave;
         var pid = 0;
         var raceBirds = world.transform.Find( "BirdAnchors" ).gameObject.GetComponentsInChildren<RaceBird>();
         foreach( RaceBird rb in raceBirds ) {
             rb.playerID = pid;
+            rb.SetBrainFromInt( theSave.playerUse[pid] );
             players.Add( rb.gameObject );
             pid++;
         }
