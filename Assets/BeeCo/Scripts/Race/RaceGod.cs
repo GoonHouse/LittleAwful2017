@@ -231,7 +231,11 @@ public class RaceGod : MonoBehaviour {
                 // check if we are still hungry by time
                 if( Time.time > ( timePreRaceStart + timePreRaceDuration ) ) {
                     // disable HUD text
-                    
+                    hudTime.text = "TO RUN!";
+                    hudTime.transform.parent.GetComponent<Tweener>().SetTarget(
+                        GameObject.Find( "TimeLabelAnchor" ),
+                        timeForBirdsRelocate
+                    );
 
                     raceState = RaceState.Race;
                 }
@@ -239,7 +243,6 @@ public class RaceGod : MonoBehaviour {
             case RaceState.Race:
                 // update the world position
                 // update the track
-                hudTime.text = "TO RUN!";
 
                 UpdateWorldPosition();
                 UpdateSpawn();
@@ -278,6 +281,8 @@ public class RaceGod : MonoBehaviour {
 
         // it's the cops
         policeLight.SetActive( true );
+        var pt = policeLight.GetComponent<Tweener>();
+        pt.SetTarget( GameObject.Find( "PoliceLightDestAnchor" ), timeForBirdsRelocate );
 
         // tween the birds into their appropriate race positions
         var playerID = 0;
