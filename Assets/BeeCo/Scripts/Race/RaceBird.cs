@@ -34,6 +34,7 @@ public class RaceBird : MonoBehaviour {
 
     private GameObject head;
     private GameObject headStartPosition;
+    private Animator anims;
 
     public bool isTargeting = false;
     public Marble targetMarble;
@@ -45,6 +46,7 @@ public class RaceBird : MonoBehaviour {
         // find our head
         head = gameObject.transform.FindAllChildren( "Head" ).gameObject;
         head.AddComponent<Tweener>();
+        anims = gameObject.GetComponentInChildren<Animator>();
 
         // create an anchor for our head
         var headMate = head.transform.parent.gameObject;

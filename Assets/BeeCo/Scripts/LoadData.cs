@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 using UnityEngine.UI;
@@ -14,8 +14,6 @@ public class LoadData : MonoBehaviour {
     public GameObject ui_ircChannel = null;
     public GameObject ui_ircServer = null;
     public GameObject ui_ircPort = null;
-
-    public GameObject ui_options_panel = null;
 
     // Use this for initialization
     void Start () {
@@ -36,8 +34,6 @@ public class LoadData : MonoBehaviour {
         ui_ircServer.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircServerChangeCheck(); });
         ui_ircPort.GetComponentInParent<InputField>().text = sd.ircPort.ToString();
         ui_ircPort.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircPortChangeCheck(); });
-
-        ui_options_panel.SetActive(false);
     }
 
     public void uiMusicVolumeChangeCheck() {
