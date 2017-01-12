@@ -200,6 +200,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGUI: {fileID: 1071688070}
   brain: {fileID: 56449741}
+  objectSpeech: {fileID: 1000010000684924, guid: 6e096631705dc3c4680d774289921f5a,
+    type: 2}
+  objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
+    type: 2}
   gridPosition: {x: 0, y: 1}
   laneSwitchTime: 0.12
   playerID: 0
@@ -1595,6 +1599,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGUI: {fileID: 607690892}
   brain: {fileID: 669633953}
+  objectSpeech: {fileID: 1000010000684924, guid: 6e096631705dc3c4680d774289921f5a,
+    type: 2}
+  objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
+    type: 2}
   gridPosition: {x: 0, y: 2}
   laneSwitchTime: 0.12
   playerID: 0
@@ -3233,6 +3241,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGUI: {fileID: 507631876}
   brain: {fileID: 1217649348}
+  objectSpeech: {fileID: 1000010000684924, guid: 6e096631705dc3c4680d774289921f5a,
+    type: 2}
+  objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
+    type: 2}
   gridPosition: {x: 0, y: 0}
   laneSwitchTime: 0.12
   playerID: 0
@@ -3886,6 +3898,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGUI: {fileID: 1852376143}
   brain: {fileID: 1469574962}
+  objectSpeech: {fileID: 1000010000684924, guid: 6e096631705dc3c4680d774289921f5a,
+    type: 2}
+  objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
+    type: 2}
   gridPosition: {x: 0, y: 3}
   laneSwitchTime: 0.12
   playerID: 0

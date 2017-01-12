@@ -6,6 +6,9 @@ public class RaceBird : MonoBehaviour {
     public PlayerGUI myGUI;
     public RaceBrain brain;
 
+    public GameObject objectSpeech;
+    public GameObject objectBusted;
+
     public Vector2 gridPosition = new Vector2(0, 0);
 
     public float laneSwitchTime = 0.5f;
@@ -35,6 +38,8 @@ public class RaceBird : MonoBehaviour {
     private GameObject head;
     private GameObject headStartPosition;
     private Animator anims;
+    private GameObject anchorBusted;
+    private GameObject anchorSpeech;
 
     public bool isTargeting = false;
     public Marble targetMarble;
@@ -47,6 +52,9 @@ public class RaceBird : MonoBehaviour {
         head = gameObject.transform.FindAllChildren( "Head" ).gameObject;
         head.AddComponent<Tweener>();
         anims = gameObject.GetComponentInChildren<Animator>();
+
+        anchorBusted = gameObject.transform.FindAllChildren( "BustedAnchor" ).gameObject;
+        anchorSpeech = gameObject.transform.FindAllChildren( "SpeechAnchor" ).gameObject;
 
         // create an anchor for our head
         var headMate = head.transform.parent.gameObject;
@@ -79,6 +87,9 @@ public class RaceBird : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if( Input.GetKey( KeyCode.G ) ) {
+            var bus = God.SpawnChild( objectBusted, anchorBusted );
+        }
         switch( rg.raceState ) {
             case RaceState.PreHungry:
                 // ???
