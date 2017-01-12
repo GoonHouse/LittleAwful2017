@@ -91,8 +91,11 @@ public class RaceBird : MonoBehaviour {
                 break;
             case RaceState.PostHungry:
                 RetractHead();
+                anims.SetBool( "IsRunning", true );
                 break;
             case RaceState.PreRace:
+                RetractHead();
+                anims.SetBool( "IsRunning", true );
                 break;
             case RaceState.Race:
                 InterpretBrainForRace();
@@ -116,6 +119,7 @@ public class RaceBird : MonoBehaviour {
                 targetMarble = closest.GetComponent<Marble>();
                 var tw = head.GetComponent<Tweener>();
                 tw.SetTarget( closest, timeToSwoonce );
+                anims.SetBool( "MouthIsOpen", true );
                 tw.onDone += RetractHead;
                 // head.transform.position = closest.transform.position;
             }
@@ -129,7 +133,7 @@ public class RaceBird : MonoBehaviour {
             targetMarble.transform.SetParent( head.transform );
             targetMarble.eater = this;
             targetMarble.tag = "Untagged";
-
+            anims.SetBool( "MouthIsOpen", false );
             tw.onDone += EatCoke;
         }
 
@@ -231,7 +235,7 @@ public class RaceBird : MonoBehaviour {
         }
     }
 
-    void SetPosition() {
+    public void SetPosition() {
         rg.grid.Add(gridPosition.x + "_" + gridPosition.y, this.gameObject);
     }
 

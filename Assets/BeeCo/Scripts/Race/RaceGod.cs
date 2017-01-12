@@ -38,6 +38,7 @@ public class RaceGod : MonoBehaviour {
     public Vector2 worldMargins = new Vector2(2, 1);
     public Vector2 worldOffset;
     public string  worldSpawnTarget = "World/TileSpawns";
+    public int worldSpawnSafetyDistance = 2;
 
     public Transform world;
     public Transform motion;
@@ -287,7 +288,12 @@ public class RaceGod : MonoBehaviour {
             tweener.SetTarget( gridPos );
             */
             var rb = player.GetComponent<RaceBird>();
-            rb.ForceMoveTo( 0, MapPlayersToStartPosition( playerID ), timeForBirdsRelocate );
+            var posY = MapPlayersToStartPosition( playerID );
+            
+            rb.gridPosition = new Vector2( worldSpawnSafetyDistance, posY );
+            rb.SetPosition();
+
+            rb.ForceMoveTo( worldSpawnSafetyDistance, posY, timeForBirdsRelocate );
 
             playerID++;
         }
