@@ -1336,7 +1336,7 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
+    spring: 1
     damper: 0
   m_LinearLimit:
     limit: 0
@@ -1428,7 +1428,7 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
+    spring: 1
     damper: 0
   m_LinearLimit:
     limit: 0
@@ -1520,7 +1520,7 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
+    spring: 1
     damper: 0
   m_LinearLimit:
     limit: 0
@@ -1612,7 +1612,7 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
+    spring: 1
     damper: 0
   m_LinearLimit:
     limit: 0
@@ -1704,7 +1704,7 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
+    spring: 1
     damper: 0
   m_LinearLimit:
     limit: 0
@@ -1796,7 +1796,7 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
+    spring: 1
     damper: 0
   m_LinearLimit:
     limit: 0
@@ -1888,7 +1888,7 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
+    spring: 1
     damper: 0
   m_LinearLimit:
     limit: 0
@@ -1980,7 +1980,7 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
+    spring: 1
     damper: 0
   m_LinearLimit:
     limit: 0
