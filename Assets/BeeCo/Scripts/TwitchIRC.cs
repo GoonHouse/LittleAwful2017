@@ -7,8 +7,8 @@ public class TwitchIRC : MonoBehaviour {
     public string oauth;
     public string nickName;
     public string channelName;
-    private string server = "irc.twitch.tv";
-    private int port = 6667;
+    public string server = "irc.twitch.tv";
+    public int port = 6667;
 
     //event(buffer).
     public class MsgEvent : UnityEngine.Events.UnityEvent<string> { }
@@ -19,7 +19,7 @@ public class TwitchIRC : MonoBehaviour {
     private Queue<string> commandQueue = new Queue<string>();
     private List<string> recievedMsgs = new List<string>();
     private System.Threading.Thread inProc, outProc;
-    private void StartIRC() {
+    public void StartIRC() {
         System.Net.Sockets.TcpClient sock = new System.Net.Sockets.TcpClient();
         sock.Connect(server, port);
         if (!sock.Connected) {
@@ -107,7 +107,7 @@ public class TwitchIRC : MonoBehaviour {
     }
     void OnEnable() {
         stopThreads = false;
-        StartIRC();
+        //StartIRC();
     }
     void OnDisable() {
         stopThreads = true;

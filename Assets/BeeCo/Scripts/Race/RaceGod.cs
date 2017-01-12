@@ -120,6 +120,17 @@ public class RaceGod : MonoBehaviour {
         }
 
         var theSave = God.main.GetComponent<SaveData>().loadedSave;
+        var twitch = God.main.GetComponent<TwitchIRC>();
+        twitch.oauth = theSave.ircPass;
+        twitch.nickName = theSave.ircNick;
+        twitch.channelName = theSave.ircChannel;
+        twitch.server = theSave.ircServer;
+        twitch.port = theSave.ircPort;
+        twitch.StartIRC();
+
+        // @TODO: Announce Twitch Rules
+        // twitch.SendMsg( "benis" );
+
         var pid = 0;
         var raceBirds = world.transform.Find( "BirdAnchors" ).gameObject.GetComponentsInChildren<RaceBird>();
         foreach( RaceBird rb in raceBirds ) {
