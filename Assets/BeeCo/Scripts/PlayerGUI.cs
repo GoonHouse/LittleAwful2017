@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerGUI : MonoBehaviour {
@@ -9,7 +9,7 @@ public class PlayerGUI : MonoBehaviour {
 
     private float score_visual_max = 5.0f;
 
-    private int current_score = 0;
+    public int current_score = 0;
     private float score_dt = 0.0f;
     private float score_t = 1.0f;
 

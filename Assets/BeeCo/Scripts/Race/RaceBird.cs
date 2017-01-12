@@ -52,6 +52,11 @@ public class RaceBird : MonoBehaviour {
         headStartPosition.transform.SetParent( headMate.transform );
         headStartPosition.transform.localPosition = head.transform.localPosition;
         headStartPosition.transform.localRotation = head.transform.localRotation;
+
+        cokeCurrent = cokeMax;
+        myGUI.score = cokeMax;
+        myGUI.score_max = cokeMax;
+        myGUI.current_score = cokeMax;
     }
 	
 	// Update is called once per frame
