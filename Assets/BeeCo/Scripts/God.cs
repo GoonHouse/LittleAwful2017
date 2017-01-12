@@ -67,7 +67,8 @@ public class God : MonoBehaviour {
 
     public static string FormatTime(float time) {
         System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(time);
-        return string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+        //return string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+        return string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
     }
 
     public static float Scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax) {
