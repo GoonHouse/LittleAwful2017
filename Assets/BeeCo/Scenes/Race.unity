@@ -103,7 +103,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1626,7 +1626,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2151,7 +2151,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -13.239638, y: 4.2706995, z: -13.239638}
+  m_ConnectedAnchor: {x: -13.239638, y: 6.1607, z: -13.239638}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -3357,7 +3357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4070,7 +4070,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.z
