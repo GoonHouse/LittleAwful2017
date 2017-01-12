@@ -21,6 +21,8 @@ public class PlayerGUI : MonoBehaviour {
     public GameObject score_bounce = null;
     public GameObject [] score_bounce_simple = null;
 
+    public GameObject tween_location = null;
+
     // Use this for initialization
     void Start () {
         foreach(GameObject target in material_change) {
