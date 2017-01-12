@@ -3933,7 +3933,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1372504180}
-  m_LocalRotation: {x: -0.1736482, y: -0, z: -0, w: 0.9848077}
+  m_LocalRotation: {x: -0.17364821, y: -0, z: -0, w: 0.9848078}
   m_LocalPosition: {x: -0.875, y: 1, z: 2.6210022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
@@ -3988,6 +3988,11 @@ Prefab:
       propertyPath: tween_location
       value: 
       objectReference: {fileID: 612466794}
+    - target: {fileID: 114000010025766782, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: player
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc011992804a7854cb364ec6f61e7344, type: 2}
   m_IsPrefabParent: 0
@@ -4330,7 +4335,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1508642762}
-  m_LocalRotation: {x: -0.1736482, y: -0, z: -0, w: 0.9848077}
+  m_LocalRotation: {x: -0.17364821, y: -0, z: -0, w: 0.9848078}
   m_LocalPosition: {x: 0.875, y: 1, z: 2.6210022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
