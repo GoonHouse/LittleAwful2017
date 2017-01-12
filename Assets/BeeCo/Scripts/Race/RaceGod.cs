@@ -37,7 +37,7 @@ public class RaceGod : MonoBehaviour {
     public Vector2 worldDimensions = new Vector2(7, 4);
     public Vector2 worldMargins = new Vector2(2, 1);
     public Vector2 worldOffset;
-    public string  worldSpawnTarget = "World/TileSpawns";
+    public GameObject worldSpawnTarget;
     public int worldSpawnSafetyDistance = 2;
 
     public Transform world;
@@ -90,6 +90,7 @@ public class RaceGod : MonoBehaviour {
             // shortcut transforms
             world = GameObject.Find( "World" ).transform;
             motion = GameObject.Find( "Motion/Lanes" ).transform;
+            worldSpawnTarget = GameObject.Find( "World/TileSpawns" );
 
             FindInstanceThings();
 
@@ -100,6 +101,7 @@ public class RaceGod : MonoBehaviour {
                 ( worldUnitDims.y / 2.0f ) - ( ( worldDimensions.y / 2.0f ) * ( worldUnitDims.y + worldMargins.y ) )
             );
             CreateWorld();
+            worldSpawnTarget.SetActive( false );
 
             //SpawnDebugMarker();
 
@@ -229,7 +231,11 @@ public class RaceGod : MonoBehaviour {
                 // check if we are still hungry by time
                 if( Time.time > ( timePreRaceStart + timePreRaceDuration ) ) {
                     // disable HUD text
-                    
+                    hudTime.text = "TO RUN!";
+                    hudTime.transform.parent.GetComponent<Tweener>().SetTarget(
+                        GameObject.Find( "TimeLabelAnchor" ),
+                        timeForBirdsRelocate
+                    );
 
                     raceState = RaceState.Race;
                 }
@@ -237,7 +243,6 @@ public class RaceGod : MonoBehaviour {
             case RaceState.Race:
                 // update the world position
                 // update the track
-                hudTime.text = "TO RUN!";
 
                 UpdateWorldPosition();
                 UpdateSpawn();
@@ -276,6 +281,8 @@ public class RaceGod : MonoBehaviour {
 
         // it's the cops
         policeLight.SetActive( true );
+        var pt = policeLight.GetComponent<Tweener>();
+        pt.SetTarget( GameObject.Find( "PoliceLightDestAnchor" ), timeForBirdsRelocate );
 
         // tween the birds into their appropriate race positions
         var playerID = 0;
@@ -298,9 +305,18 @@ public class RaceGod : MonoBehaviour {
             playerID++;
         }
 
+        // destroy all the coke
+        var cokes = GameObject.FindGameObjectsWithTag( "Edible" );
+        foreach( GameObject coke in cokes ) {
+            Destroy( coke );
+        }
+
         // move the camera
         var ct = Camera.main.gameObject.GetComponent<Tweener>();
         ct.SetTarget( cameraRaceAnchor, timeForBirdsRelocate );
+
+        // visualize the grid
+        worldSpawnTarget.SetActive( true );
 
         // set round state
         raceState = RaceState.PreRace;
@@ -370,7 +386,7 @@ public class RaceGod : MonoBehaviour {
                     z * (worldUnitDims.y + worldMargins.y) + worldOffset.y
                 );
                 unit.name = coordinate + " " + unit.name;
-                unit.transform.parent = GameObject.Find( worldSpawnTarget ).transform;
+                unit.transform.parent = worldSpawnTarget.transform;
                 unit.transform.localPosition = pos;
                 spawnedGrid.Add(
                     coordinate,

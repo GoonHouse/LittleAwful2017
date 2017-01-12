@@ -200,6 +200,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGUI: {fileID: 1071688070}
   brain: {fileID: 56449741}
+  objectSpeech: {fileID: 1000010000684924, guid: 6e096631705dc3c4680d774289921f5a,
+    type: 2}
+  objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
+    type: 2}
   gridPosition: {x: 0, y: 1}
   laneSwitchTime: 0.12
   playerID: 0
@@ -600,6 +604,39 @@ Transform:
   - {fileID: 476079995}
   m_Father: {fileID: 966669664}
   m_RootOrder: 2
+--- !u!1 &233571956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 233571957}
+  m_Layer: 5
+  m_Name: TimeLabelAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &233571957
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233571956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1906420341}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 100}
+  m_SizeDelta: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &255786504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1697,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGUI: {fileID: 607690892}
   brain: {fileID: 669633953}
+  objectSpeech: {fileID: 1000010000684924, guid: 6e096631705dc3c4680d774289921f5a,
+    type: 2}
+  objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
+    type: 2}
   gridPosition: {x: 0, y: 2}
   laneSwitchTime: 0.12
   playerID: 0
@@ -1806,6 +1847,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &693685836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 693685837}
+  m_Layer: 0
+  m_Name: PoliceLightDestAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693685837
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693685836}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -28.71, y: 5.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1535222068}
+  m_RootOrder: 5
 --- !u!1 &693785043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2262,7 @@ GameObject:
   - 4: {fileID: 904518173}
   - 108: {fileID: 904518174}
   - 95: {fileID: 904518175}
+  - 114: {fileID: 904518176}
   m_Layer: 0
   m_Name: PoliceLight
   m_TagString: Untagged
@@ -2207,7 +2277,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904518172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.71, y: 5.92, z: 0}
+  m_LocalPosition: {x: -109.02, y: 5.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -2264,6 +2334,27 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &904518176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904518172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1805fb02d284051459c9889f5dbd1f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  easeType: 18
+  defaultTime: 0
+  startPosition: {x: 0, y: 0, z: 0}
+  startRotation: {x: 0, y: 0, z: 0, w: 0}
+  startTime: 0
+  targetTransform: {fileID: 0}
+  targetTime: 0
+  done: 1
+  local: 0
+  childOnComplete: 0
 --- !u!1 &964124105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,6 +3394,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGUI: {fileID: 507631876}
   brain: {fileID: 1217649348}
+  objectSpeech: {fileID: 1000010000684924, guid: 6e096631705dc3c4680d774289921f5a,
+    type: 2}
+  objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
+    type: 2}
   gridPosition: {x: 0, y: 0}
   laneSwitchTime: 0.12
   playerID: 0
@@ -3989,6 +4084,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGUI: {fileID: 1852376143}
   brain: {fileID: 1469574962}
+  objectSpeech: {fileID: 1000010000684924, guid: 6e096631705dc3c4680d774289921f5a,
+    type: 2}
+  objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
+    type: 2}
   gridPosition: {x: 0, y: 3}
   laneSwitchTime: 0.12
   playerID: 0
@@ -4191,6 +4290,7 @@ Transform:
   - {fileID: 2138663455}
   - {fileID: 294221283}
   - {fileID: 904518173}
+  - {fileID: 693685837}
   - {fileID: 2085445424}
   - {fileID: 1667544805}
   m_Father: {fileID: 0}
@@ -4398,7 +4498,7 @@ Transform:
   - {fileID: 1479333609}
   - {fileID: 437478264}
   m_Father: {fileID: 1535222068}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1001 &1688966556
 Prefab:
   m_ObjectHideFlags: 0
@@ -4615,6 +4715,7 @@ GameObject:
   - 224: {fileID: 1736148508}
   - 222: {fileID: 1736148510}
   - 114: {fileID: 1736148509}
+  - 114: {fileID: 1736148511}
   m_Layer: 5
   m_Name: TimeLabel
   m_TagString: Untagged
@@ -4682,6 +4783,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1736148507}
+--- !u!114 &1736148511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1736148507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1805fb02d284051459c9889f5dbd1f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  easeType: 29
+  defaultTime: 0
+  startPosition: {x: 0, y: 0, z: 0}
+  startRotation: {x: 0, y: 0, z: 0, w: 0}
+  startTime: 0
+  targetTransform: {fileID: 0}
+  targetTime: 0
+  done: 1
+  local: 0
+  childOnComplete: 0
 --- !u!1 &1835723251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4900,6 +5022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1736148508}
+  - {fileID: 233571957}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
@@ -5326,7 +5449,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1535222068}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &2125157767
 GameObject:
   m_ObjectHideFlags: 0
