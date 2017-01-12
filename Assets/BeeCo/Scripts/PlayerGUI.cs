@@ -5,6 +5,7 @@ public class PlayerGUI : MonoBehaviour {
 
     public int player = 0;
     public int score = 0;
+    public int score_max = 0;
 
     private float score_visual_max = 5.0f;
 
@@ -31,7 +32,7 @@ public class PlayerGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        score_text.GetComponent<TextMesh>().text = current_score.ToString();
+        score_text.GetComponent<TextMesh>().text = current_score.ToString()+"/"+ score_max.ToString();
         // Bwahahaha, I laugh at anyone trying to debug this! ~josefnpat
         var temp_s = (Mathf.Min(current_score + score_dt, score_visual_max - 1) + Mathf.Sin(score_dt * Mathf.PI)) / score_visual_max;
         score_bounce.transform.localScale = new Vector3(temp_s, temp_s*0.666f, temp_s); // MAGIC SATANIC NUMBERS
