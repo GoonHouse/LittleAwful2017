@@ -46,6 +46,7 @@ public class RaceGod : MonoBehaviour {
     public float hazardMoveSpeed = 2.0f;
 
     public List<GameObject> players = new List<GameObject>();
+    public List<GameObject> playerGUIs = new List<GameObject>();
 
     public GameObject policeLight;
     public Text hudTime;
@@ -113,9 +114,17 @@ public class RaceGod : MonoBehaviour {
         cameraRaceAnchor = world.transform.Find( "CameraAnchors/CameraRaceAnchor" ).gameObject;
         cokeSpawnAnchor = world.transform.Find( "CokeSpawnAnchor" ).gameObject;
 
+        var guis = Camera.main.gameObject.GetComponentsInChildren<PlayerGUI>();
+        foreach( PlayerGUI gui in guis ) {
+            playerGUIs.Add( gui.gameObject );
+        }
+
+        var pid = 0;
         var raceBirds = world.transform.Find( "BirdAnchors" ).gameObject.GetComponentsInChildren<RaceBird>();
         foreach( RaceBird rb in raceBirds ) {
+            rb.playerID = pid;
             players.Add( rb.gameObject );
+            pid++;
         }
     }
 
@@ -169,7 +178,7 @@ public class RaceGod : MonoBehaviour {
                 // check if we are still hungry by time
                 if( Time.time > ( timePreRaceStart + timePreRaceDuration ) ) {
                     // disable HUD text
-                    hudTime.gameObject.SetActive( false );
+                    
 
                     raceState = RaceState.Race;
                 }
@@ -177,6 +186,8 @@ public class RaceGod : MonoBehaviour {
             case RaceState.Race:
                 // update the world position
                 // update the track
+                hudTime.text = "TO RUN!";
+
                 UpdateWorldPosition();
                 UpdateSpawn();
                 break;

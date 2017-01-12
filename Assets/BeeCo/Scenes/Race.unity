@@ -99,7 +99,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.y
@@ -107,7 +107,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalRotation.x
@@ -198,9 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34468a39b9fb2eb4d8433a322d2d1e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myGUI: {fileID: 1071688070}
   brain: {fileID: 56449741}
   gridPosition: {x: 0, y: 1}
   laneSwitchTime: 0.12
+  playerID: 0
   alive: 1
   cokeMax: 5
   cokeCurrent: 5
@@ -669,7 +671,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000024303412, y: 0.48488, z: 0.000000730157}
+  m_ConnectedAnchor: {x: 0.00000047221968, y: 0.48487952, z: 0.0000010728837}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -790,7 +792,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 437478259}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 60, z: 0}
+  m_LocalPosition: {x: 0, y: 40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children:
@@ -1119,6 +1121,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &507631876 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010025766782, guid: cc011992804a7854cb364ec6f61e7344,
+    type: 2}
+  m_PrefabInternal: {fileID: 1380958917}
+  m_Script: {fileID: 11500000, guid: 1d620b0e3601f0e44b6ab8e60178a595, type: 3}
 --- !u!1 &526541712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,6 +1156,12 @@ Transform:
   - {fileID: 1971110710}
   m_Father: {fileID: 56449739}
   m_RootOrder: 1
+--- !u!114 &607690892 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010025766782, guid: cc011992804a7854cb364ec6f61e7344,
+    type: 2}
+  m_PrefabInternal: {fileID: 1164896075}
+  m_Script: {fileID: 11500000, guid: 1d620b0e3601f0e44b6ab8e60178a595, type: 3}
 --- !u!1001 &669633950
 Prefab:
   m_ObjectHideFlags: 0
@@ -1157,7 +1171,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1165,7 +1179,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1256,9 +1270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34468a39b9fb2eb4d8433a322d2d1e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myGUI: {fileID: 607690892}
   brain: {fileID: 669633953}
   gridPosition: {x: 0, y: 2}
   laneSwitchTime: 0.12
+  playerID: 0
   alive: 1
   cokeMax: 5
   cokeCurrent: 5
@@ -1843,7 +1859,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000018342898, y: 0.48488012, z: 0.0000021159651}
+  m_ConnectedAnchor: {x: 0.00000053182373, y: 0.48488, z: 0.0000013560058}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1970,6 +1986,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0821e60cdb103f43818d81f6c49b247, type: 3}
   m_IsPrefabParent: 0
+--- !u!114 &1071688070 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010025766782, guid: cc011992804a7854cb364ec6f61e7344,
+    type: 2}
+  m_PrefabInternal: {fileID: 1688966556}
+  m_Script: {fileID: 11500000, guid: 1d620b0e3601f0e44b6ab8e60178a595, type: 3}
 --- !u!4 &1077788030 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000010809447080, guid: d4a401367db713045a6589e3a73ebf63,
@@ -2142,7 +2164,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2150,7 +2172,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2233,9 +2255,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34468a39b9fb2eb4d8433a322d2d1e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myGUI: {fileID: 507631876}
   brain: {fileID: 1217649348}
   gridPosition: {x: 0, y: 0}
   laneSwitchTime: 0.12
+  playerID: 0
   alive: 1
   cokeMax: 5
   cokeCurrent: 5
@@ -2482,7 +2506,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -25
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2490,7 +2514,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2581,9 +2605,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34468a39b9fb2eb4d8433a322d2d1e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myGUI: {fileID: 1852376143}
   brain: {fileID: 1469574962}
   gridPosition: {x: 0, y: 3}
   laneSwitchTime: 0.12
+  playerID: 0
   alive: 1
   cokeMax: 5
   cokeCurrent: 5
@@ -2997,6 +3023,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1736148507}
+--- !u!114 &1852376143 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010025766782, guid: cc011992804a7854cb364ec6f61e7344,
+    type: 2}
+  m_PrefabInternal: {fileID: 262911533}
+  m_Script: {fileID: 11500000, guid: 1d620b0e3601f0e44b6ab8e60178a595, type: 3}
 --- !u!1 &1906420337
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,7 +3358,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000077024407, y: 0.48488, z: 0.0000013560058}
+  m_ConnectedAnchor: {x: 0.00000029340677, y: 0.48487952, z: 0.0000010728837}
   m_UseSpring: 0
   m_Spring:
     spring: 0

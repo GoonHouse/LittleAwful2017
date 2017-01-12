@@ -3,12 +3,14 @@ using System.Collections;
 
 public class RaceBird : MonoBehaviour {
     private RaceGod rg;
-
+    public PlayerGUI myGUI;
     public RaceBrain brain;
 
     public Vector2 gridPosition = new Vector2(0, 0);
 
     public float laneSwitchTime = 0.5f;
+
+    public int playerID;
 
     // whether or not the bird has been busted
     public bool alive = true;
@@ -79,6 +81,7 @@ public class RaceBird : MonoBehaviour {
             default:
                 break;
         }
+        UpdateHUD();
     }
 
     void InterpretBrainForHungry() {
@@ -114,6 +117,7 @@ public class RaceBird : MonoBehaviour {
 
     void EatCoke() {
         cokeMax += (int) targetMarble.value;
+        cokeCurrent = cokeMax;
         Debug.Log( gameObject.name + " is eating a coke: " + targetMarble.gameObject );
         rg.marblesActive--;
         Destroy( targetMarble.gameObject );
@@ -284,6 +288,11 @@ public class RaceBird : MonoBehaviour {
         // physically relocate ourselves
         gridPosition = newPos;
         SetPosition();
+    }
+
+    void UpdateHUD() {
+        myGUI.score_max = cokeMax;
+        myGUI.score = cokeCurrent;
     }
 
     void OnTriggerEnter( Collider other ) {
