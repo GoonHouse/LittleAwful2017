@@ -311,9 +311,17 @@ public class RaceGod : MonoBehaviour {
             Destroy( coke );
         }
 
+        // move the GUIs
+        foreach( GameObject gui in playerGUIs ) {
+            var target = gui.GetComponent<PlayerGUI>().tween_location;
+            var twr = gui.GetComponent<Tweener>();
+            twr.SetTarget( target, timeForBirdsRelocate );
+        }
+
         // move the camera
         var ct = Camera.main.gameObject.GetComponent<Tweener>();
         ct.SetTarget( cameraRaceAnchor, timeForBirdsRelocate );
+
 
         // visualize the grid
         worldSpawnTarget.SetActive( true );
