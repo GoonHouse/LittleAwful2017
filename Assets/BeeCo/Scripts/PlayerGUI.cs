@@ -7,6 +7,8 @@ public class PlayerGUI : MonoBehaviour {
     public int score = 0;
     public int score_max = 0;
 
+    private float tween_speed = 0.25f;
+
     private float score_visual_max = 5.0f;
 
     public int current_score = 0;
@@ -46,7 +48,7 @@ public class PlayerGUI : MonoBehaviour {
             score_dt = 0.0f;
         } else {
 
-            score_dt += Time.deltaTime;
+            score_dt += Time.deltaTime/this.tween_speed;
             
             if (score_dt > score_t) {
                 score_dt -= score_t;
