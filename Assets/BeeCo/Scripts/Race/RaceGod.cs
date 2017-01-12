@@ -100,7 +100,7 @@ public class RaceGod : MonoBehaviour {
             );
             CreateWorld();
 
-            SpawnDebugMarker();
+            //SpawnDebugMarker();
 
             // spawn road chunks all the way up until the reference object
             // UpdateWorldPosition();
