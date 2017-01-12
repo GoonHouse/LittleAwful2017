@@ -62,14 +62,14 @@ public class RaceBird : MonoBehaviour {
     public void SetBrainFromInt( int brainType ) {
         switch( brainType ) {
             case 2: // Human
-                brain = new RaceBrainHuman();
+                brain = gameObject.AddComponent<RaceBrainHuman>();
                 break;
             case 1: // AI
-                brain = new RaceBrainComputer();
+                brain = gameObject.AddComponent<RaceBrainComputer>();
                 break;
             case 0: // twitch
             default:
-                brain = new RaceBrainTwitch();
+                brain = gameObject.AddComponent<RaceBrainTwitch>();
                 break;
 
         }
@@ -139,11 +139,15 @@ public class RaceBird : MonoBehaviour {
     void EatCoke() {
         cokeMax += (int) targetMarble.value;
         cokeCurrent = cokeMax;
-        Debug.Log( gameObject.name + " is eating a coke: " + targetMarble.gameObject );
+        // Debug.Log( gameObject.name + " is eating a coke: " + targetMarble.gameObject );
         rg.marblesActive--;
         Destroy( targetMarble.gameObject );
         var tw = head.GetComponent<Tweener>();
         tw.onDone -= EatCoke;
+    }
+
+    public void TwitchMessage( string msg, string user ) {
+        Debug.Log( gameObject.name + "has twitch message <" + user + ">: " + msg );
     }
 
     GameObject GetClosest( GameObject[] pool ) {

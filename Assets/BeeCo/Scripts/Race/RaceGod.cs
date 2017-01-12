@@ -46,6 +46,7 @@ public class RaceGod : MonoBehaviour {
     public float hazardMoveSpeed = 2.0f;
 
     public List<GameObject> players = new List<GameObject>();
+    public List<GameObject> twitchPlayers = new List<GameObject>();
     public List<GameObject> playerGUIs = new List<GameObject>();
 
     public GameObject policeLight;
@@ -69,6 +70,8 @@ public class RaceGod : MonoBehaviour {
 
     public float timeLastSpawnedMarble;
     public float timeSpawnMarbleDelay = 0.5f;
+
+    public List<string> ircCommands = new List<string>{ "eat", "left", "right", "go", "back" };
 
     /*
      * intensity = determined by: ( Time.time - startTime )
@@ -120,14 +123,6 @@ public class RaceGod : MonoBehaviour {
         }
 
         var theSave = God.main.GetComponent<SaveData>().loadedSave;
-        var twitch = God.main.GetComponent<TwitchIRC>();
-        twitch.oauth = theSave.ircPass;
-        twitch.nickName = theSave.ircNick;
-        twitch.channelName = theSave.ircChannel;
-        twitch.server = theSave.ircServer;
-        twitch.port = theSave.ircPort;
-        twitch.StartIRC();
-
         // @TODO: Announce Twitch Rules
         // twitch.SendMsg( "benis" );
 
@@ -136,8 +131,50 @@ public class RaceGod : MonoBehaviour {
         foreach( RaceBird rb in raceBirds ) {
             rb.playerID = pid;
             rb.SetBrainFromInt( theSave.playerUse[pid] );
+            if( theSave.playerUse[pid] == 0 ) {
+                twitchPlayers.Add( rb.gameObject );
+            }
             players.Add( rb.gameObject );
             pid++;
+        }
+
+        if( twitchPlayers.Count > 0 ) {
+            var twitch = God.main.GetComponent<TwitchIRC>();
+            twitch.oauth = theSave.ircPass;
+            twitch.nickName = theSave.ircNick;
+            twitch.channelName = theSave.ircChannel;
+            twitch.server = theSave.ircServer;
+            twitch.port = theSave.ircPort;
+
+            twitch.messageRecievedEvent.AddListener( MessageHandler );
+
+            twitch.StartIRC();
+        }
+    }
+
+    void MessageHandler( string msg, string user ) {
+        var parts = new List<string>( msg.Split( ' ' ) );
+        var wasCommand = false;
+
+        if( parts.Count >= 2 ) {
+            foreach( string ircCommand in ircCommands ) {
+                if( parts[0] == ircCommand ) {
+                    int pdex = -1;
+                    if( System.Int32.TryParse( parts[1], out pdex ) && pdex > 0 && pdex < players.Count ) {
+                        var p = players[pdex - 1];
+                        if( p ) {
+                            wasCommand = true;
+                            var brain = p.GetComponent<RaceBird>().brain;
+                            brain.DoSignal( ircCommand );
+                        }
+                    }
+                }
+            }
+        }
+
+        if( !wasCommand ) {
+            var pid = Random.Range( 0, twitchPlayers.Count - 1 );
+            players[pid].GetComponent<RaceBird>().TwitchMessage( msg, user );
         }
     }
 

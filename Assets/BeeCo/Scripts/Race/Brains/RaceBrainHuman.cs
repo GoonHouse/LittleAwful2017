@@ -18,4 +18,8 @@ public class RaceBrainHuman : RaceBrain {
     public override bool BrainStop() {
         return Input.GetKeyDown(KeyCode.S);
     }
+
+    public override void DoSignal( string signal ) {
+        ///throw new System.NotImplementedException();
+    }
 }

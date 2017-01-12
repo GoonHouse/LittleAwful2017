@@ -22,4 +22,8 @@ public class RaceBrainTwitch : RaceBrain {
     public override bool BrainStop() {
         return Random.value <= chanceToStop;
     }
+
+    public override void DoSignal( string signal ) {
+        Debug.Log( gameObject.name + " got a signal saying: " + signal );
+    }
 }

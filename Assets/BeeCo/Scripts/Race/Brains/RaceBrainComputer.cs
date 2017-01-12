@@ -22,4 +22,8 @@ public class RaceBrainComputer : RaceBrain {
     public override bool BrainStop() {
         return Random.value <= chanceToStop;
     }
+
+    public override void DoSignal( string signal ) {
+        //throw new System.NotImplementedException();
+    }
 }

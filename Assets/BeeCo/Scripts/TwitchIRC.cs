@@ -11,7 +11,7 @@ public class TwitchIRC : MonoBehaviour {
     public int port = 6667;
 
     //event(buffer).
-    public class MsgEvent : UnityEngine.Events.UnityEvent<string> { }
+    public class MsgEvent : UnityEngine.Events.UnityEvent<string, string> { }
     public MsgEvent messageRecievedEvent = new MsgEvent();
 
     private string buffer = string.Empty;
@@ -19,6 +19,12 @@ public class TwitchIRC : MonoBehaviour {
     private Queue<string> commandQueue = new Queue<string>();
     private List<string> recievedMsgs = new List<string>();
     private System.Threading.Thread inProc, outProc;
+    public string BreakMessage(string msg, out string user) {
+        int msgIndex = msg.IndexOf( "PRIVMSG #" );
+        var msgString = msg.Substring( msgIndex + channelName.Length + 11 );
+        user = msg.Substring( 1, msg.IndexOf( '!' ) - 1 );
+        return msgString;
+    }
     public void StartIRC() {
         System.Net.Sockets.TcpClient sock = new System.Net.Sockets.TcpClient();
         sock.Connect(server, port);
@@ -125,7 +131,9 @@ public class TwitchIRC : MonoBehaviour {
         lock (recievedMsgs) {
             if (recievedMsgs.Count > 0) {
                 for (int i = 0; i < recievedMsgs.Count; i++) {
-                    messageRecievedEvent.Invoke(recievedMsgs[i]);
+                    string user;
+                    var msgString = BreakMessage( recievedMsgs[i], out user );
+                    messageRecievedEvent.Invoke( msgString, user );
                 }
                 recievedMsgs.Clear();
             }

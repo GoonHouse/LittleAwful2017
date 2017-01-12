@@ -65,7 +65,7 @@ MonoBehaviour:
     playerUse: 00000000000000000000000000000000
     ircNick: CocaineOstrich
     ircPass: iL0v3Coca1ne!
-    ircChannel: '#sagamedev'
+    ircChannel: sagamedev
     ircServer: irc.twitch.tv
     ircPort: 6667
   defaultSaveName: slot_1
@@ -133,6 +133,7 @@ MonoBehaviour:
   spawnWaveCount: 0
   hazardMoveSpeed: 1
   players: []
+  playerGUIs: []
   policeLight: {fileID: 0}
   hudTime: {fileID: 0}
   cameraRaceAnchor: {fileID: 0}
@@ -162,3 +163,5 @@ MonoBehaviour:
   oauth: 
   nickName: 
   channelName: 
+  server: irc.twitch.tv
+  port: 6667

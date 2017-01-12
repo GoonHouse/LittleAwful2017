@@ -33,7 +33,7 @@ public class SaveDatum {
     // Twitch Settings
     public string ircNick = "CocaineOstrich";
     public string ircPass = "iL0v3Coca1ne!";
-    public string ircChannel = "#sagamedev";
+    public string ircChannel = "sagamedev";
     public string ircServer = "irc.twitch.tv";
     public int    ircPort = 6667;
 }
