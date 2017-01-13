@@ -403,7 +403,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 12800000, guid: 6922212173794794791add92e6707f5b, type: 3}
-    m_FontSize: 32
+    m_FontSize: 24
     m_FontStyle: 0
     m_Alignment: 7
     m_WordWrap: 0
@@ -421,7 +421,7 @@ MonoBehaviour:
       your squaking. You got [coke]? I need my fix.\r\n3: Who picked this location?"
     sub_delay: 0
     voiceover: {fileID: 8300000, guid: ea658d2016e850d4cad6902a673a6527, type: 3}
-    override_voicever_length: 1
+    override_voicever_length: 0
     backgrounds:
     - {fileID: 2800000, guid: 8c1f00855087eee4487d6aae083e5f40, type: 3}
     pan: 0
