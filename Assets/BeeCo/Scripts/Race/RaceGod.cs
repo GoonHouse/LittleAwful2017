@@ -14,6 +14,17 @@ public enum RaceState {
     PostRace
 }
 
+[System.Serializable]
+public struct ChatMessage {
+    public ChatMessage( string msg, string user ) {
+        this.user = user;
+        this.msg = msg;
+    }
+
+    public string user;
+    public string msg;
+}
+
 public class RaceGod : MonoBehaviour {
     public RaceState raceState = RaceState.NoRace;
 
@@ -50,6 +61,8 @@ public class RaceGod : MonoBehaviour {
     public List<GameObject> twitchPlayers = new List<GameObject>();
     public List<GameObject> playerGUIs = new List<GameObject>();
 
+    public List<ChatMessage> chatQueue = new List<ChatMessage>();
+
     public GameObject policeLight;
     public Text hudTime;
     public GameObject cameraRaceAnchor;
@@ -73,6 +86,15 @@ public class RaceGod : MonoBehaviour {
     public float timeSpawnMarbleDelay = 0.5f;
 
     public List<string> ircCommands = new List<string>{ "eat", "left", "right", "go", "back", "stop" };
+
+    private string debugUser = "DickDaddy43";
+    private List<string> debugMessages = new List<string>{
+        "hey",
+        "my dick does not work and that upsets me greatly just wanted you to know okay thanks guys I appreciate it thanks for visiting goodbye",
+        "what do you mean irc\ndoesn't have newlines",
+        "<b>it's funny because it says b</b>",
+        "**get out** of my _house_"
+    };
 
     /*
      * intensity = determined by: ( Time.time - startTime )
@@ -152,12 +174,16 @@ public class RaceGod : MonoBehaviour {
             twitch.messageRecievedEvent.AddListener( MessageHandler );
 
             twitch.StartIRC();
+
+            twitch.SendMsg( "Hey fellow viewers! To make a Twitch controlled player do something, type \"command playerNumber\"!" );
+            twitch.SendMsg( "Controls: \"go\" or \"eat\" to eat the nearest bag of coke!" );
         }
     }
 
     void MessageHandler( string msg, string user ) {
         var parts = new List<string>( msg.Split( ' ' ) );
         var wasCommand = false;
+        var theSave = God.main.GetComponent<SaveData>().loadedSave;
 
         if( parts.Count >= 2 ) {
             foreach( string ircCommand in ircCommands ) {
@@ -175,9 +201,8 @@ public class RaceGod : MonoBehaviour {
             }
         }
 
-        if( !wasCommand ) {
-            var pid = Random.Range( 0, twitchPlayers.Count - 1 );
-            players[pid].GetComponent<RaceBird>().TwitchMessage( msg, user );
+        if( !wasCommand && user.ToLower() != theSave.ircNick.ToLower() ) {
+            chatQueue.Add( new ChatMessage( msg, user ) );
         }
     }
 
@@ -188,6 +213,12 @@ public class RaceGod : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        UpdateTwitchChat();
+        if( Input.GetKeyDown( KeyCode.Q ) ) {
+            var msg = debugMessages[Random.Range( 0, debugMessages.Count - 1 )];
+            MessageHandler( msg, debugUser );
+        }
+
         switch( raceState ) {
             case RaceState.NoRace:
                 // not doing anything important
@@ -253,6 +284,28 @@ public class RaceGod : MonoBehaviour {
             default:
                 Debug.Log( "groose is loose" );
                 break;
+        }
+    }
+
+    void UpdateTwitchChat() {
+
+        if( twitchPlayers.Count > 0 && chatQueue.Count > 0 ) {
+            var tps = new List<RaceBird>();
+            foreach( GameObject twitch in twitchPlayers ) {
+                var rb = twitch.GetComponent<RaceBird>();
+                if( !rb.twitchMessage ) {
+                    tps.Add( rb );
+                }
+            }
+
+            if( tps.Count > 0 ) {
+                tps.Shuffle();
+
+                var tm = chatQueue[0];
+                chatQueue.RemoveAt( 0 );
+                var tb = tps[0];
+                tb.TwitchMessage( tm.msg, tm.user );
+            }
         }
     }
 

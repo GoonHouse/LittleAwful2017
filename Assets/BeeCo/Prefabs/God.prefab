@@ -127,7 +127,7 @@ MonoBehaviour:
   worldDimensions: {x: 7, y: 6}
   worldMargins: {x: 3.5, y: 2}
   worldOffset: {x: 0, y: 0}
-  worldSpawnTarget: World/TileSpawns
+  worldSpawnTarget: {fileID: 0}
   worldSpawnSafetyDistance: 2
   world: {fileID: 0}
   motion: {fileID: 0}
@@ -136,6 +136,7 @@ MonoBehaviour:
   players: []
   twitchPlayers: []
   playerGUIs: []
+  chatQueue: []
   policeLight: {fileID: 0}
   hudTime: {fileID: 0}
   cameraRaceAnchor: {fileID: 0}

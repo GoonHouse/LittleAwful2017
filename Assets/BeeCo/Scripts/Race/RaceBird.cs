@@ -41,6 +41,8 @@ public class RaceBird : MonoBehaviour {
     private GameObject anchorBusted;
     private GameObject anchorSpeech;
 
+    public GameObject twitchMessage;
+
     public bool isTargeting = false;
     public Marble targetMarble;
 
@@ -88,7 +90,7 @@ public class RaceBird : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if( Input.GetKey( KeyCode.G ) ) {
-            var bus = God.SpawnChild( objectBusted, anchorBusted );
+            God.SpawnChild( objectBusted, anchorBusted );
         }
         switch( rg.raceState ) {
             case RaceState.PreHungry:
@@ -164,7 +166,10 @@ public class RaceBird : MonoBehaviour {
     }
 
     public void TwitchMessage( string msg, string user ) {
-        Debug.Log( gameObject.name + "has twitch message <" + user + ">: " + msg );
+        twitchMessage = God.SpawnChild( objectSpeech, anchorSpeech );
+        var text = twitchMessage.GetComponentInChildren<UnityEngine.UI.Text>();
+        text.text = "<b>" + user + ":</b> " + msg;
+        Destroy( twitchMessage, 4.0f );
     }
 
     GameObject GetClosest( GameObject[] pool ) {

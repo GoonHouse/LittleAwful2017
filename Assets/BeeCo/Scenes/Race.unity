@@ -215,6 +215,7 @@ MonoBehaviour:
   timeToRecoverCoke: 5
   timePerCokeRecovery: 1
   timeLastGeneratedCoke: 0
+  twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
 --- !u!114 &56449743
@@ -1738,6 +1739,7 @@ MonoBehaviour:
   timeToRecoverCoke: 5
   timePerCokeRecovery: 1
   timeLastGeneratedCoke: 0
+  twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
 --- !u!114 &669633955
@@ -3461,6 +3463,7 @@ MonoBehaviour:
   timeToRecoverCoke: 5
   timePerCokeRecovery: 1
   timeLastGeneratedCoke: 0
+  twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
 --- !u!114 &1217649350
@@ -4182,6 +4185,7 @@ MonoBehaviour:
   timeToRecoverCoke: 5
   timePerCokeRecovery: 1
   timeLastGeneratedCoke: 0
+  twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
 --- !u!114 &1469574964
