@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013247728862}
   - 135: {fileID: 135000012604771186}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Wowie
   m_TagString: ForceBack
   m_Icon: {fileID: 0}
