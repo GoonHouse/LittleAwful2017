@@ -419,37 +419,51 @@ MonoBehaviour:
   slides:
   - sub: "\r1: You're late, 2.\r\n2: Shut up. You know I have the [coke].\r\n4: Quit
       your squaking. You got [coke]? I need my fix.\r\n3: Who picked this location?"
+    sub_delay: 0
     voiceover: {fileID: 8300000, guid: ea658d2016e850d4cad6902a673a6527, type: 3}
-    override_voicever_length: 0
+    override_voicever_length: 1
     backgrounds:
     - {fileID: 2800000, guid: 8c1f00855087eee4487d6aae083e5f40, type: 3}
+    pan: 0
   - sub: '1: I did.'
+    sub_delay: 5
     voiceover: {fileID: 8300000, guid: 4c5d28f2923699148af00bcc863e5714, type: 3}
     override_voicever_length: 0
     backgrounds:
     - {fileID: 2800000, guid: f54cb9f2a1326f84991d58f282e327fc, type: 3}
+    pan: 4
   - sub: "\r3: This place is fucking awesome. Let's trade [coke]."
+    sub_delay: 0
     voiceover: {fileID: 8300000, guid: 7da3eb26c19702d4081bb8ba2b12994f, type: 3}
     override_voicever_length: 0
     backgrounds:
     - {fileID: 2800000, guid: 605c27b546c5bd148b58a2e0b6a01d7b, type: 3}
+    pan: 3
   - sub: "[Phone Rings\r]"
+    sub_delay: 0
     voiceover: {fileID: 8300000, guid: fcec9e3426e789e4dbb7e2d470f3a6b2, type: 3}
     override_voicever_length: 0
     backgrounds:
     - {fileID: 2800000, guid: 14be54953219f1d49b1c8b16f573871c, type: 3}
+    pan: 0
   - sub: '1: It''s a setup! The cops want our [coke]!'
+    sub_delay: 0
     voiceover: {fileID: 8300000, guid: 43719e241bfa77640a4e0d735e2dad11, type: 3}
     override_voicever_length: 0
     backgrounds:
     - {fileID: 2800000, guid: ecbe7476c2d08a2499dc4ed4860ca5ba, type: 3}
+    pan: 0
   - sub: '4: The [coke]! Quick, get it before the cops get here!'
+    sub_delay: 0
     voiceover: {fileID: 8300000, guid: c662e8ceed386ae47a44cbc040ffd4d0, type: 3}
     override_voicever_length: 0
     backgrounds:
     - {fileID: 2800000, guid: fe9a520cf742fa04c9daa413d563266a, type: 3}
+    pan: 0
   - sub: 
+    sub_delay: 0
     voiceover: {fileID: 0}
     override_voicever_length: 15
     backgrounds:
     - {fileID: 2800000, guid: 73bca7c6eabc01b4eab40ece5af59cea, type: 3}
+    pan: 0

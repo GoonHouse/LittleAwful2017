@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class Cutscene2d : MonoBehaviour {
 
+    public enum direction { None, Up, Right, Down, Left};
+
     [Header("Global Cutscene Variables")]
     public bool debugInspectorRun = false;
     public GUIStyle subtitleStyle;
@@ -14,9 +16,11 @@ public class Cutscene2d : MonoBehaviour {
     public struct slide {
         [TextArea(5, 10)]
         public string sub;
+        public float sub_delay;
         public AudioClip voiceover;
         public int override_voicever_length;
         public Texture2D [] backgrounds;
+        public direction pan;
     }
     [Header("Data")]
     public List<slide> slides = new List<slide>();
@@ -38,16 +42,45 @@ public class Cutscene2d : MonoBehaviour {
 
     void OnGUI() {
         if(this.isRunning()) {
-            foreach( Texture2D ct in this.getCurrentSlide().backgrounds) {
-                var ws = (float)Screen.height / (float)ct.height;
-                var w = ct.width * ws;
-                var h = ct.height* ws;
+            var cs = this.getCurrentSlide();
+            foreach ( Texture2D ct in cs.backgrounds) {
+                var w = 0.0f; var h = 0.0f; var x = 0.0f; var y = 0.0f;
+                var tween = this.dt / this.getCurrentSlideTime();
+                if (cs.pan == direction.Up) {
+                    var hs = (float) Screen.width / (float) ct.width;
+                    w = ct.width * hs;
+                    h = ct.height * hs;
+                    y = (Screen.height - h) - (Screen.height - w) * tween;
+                } else if (cs.pan == direction.Right) {
+                    var ws = (float) Screen.height / (float) ct.height;
+                    w = ct.width * ws;
+                    h = ct.height * ws;
+                    x = (Screen.width - w) * tween;
+                } else if (cs.pan == direction.Down) {
+                    var hs = (float) Screen.width / (float) ct.width;
+                    w = ct.width * hs;
+                    h = ct.height * hs;
+                    y = (Screen.height - h) * tween;
+                } else if (cs.pan == direction.Left) {
+                    var ws = (float) Screen.height / (float) ct.height;
+                    w = ct.width * ws;
+                    h = ct.height * ws;
+                    x = (Screen.width - w) - (Screen.width - w) * tween;
+                } else { // if (cs.pan == direction.None) {
+                    var ws = (float) Screen.height / (float) ct.height;
+                    w = ct.width * ws;
+                    h = ct.height * ws;
+                }
                 //Debug.Log("screen:" + Screen.width + "x" + Screen.height + " image:" + ct.width + "x" + ct.height + " rendered at:" + w + "x" + h + " scale:" + ws);
-                GUI.DrawTexture( new Rect(0, 0,w,h ), ct);
+                GUI.DrawTexture( new Rect(x,y,w,h), ct);
             }
-            GUI.Label(
-                new Rect(subtitleStylePadding, subtitleStylePadding, Screen.width- subtitleStylePadding*2, Screen.height- subtitleStylePadding*2),
-                this.getCurrentSlide().sub.Replace("\\n", "\n"), this.subtitleStyle);
+            if (this.dt > this.getCurrentSlide().sub_delay) {
+                GUI.Label(
+                    new Rect(
+                        subtitleStylePadding, subtitleStylePadding,
+                        Screen.width-subtitleStylePadding*2, Screen.height-subtitleStylePadding*2),
+                    this.getCurrentSlide().sub.Replace("\\n", "\n"), this.subtitleStyle);
+            }
         }
     }
 
