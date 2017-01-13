@@ -145,7 +145,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012006430688, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalScale.x
@@ -159,7 +159,15 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10.000023
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 135000012069436714, guid: bfd93bc3e41164e41bcacf5902e2a289,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135000012069436714, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
+    - {fileID: 33000011543508372, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
+    - {fileID: 23000013984929128, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &56449739 stripped
@@ -239,6 +247,21 @@ MonoBehaviour:
   done: 1
   local: 1
   childOnComplete: 1
+--- !u!54 &56449745
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56449740}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!96 &56449746
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -1669,7 +1692,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012006430688, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalScale.x
@@ -1683,7 +1706,15 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 135000012069436714, guid: bfd93bc3e41164e41bcacf5902e2a289,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135000012069436714, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
+    - {fileID: 33000011543508372, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
+    - {fileID: 23000013984929128, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &669633951 stripped
@@ -1763,6 +1794,21 @@ MonoBehaviour:
   done: 1
   local: 1
   childOnComplete: 1
+--- !u!54 &669633957
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669633952}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!96 &669633958
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -3397,7 +3443,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012006430688, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalScale.x
@@ -3411,7 +3457,15 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 135000012069436714, guid: bfd93bc3e41164e41bcacf5902e2a289,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135000012069436714, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
+    - {fileID: 33000011543508372, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
+    - {fileID: 23000013984929128, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1217649346 stripped
@@ -3487,6 +3541,21 @@ MonoBehaviour:
   done: 1
   local: 1
   childOnComplete: 1
+--- !u!54 &1217649352
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217649347}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!96 &1217649353
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -4115,7 +4184,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012006430688, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010917231926, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
       propertyPath: m_LocalScale.x
@@ -4129,7 +4198,15 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 135000012069436714, guid: bfd93bc3e41164e41bcacf5902e2a289,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135000012069436714, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
+    - {fileID: 33000011543508372, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
+    - {fileID: 23000013984929128, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bfd93bc3e41164e41bcacf5902e2a289, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1469574960 stripped
@@ -4209,6 +4286,21 @@ MonoBehaviour:
   done: 1
   local: 1
   childOnComplete: 1
+--- !u!54 &1469574966
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1469574961}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!96 &1469574967
 TrailRenderer:
   m_ObjectHideFlags: 0
