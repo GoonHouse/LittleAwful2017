@@ -227,22 +227,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000012016848120
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000010712986428}
-  - 65: {fileID: 65000013209471496}
-  m_Layer: 0
-  m_Name: HazardBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000012025009040
 GameObject:
   m_ObjectHideFlags: 1
@@ -329,9 +313,10 @@ GameObject:
   - 33: {fileID: 33000011852286442}
   - 23: {fileID: 23000010517243546}
   - 54: {fileID: 54000011165427092}
+  - 65: {fileID: 65000010138413022}
   m_Layer: 0
   m_Name: Car 1
-  m_TagString: Untagged
+  m_TagString: ForceBack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -640,19 +625,6 @@ Transform:
   - {fileID: 4000013900229342}
   m_Father: {fileID: 4000012360803098}
   m_RootOrder: 0
---- !u!4 &4000010712986428
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012016848120}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 5.5, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 5.6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000011160728706}
-  m_RootOrder: 7
 --- !u!4 &4000010798791120
 Transform:
   m_ObjectHideFlags: 1
@@ -727,7 +699,6 @@ Transform:
   - {fileID: 4000011088172194}
   - {fileID: 4000012681767004}
   - {fileID: 4000013792033284}
-  - {fileID: 4000010712986428}
   m_Father: {fileID: 4000010820871630}
   m_RootOrder: 0
 --- !u!4 &4000011234253316
@@ -1396,18 +1367,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &65000013209471496
+--- !u!65 &65000010138413022
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012016848120}
+  m_GameObject: {fileID: 1000012843583598}
   m_Material: {fileID: 13400000, guid: f54dc66487eeaec42bb42c601fba13c4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6, y: 4, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!137 &137000013842645122
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
