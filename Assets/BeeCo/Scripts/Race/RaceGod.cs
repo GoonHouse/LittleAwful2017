@@ -176,7 +176,7 @@ public class RaceGod : MonoBehaviour {
             twitch.StartIRC();
 
             twitch.SendMsg( "Hey fellow viewers! To make a Twitch controlled player do something, type \"command playerNumber\"!" );
-            twitch.SendMsg( "Controls: \"go\" or \"eat\" to eat the nearest bag of coke!" );
+            
         }
     }
 
@@ -280,6 +280,11 @@ public class RaceGod : MonoBehaviour {
                 break;
             case RaceState.PostRace:
                 // winner emerges, tween them into the sunset
+                if( twitchPlayers.Count > 0 ) {
+                    var twitch = God.main.GetComponent<TwitchIRC>();
+                    twitch.SendMsg( "Holy wow, somebody won! Horray!" );
+                }
+                raceState = RaceState.NoRace;
                 break;
             default:
                 Debug.Log( "groose is loose" );
@@ -375,6 +380,11 @@ public class RaceGod : MonoBehaviour {
         var ct = Camera.main.gameObject.GetComponent<Tweener>();
         ct.SetTarget( cameraRaceAnchor, timeForBirdsRelocate );
 
+        // tell the chat how to play
+        if( twitchPlayers.Count > 0 ) {
+            var twitch = God.main.GetComponent<TwitchIRC>();
+            twitch.SendMsg( "Controls: \"go\" or \"boost\" to use coke to boost, \"stop\" to stand still, and \"left/right\" to switch lanes!" );
+        }
 
         // visualize the grid
         worldSpawnTarget.SetActive( true );
