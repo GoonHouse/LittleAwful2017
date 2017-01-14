@@ -115,6 +115,7 @@ public class RaceBird : MonoBehaviour {
                 anims.SetBool( "IsRunning", true );
                 break;
             case RaceState.Race:
+                anims.SetFloat( "RunSpeed", rg.hazardMoveSpeed );
                 InterpretBrainForRace();
                 CokeUpdate();
                 break;
@@ -163,7 +164,9 @@ public class RaceBird : MonoBehaviour {
         cokeCurrent = cokeMax;
         // Debug.Log( gameObject.name + " is eating a coke: " + targetMarble.gameObject );
         rg.marblesActive--;
-        Destroy( targetMarble.gameObject );
+        if( targetMarble && targetMarble.gameObject ) {
+            Destroy( targetMarble.gameObject );
+        }
         var tw = head.GetComponent<Tweener>();
         tw.onDone -= EatCoke;
     }
