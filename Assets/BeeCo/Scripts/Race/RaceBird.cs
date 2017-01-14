@@ -109,6 +109,7 @@ public class RaceBird : MonoBehaviour {
             case RaceState.PostHungry:
                 RetractHead();
                 anims.SetBool( "IsRunning", true );
+                anims.SetBool( "MouthIsOpen", false );
                 break;
             case RaceState.PreRace:
                 RetractHead();

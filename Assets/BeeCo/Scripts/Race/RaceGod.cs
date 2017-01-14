@@ -68,6 +68,7 @@ public class RaceGod : MonoBehaviour {
     public Text hudTime;
     public GameObject cameraRaceAnchor;
     public GameObject cokeSpawnAnchor;
+    public SpawnArea cokeSpawner;
 
     public float timeForBirdsRelocate = 3.0f;
 
@@ -147,6 +148,7 @@ public class RaceGod : MonoBehaviour {
         hudTime = GameObject.Find( "Canvas/TimeLabel/Time" ).GetComponent<Text>();
         cameraRaceAnchor = world.transform.Find( "CameraAnchors/CameraRaceAnchor" ).gameObject;
         cokeSpawnAnchor = world.transform.Find( "CokeSpawnAnchor" ).gameObject;
+        cokeSpawner = cokeSpawnAnchor.GetComponent<SpawnArea>();
 
         var guis = Camera.main.gameObject.GetComponentsInChildren<PlayerGUI>();
         foreach( PlayerGUI gui in guis ) {
@@ -459,8 +461,9 @@ public class RaceGod : MonoBehaviour {
 
     void UpdateEnoughCoke() {
         if( marblesActive < marblesMinActive && marblesRoundTotal > 0 && Time.time > ( timeLastSpawnedMarble + timeSpawnMarbleDelay ) ) {
-            var coke = God.SpawnChild( cokeObject, cokeSpawnAnchor );
-            coke.name = "Coke #" + marblesRoundTotal;
+            cokeSpawner.SpawnA( cokeObject );
+            //var coke = God.SpawnChild( cokeObject, cokeSpawnAnchor );
+            //coke.name = "Coke #" + marblesRoundTotal;
             timeLastSpawnedMarble = Time.time;
             marblesRoundTotal--;
             marblesActive++;
