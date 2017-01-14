@@ -356,7 +356,7 @@ public class RaceBird : MonoBehaviour {
             var rbs = other.gameObject.GetComponents<Rigidbody>();
             foreach( Rigidbody rb in rbs ) {
                 rb.constraints = RigidbodyConstraints.None;
-                rb.AddForce( Vector3.up * rg.hazardMoveSpeed * 100.0f );
+                rb.AddForce( Vector3.up * rg.hazardMoveSpeed * 10000.0f );
             }
             if( ! MoveIfPossible( -1, 0 ) ) {
                 Debug.Log( gameObject.name + " could not move backwards from hitting a " + other.gameObject.name );
