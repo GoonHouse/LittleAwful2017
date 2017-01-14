@@ -187,5 +187,6 @@ MonoBehaviour:
   - {fileID: 1000010315425952, guid: 9e4d1f008db429c40b5c102ee25a5693, type: 2}
   - {fileID: 1000010315425952, guid: 5507ff6553131cc4da86d72c74654cea, type: 2}
   - {fileID: 1000010315425952, guid: 58b359e7018908f4496d33574f71c487, type: 2}
+  - {fileID: 1000012392895414, guid: 1e590fdf0a0523947918c24ab49c1c4a, type: 2}
   chanceOfSpawn: 0.5
   doScale: 0
