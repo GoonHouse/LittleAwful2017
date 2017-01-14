@@ -129,5 +129,6 @@ MonoBehaviour:
   - {fileID: 1000010529140298, guid: 9d344c63889dfb44a9fac85293a6f489, type: 2}
   - {fileID: 1000012025749226, guid: f44744c5348408e4bbc5e01a2adc9683, type: 2}
   - {fileID: 1000013377818114, guid: 57870326af6d9a84e9dac0777c60e630, type: 2}
+  - {fileID: 1000011169804830, guid: e1539a320d219b2429f5fb6967f34c1a, type: 2}
   chanceOfSpawn: 1
   doScale: 0
