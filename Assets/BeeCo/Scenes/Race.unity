@@ -927,7 +927,7 @@ Rigidbody:
   m_GameObject: {fileID: 355786166}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -955,10 +955,10 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 200
+    damper: 10
   m_LinearLimit:
-    limit: 0
+    limit: 0.01
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -1431,7 +1431,7 @@ Prefab:
     - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
         type: 2}
       propertyPath: m_ConnectedAnchor.y
-      value: 4.2706995
+      value: 6.1607
       objectReference: {fileID: 0}
     - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
         type: 2}
@@ -1543,6 +1543,161 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: 0.0000027716162
       objectReference: {fileID: 0}
+    - target: {fileID: 54000010261071038, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011330771370, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000014115851358, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011969034860, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000010451941960, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000012349854000, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011514080986, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4a401367db713045a6589e3a73ebf63, type: 2}
   m_IsPrefabParent: 0
@@ -1559,7 +1714,7 @@ Rigidbody:
   m_GameObject: {fileID: 489067415}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2039,7 +2194,7 @@ Rigidbody:
   m_GameObject: {fileID: 744482771}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2067,10 +2222,10 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 200
+    damper: 10
   m_LinearLimit:
-    limit: 0
+    limit: 0.01
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -2181,7 +2336,7 @@ Rigidbody:
   m_GameObject: {fileID: 820933737}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -2209,10 +2364,10 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 200
+    damper: 10
   m_LinearLimit:
-    limit: 0
+    limit: 0.01
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -2522,7 +2677,7 @@ Rigidbody:
   m_GameObject: {fileID: 999402347}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2550,10 +2705,10 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 200
+    damper: 10
   m_LinearLimit:
-    limit: 0
+    limit: 0.01
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -2829,7 +2984,7 @@ Prefab:
     - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
         type: 2}
       propertyPath: m_ConnectedAnchor.y
-      value: 4.2706995
+      value: 6.1607
       objectReference: {fileID: 0}
     - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
         type: 2}
@@ -2936,6 +3091,161 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: 0.0000013560058
       objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000010261071038, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011330771370, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000014115851358, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011969034860, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000010451941960, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000012349854000, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011514080986, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4a401367db713045a6589e3a73ebf63, type: 2}
   m_IsPrefabParent: 0
@@ -2952,7 +3262,7 @@ Rigidbody:
   m_GameObject: {fileID: 1029244925}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3283,7 +3593,7 @@ Rigidbody:
   m_GameObject: {fileID: 1199506603}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3311,10 +3621,10 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 200
+    damper: 10
   m_LinearLimit:
-    limit: 0
+    limit: 0.01
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -3743,7 +4053,7 @@ Rigidbody:
   m_GameObject: {fileID: 1330018952}
   serializedVersion: 2
   m_Mass: 0.5
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3771,10 +4081,10 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 200
+    damper: 10
   m_LinearLimit:
-    limit: 0
+    limit: 0.01
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -4538,7 +4848,7 @@ Rigidbody:
   m_GameObject: {fileID: 1666999982}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -4566,10 +4876,10 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 200
+    damper: 10
   m_LinearLimit:
-    limit: 0
+    limit: 0.01
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -7217,7 +7527,7 @@ Prefab:
     - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
         type: 2}
       propertyPath: m_ConnectedAnchor.y
-      value: 4.2706995
+      value: 6.1607
       objectReference: {fileID: 0}
     - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
         type: 2}
@@ -7324,6 +7634,161 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: 0.0000010728837
       objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010110566234, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000010512313432, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011822611080, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000011904214792, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012038101314, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000012219355050, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000013877802886, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153000014164371060, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000010261071038, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011330771370, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000014115851358, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011969034860, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000010451941960, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000012349854000, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54000011514080986, guid: d4a401367db713045a6589e3a73ebf63,
+        type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4a401367db713045a6589e3a73ebf63, type: 2}
   m_IsPrefabParent: 0
@@ -7340,7 +7805,7 @@ Rigidbody:
   m_GameObject: {fileID: 2043641961}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -7456,7 +7921,7 @@ Rigidbody:
   m_GameObject: {fileID: 2125157767}
   serializedVersion: 2
   m_Mass: 0.25
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -7484,10 +7949,10 @@ ConfigurableJoint:
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 200
+    damper: 10
   m_LinearLimit:
-    limit: 0
+    limit: 0.01
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
