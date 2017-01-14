@@ -73,6 +73,9 @@ public class RaceGod : MonoBehaviour {
     public float timePreRaceStart;
     public float timePreRaceDuration = 3.0f;
 
+    public float timePostRaceStart;
+    public float timePostRaceDuration = 10.0f;
+
     // hungry game logic
     public float timeHungryStart;
     public float timeHungryDuration = 60.0f;
@@ -95,6 +98,7 @@ public class RaceGod : MonoBehaviour {
         "<b>it's funny because it says b</b>",
         "**get out** of my _house_"
     };
+    private string ourScene = "";
 
     /*
      * intensity = determined by: ( Time.time - startTime )
@@ -108,6 +112,7 @@ public class RaceGod : MonoBehaviour {
     }
 
     void TheLevelWasLoaded(Scene scene, LoadSceneMode loadSceneMode) {
+        ourScene = scene.name;
         if( scene.name == "Race" ) {
             // shortcut transforms
             world = GameObject.Find( "World" ).transform;
@@ -213,10 +218,17 @@ public class RaceGod : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if( ourScene != "Race" ) {
+            return;
+        }
         UpdateTwitchChat();
+
         if( Input.GetKeyDown( KeyCode.Q ) ) {
             var msg = debugMessages[Random.Range( 0, debugMessages.Count - 1 )];
             MessageHandler( msg, debugUser );
+        }
+        if( Input.GetKeyDown( KeyCode.Y ) && raceState < RaceState.PostHungry ) {
+            raceState = RaceState.PostHungry;
         }
 
         switch( raceState ) {
@@ -274,17 +286,26 @@ public class RaceGod : MonoBehaviour {
             case RaceState.Race:
                 // update the world position
                 // update the track
-
                 UpdateWorldPosition();
                 UpdateSpawn();
+                UpdatePlayersAlive();
                 break;
             case RaceState.PostRace:
                 // winner emerges, tween them into the sunset
-                if( twitchPlayers.Count > 0 ) {
-                    var twitch = God.main.GetComponent<TwitchIRC>();
-                    twitch.SendMsg( "Holy wow, somebody won! Horray!" );
+                if( timePostRaceStart <= 0.0f ) {
+                    timePostRaceStart = Time.time;
                 }
-                raceState = RaceState.NoRace;
+
+                // check if we are still hungry by time
+                if( Time.time > ( timePostRaceStart + timePostRaceDuration ) ) {
+                    if( twitchPlayers.Count > 0 ) {
+                        var twitch = God.main.GetComponent<TwitchIRC>();
+                        twitch.SendMsg( "Holy wow, somebody won! Horray!" );
+                    }
+
+                    raceState = RaceState.NoRace;
+                    SceneManager.LoadScene( "Results" );
+                }
                 break;
             default:
                 Debug.Log( "groose is loose" );
@@ -292,13 +313,26 @@ public class RaceGod : MonoBehaviour {
         }
     }
 
-    void UpdateTwitchChat() {
+    void UpdatePlayersAlive() {
+        var alivePlayers = new List<RaceBird>();
+        foreach( GameObject player in players ) {
+            var rb = player.GetComponent<RaceBird>();
+            if( rb.alive ) {
+                alivePlayers.Add( rb );
+            }
+        }
+        if( alivePlayers.Count <= 1 ) {
+            alivePlayers[0].WinGame();
+            raceState = RaceState.PostRace;
+        }
+    }
 
+    void UpdateTwitchChat() {
         if( twitchPlayers.Count > 0 && chatQueue.Count > 0 ) {
             var tps = new List<RaceBird>();
             foreach( GameObject twitch in twitchPlayers ) {
                 var rb = twitch.GetComponent<RaceBird>();
-                if( !rb.twitchMessage ) {
+                if( !rb.twitchMessage && rb.alive ) {
                     tps.Add( rb );
                 }
             }
@@ -364,9 +398,9 @@ public class RaceGod : MonoBehaviour {
         }
 
         // destroy all the coke
-        var cokes = GameObject.FindGameObjectsWithTag( "Edible" );
-        foreach( GameObject coke in cokes ) {
-            Destroy( coke );
+        var cokes = GameObject.FindObjectsOfType<Marble>();
+        foreach( Marble coke in cokes ) {
+            Destroy( coke.gameObject );
         }
 
         // move the GUIs

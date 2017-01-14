@@ -89,8 +89,12 @@ public class RaceBird : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        UpdateHUD();
         if( Input.GetKey( KeyCode.G ) ) {
             God.SpawnChild( objectBusted, anchorBusted );
+        }
+        if( !alive ) {
+            return;
         }
         switch( rg.raceState ) {
             case RaceState.PreHungry:
@@ -120,7 +124,6 @@ public class RaceBird : MonoBehaviour {
             default:
                 break;
         }
-        UpdateHUD();
     }
 
     void InterpretBrainForHungry() {
@@ -308,12 +311,38 @@ public class RaceBird : MonoBehaviour {
         }
     }
 
+    public void WinGame() {
+        // woopie
+        Debug.Log( gameObject.name + ": I won and everyone else is a fuck." );
+
+        var t = gameObject.GetComponent<Tweener>();
+        t.SetTarget( GameObject.Find( "WinAnchor" ) );
+    }
+
+    public void Arrested() {
+        // shit
+        Debug.Log( gameObject.name + ": I got arrested 'cause I'm a fuck." );
+        // @TODO: make the BUSTED text appear on my HUD
+
+        var t = gameObject.GetComponent<Tweener>();
+        t.SetTarget( GameObject.Find( "JailAnchor" ) );
+
+        alive = false;
+    }
+
     public void CascadingFailure() {
         
     }
 
     public void GetHit() {
-        
+        if( gridPosition.x == 0 ) {
+            // guess what idiot we're busted
+            Arrested();
+        }
+        if( !MoveIfPossible( -1, 0 ) ) {
+            Debug.Log( gameObject.name + " could not move backwards from hitting a thing" );
+        }
+
     }
 
     void MoveTo( Vector2 newPos, float time = -1.0f ) {
@@ -358,9 +387,7 @@ public class RaceBird : MonoBehaviour {
                 rb.constraints = RigidbodyConstraints.None;
                 rb.AddForce( Vector3.up * rg.hazardMoveSpeed * 10000.0f );
             }
-            if( ! MoveIfPossible( -1, 0 ) ) {
-                Debug.Log( gameObject.name + " could not move backwards from hitting a " + other.gameObject.name );
-            }
+            GetHit();
         }
     }
 }
