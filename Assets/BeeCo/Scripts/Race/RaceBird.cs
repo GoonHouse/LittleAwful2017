@@ -325,6 +325,12 @@ public class RaceBird : MonoBehaviour {
     public void Arrested() {
         // shit
         Debug.Log( gameObject.name + ": I got arrested 'cause I'm a fuck." );
+
+        cokeCurrent = 0;
+
+        var ba = myGUI.transform.Find( "BustedAnchor" ).gameObject;
+
+        God.SpawnChild( objectBusted, ba );
         // @TODO: make the BUSTED text appear on my HUD
 
         var t = gameObject.GetComponent<Tweener>();
