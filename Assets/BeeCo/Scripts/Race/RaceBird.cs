@@ -166,7 +166,7 @@ public class RaceBird : MonoBehaviour {
     }
 
     public void TwitchMessage( string msg, string user ) {
-        twitchMessage = God.SpawnChild( objectSpeech, anchorSpeech );
+        twitchMessage = God.SpawnChild( objectSpeech, anchorSpeech, false );
         var text = twitchMessage.GetComponentInChildren<UnityEngine.UI.Text>();
         text.text = "<b>" + user + ":</b> " + msg;
         Destroy( twitchMessage, 4.0f );
@@ -308,6 +308,14 @@ public class RaceBird : MonoBehaviour {
         }
     }
 
+    public void CascadingFailure() {
+        
+    }
+
+    public void GetHit() {
+        
+    }
+
     void MoveTo( Vector2 newPos, float time = -1.0f ) {
         if( time < 0.0f ) {
             time = laneSwitchTime;
@@ -342,8 +350,13 @@ public class RaceBird : MonoBehaviour {
         myGUI.score = cokeCurrent;
     }
 
-    void OnTriggerEnter( Collider other ) {
+    void OnCollisionEnter( Collision other ) {
         if( other.gameObject.tag == "ForceBack" ) {
+            other.gameObject.tag = "Untagged";
+            var rbs = other.gameObject.GetComponents<Rigidbody>();
+            foreach( Rigidbody rb in rbs ) {
+                rb.constraints = RigidbodyConstraints.None;
+            }
             if( ! MoveIfPossible( -1, 0 ) ) {
                 Debug.Log( gameObject.name + " could not move backwards from hitting a " + other.gameObject.name );
             }
