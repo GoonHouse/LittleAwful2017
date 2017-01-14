@@ -158,6 +158,7 @@ public class RaceGod : MonoBehaviour {
         // twitch.SendMsg( "benis" );
 
         var pid = 0;
+        playersAlive = 0;
         var raceBirds = world.transform.Find( "BirdAnchors" ).gameObject.GetComponentsInChildren<RaceBird>();
         foreach( RaceBird rb in raceBirds ) {
             rb.playerID = pid;
@@ -167,6 +168,7 @@ public class RaceGod : MonoBehaviour {
             }
             players.Add( rb.gameObject );
             pid++;
+            playersAlive++;
         }
 
         if( twitchPlayers.Count > 0 ) {
@@ -326,6 +328,7 @@ public class RaceGod : MonoBehaviour {
             alivePlayers[0].WinGame();
             raceState = RaceState.PostRace;
         }
+        playersAlive = alivePlayers.Count;
     }
 
     void UpdateTwitchChat() {
