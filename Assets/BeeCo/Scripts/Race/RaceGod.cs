@@ -461,9 +461,11 @@ public class RaceGod : MonoBehaviour {
 
     void UpdateEnoughCoke() {
         if( marblesActive < marblesMinActive && marblesRoundTotal > 0 && Time.time > ( timeLastSpawnedMarble + timeSpawnMarbleDelay ) ) {
-            cokeSpawner.SpawnA( cokeObject );
-            //var coke = God.SpawnChild( cokeObject, cokeSpawnAnchor );
-            //coke.name = "Coke #" + marblesRoundTotal;
+            
+            var coke = cokeSpawner.SpawnA( cokeObject );
+            coke.name = "Coke #" + marblesRoundTotal;
+            coke.transform.localRotation = Random.rotation;
+
             timeLastSpawnedMarble = Time.time;
             marblesRoundTotal--;
             marblesActive++;
