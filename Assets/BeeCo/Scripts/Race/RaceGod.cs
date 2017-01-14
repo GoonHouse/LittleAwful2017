@@ -44,6 +44,7 @@ public class RaceGod : MonoBehaviour {
     // how long the strips of road are
     public float worldChunkWidth = 100.0f;
     public int worldChunkOffset = -3;
+    public int worldHazardRange = 3;
     public Vector2 worldUnitDims = new Vector2(12, 10);
     public Vector2 worldDimensions = new Vector2(7, 4);
     public Vector2 worldMargins = new Vector2(2, 1);
@@ -473,7 +474,7 @@ public class RaceGod : MonoBehaviour {
         chunk.name = "Wave " + spawnWaveCount;
 
         // don't put hazards on an initial stretch
-        if( spawnWaveCount + worldChunkOffset <= 0 ) {
+        if( spawnWaveCount + worldChunkOffset <= worldHazardRange ) {
             Destroy( chunk.transform.Find( "HazardStripAnchor" ).gameObject );
         }
 
