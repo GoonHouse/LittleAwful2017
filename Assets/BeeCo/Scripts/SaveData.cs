@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+public enum RaceAI {
+    Twitch,
+    AI,
+    Human
+}
+
 [System.Serializable]
 public class SaveDatum {
 
