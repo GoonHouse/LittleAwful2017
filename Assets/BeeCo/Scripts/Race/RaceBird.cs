@@ -10,6 +10,7 @@ public class RaceBird : MonoBehaviour {
 
     public GameObject objectSpeech;
     public GameObject objectBusted;
+    public GameObject objectCrown;
 
     public Vector2 gridPosition = new Vector2(0, 0);
 
@@ -47,6 +48,7 @@ public class RaceBird : MonoBehaviour {
     public bool isTargeting = false;
     public Marble targetMarble;
     public bool isWinner = false;
+    public int winnerSize = 0;
 
     public float timeRaceStart;
     public float timeStopRunning;
@@ -66,6 +68,12 @@ public class RaceBird : MonoBehaviour {
         head = gameObject.transform.FindAllChildren( "Head" ).gameObject;
         head.AddComponent<Tweener>();
         anims = gameObject.GetComponentInChildren<Animator>();
+
+        if( winnerSize > 0 ) {
+            var crown = God.SpawnChild( objectCrown, anchorSpeech );
+            crown.transform.localScale = Vector3.one * winnerSize;
+        }
+       
 
         anchorSpeech = gameObject.transform.FindAllChildren( "SpeechAnchor" ).gameObject;
 

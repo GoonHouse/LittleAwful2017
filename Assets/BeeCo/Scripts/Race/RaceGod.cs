@@ -50,6 +50,7 @@ public class RaceGod : MonoBehaviour {
     public GameObject gridObject;
     public GameObject chunkAnchor;
     public GameObject cokeObject;
+    public GameObject coolHat;
 
     public Dictionary<string, GameObject> grid = new Dictionary<string, GameObject>();
     public Dictionary<string, GameObject> spawnedGrid = new Dictionary<string, GameObject>();
@@ -205,7 +206,11 @@ public class RaceGod : MonoBehaviour {
                     rb.gameObject.GetComponent<RaceBrainHuman>().playerID = (pid + 1);
                     break;
             }
-            
+            if( theSave.lastBirdToWin == pid ) {
+                rb.winnerSize = theSave.lastBirdWinsConsecutive;
+            } else {
+                rb.winnerSize = 0;
+            }
             players.Add( rb.gameObject );
             pid++;
             playersAlive++;
@@ -377,6 +382,15 @@ public class RaceGod : MonoBehaviour {
         }
         if( alivePlayers.Count <= 1 ) {
             alivePlayers[0].WinGame();
+            var theSave = God.main.GetComponent<SaveData>().loadedSave;
+
+            if( theSave.lastBirdToWin == alivePlayers[0].playerID ) {
+                theSave.lastBirdWinsConsecutive++;
+            } else {
+                theSave.lastBirdWinsConsecutive = 0;
+            }
+            theSave.lastBirdToWin = alivePlayers[0].playerID;
+            
             raceState = RaceState.PostRace;
         }
         playersAlive = alivePlayers.Count;
