@@ -398,7 +398,7 @@ Transform:
   m_GameObject: {fileID: 85386391}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 9.43, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1162708022}
@@ -415,7 +415,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldSpawn: 1
-  rateOfSpawn: 0.5
+  randomRotation: 1
+  rateOfSpawn: 0.75
   thingToSpawn: {fileID: 1000014189543136, guid: a3cca014f1c3ce7418fdd95985ffe6bb,
     type: 2}
   scaleRange: 2
@@ -8062,7 +8063,7 @@ Transform:
   m_GameObject: {fileID: 2085445423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 5.05, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1162708022}
@@ -8091,7 +8092,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldSpawn: 1
-  rateOfSpawn: 0.5
+  randomRotation: 1
+  rateOfSpawn: 0.75
   thingToSpawn: {fileID: 1000014189543136, guid: a3cca014f1c3ce7418fdd95985ffe6bb,
     type: 2}
   scaleRange: 2

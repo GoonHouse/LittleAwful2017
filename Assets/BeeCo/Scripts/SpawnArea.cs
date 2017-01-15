@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpawnArea : MonoBehaviour {
     public bool shouldSpawn;
+    public bool randomRotation;
     public float rateOfSpawn;
     public GameObject thingToSpawn;
     public float scaleRange = 2.0f;
@@ -30,6 +31,9 @@ public class SpawnArea : MonoBehaviour {
         go.GetComponent<Rigidbody>().angularDrag = 1.0f;
         go.GetComponent<Rigidbody>().drag = 1.0f;
         go.GetComponent<Rigidbody>().mass = 50.0f;
+        if( randomRotation ) {
+            go.transform.localRotation = Random.rotation;
+        }
         return go;
     }
 
