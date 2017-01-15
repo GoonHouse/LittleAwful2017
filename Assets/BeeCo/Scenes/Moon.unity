@@ -963,7 +963,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 750973679}
-  - 95: {fileID: 750973678}
   m_Layer: 0
   m_Name: CartoonOstrich
   m_TagString: Untagged
@@ -971,24 +970,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &750973678
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 95000013757216582, guid: d4a401367db713045a6589e3a73ebf63,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 750973677}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ef1a9be9cbf744646a7d9dda5aab16b0, type: 3}
-  m_Controller: {fileID: 9100000, guid: 22365b4fcfd5fdf43a953032d0e2f9a9, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &750973679
 Transform:
   m_ObjectHideFlags: 0
