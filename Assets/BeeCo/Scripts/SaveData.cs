@@ -31,6 +31,7 @@ public class SaveDatum {
     public float musicVolume = 1.0f;
     public float effectsVolume = 1.0f;
     public float flashingLights = 1.0f;
+    public bool showCutscene = false;
 
     // Player Settings
     // 0 .. twitch, 1 .. AI, 2 .. human
@@ -44,7 +45,6 @@ public class SaveDatum {
     public string ircServer = "irc.twitch.tv";
     public int    ircPort = 6667;
 
-    public bool hasSeenIntro = false;
     public int  lastBirdToWin = -1;
     public int  lastBirdWinsConsecutive = 0;
 }
