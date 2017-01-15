@@ -45,6 +45,7 @@ public class RaceBird : MonoBehaviour {
 
     public bool isTargeting = false;
     public Marble targetMarble;
+    public bool isWinner = false;
 
     // Use this for initialization
     void Start () {
@@ -93,7 +94,7 @@ public class RaceBird : MonoBehaviour {
         if( Input.GetKey( KeyCode.G ) ) {
             God.SpawnChild( objectBusted, anchorBusted );
         }
-        if( !alive ) {
+        if( !alive || isWinner ) {
             return;
         }
         switch( rg.raceState ) {
@@ -318,6 +319,8 @@ public class RaceBird : MonoBehaviour {
     public void WinGame() {
         // woopie
         Debug.Log( gameObject.name + ": I won and everyone else is a fuck." );
+
+        isWinner = true;
 
         var t = gameObject.GetComponent<Tweener>();
         t.SetTarget( GameObject.Find( "WinAnchor" ) );

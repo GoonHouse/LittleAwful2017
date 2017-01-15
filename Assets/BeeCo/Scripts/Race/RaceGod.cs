@@ -55,8 +55,10 @@ public class RaceGod : MonoBehaviour {
     public Transform world;
     public Transform motion;
 
+    public float intensity;
     public int spawnWaveCount = 0;
-    public float hazardMoveSpeed = 2.0f;
+    public float hazardMoveSpeed = 1.0f;
+    public float hazardIntensityFactor = 5.0f;
 
     public List<GameObject> players = new List<GameObject>();
     public List<GameObject> twitchPlayers = new List<GameObject>();
@@ -81,6 +83,9 @@ public class RaceGod : MonoBehaviour {
     // hungry game logic
     public float timeHungryStart;
     public float timeHungryDuration = 60.0f;
+
+    public float timeRaceStart;
+    public float timeRaceDuration = 180.0f;
 
     public int marblesTotal = 0;
     public int marblesMinActive = 13;
@@ -289,6 +294,9 @@ public class RaceGod : MonoBehaviour {
                 }
                 break;
             case RaceState.Race:
+                if( timeRaceStart <= 0.0f ) {
+                    timeRaceStart = Time.time;
+                }
                 // update the world position
                 // update the track
                 UpdateWorldPosition();
@@ -316,6 +324,13 @@ public class RaceGod : MonoBehaviour {
                 Debug.Log( "groose is loose" );
                 break;
         }
+    }
+
+    void UpdateRaceSpeed() {
+        var time = Mathf.Min( timeRaceDuration, Time.time - timeRaceStart );
+        intensity = time / timeRaceDuration;
+
+        hazardMoveSpeed = 1.0f + intensity * hazardIntensityFactor;
     }
 
     void UpdatePlayersAlive() {
