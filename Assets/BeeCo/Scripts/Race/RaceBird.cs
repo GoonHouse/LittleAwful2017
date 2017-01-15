@@ -202,7 +202,10 @@ public class RaceBird : MonoBehaviour {
     public void TwitchMessage( string msg, string user ) {
         myStats.messagesReceived++;
         sb.Play( "chat_message" );
-        twitchMessage = God.SpawnChild( objectSpeech, anchorSpeech, false );
+        twitchMessage = God.SpawnChild( objectSpeech, anchorSpeech );
+        var lr = twitchMessage.transform.localRotation;
+        lr.x = 0;
+        twitchMessage.transform.localRotation = lr;
         var text = twitchMessage.GetComponentInChildren<UnityEngine.UI.Text>();
         text.text = "<b>" + user + ":</b> " + msg;
         Destroy( twitchMessage, 4.0f );

@@ -37,6 +37,10 @@ public class SaveDatum {
     public string ircChannel = "sagamedev";
     public string ircServer = "irc.twitch.tv";
     public int    ircPort = 6667;
+
+    public bool hasSeenIntro = false;
+    public int  lastBirdToWin = -1;
+    public int  lastBirdWinsConsecutive = 0;
 }
 
 public class SaveData : MonoBehaviour {

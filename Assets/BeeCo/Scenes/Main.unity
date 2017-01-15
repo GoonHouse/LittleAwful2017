@@ -19441,6 +19441,21 @@ Prefab:
       propertyPath: m_curveOrigin
       value: 
       objectReference: {fileID: 1382986945}
+    - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
+        type: 2}
+      propertyPath: loadedSave.playerUse.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
+        type: 2}
+      propertyPath: loadedSave.playerUse.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
+        type: 2}
+      propertyPath: loadedSave.playerUse.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec27c128e6bd2344a86e06f509d8ec1, type: 2}
   m_IsPrefabParent: 0
