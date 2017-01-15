@@ -302,6 +302,7 @@ public class RaceGod : MonoBehaviour {
                 UpdateWorldPosition();
                 UpdateSpawn();
                 UpdatePlayersAlive();
+                UpdateRaceSpeed();
                 break;
             case RaceState.PostRace:
                 // winner emerges, tween them into the sunset
