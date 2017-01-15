@@ -189,8 +189,7 @@ public class RaceGod : MonoBehaviour {
         // twitch.SendMsg( "benis" );
 
         var flashy = policeLight.GetComponent<Animator>();
-        flashy.SetFloat( "LightSpeed", theSave.flashingLights );
-        Debug.Log( "Flashing Lights Assigned to: " + flashy.GetFloat("LightSpeed") );
+        flashy.speed = theSave.flashingLights;
 
         var pid = 0;
         playersAlive = 0;
