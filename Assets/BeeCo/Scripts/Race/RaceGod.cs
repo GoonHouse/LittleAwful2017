@@ -25,6 +25,23 @@ public struct ChatMessage {
     public string msg;
 }
 
+[System.Serializable]
+public struct BirdStats {
+    public int cokeConsumed; // how much coke has been consumed // X
+    public int cokeRegenerated; // duh // X
+    public int cokeFromHeaven; // bonus coke from the sky // X
+    public int thingsCollidedWith; // how many things you've collided with // X
+    public int timesLanesSwitched; // lane switch academy? (poops?)  // X
+    public int timesStoodStill; // X
+    public int boostsUsed; // X 
+    public float timeSpentRunning; // X
+    public float distanceTraveled; // how far you've gone -- winner gets the distance to the moon added
+    public float garbageStrewn; // things hit * (1/7) * Random.value(2*3);
+    public float damageCaused;
+    
+    public float caloriesBurned;
+}
+
 public class RaceGod : MonoBehaviour {
     public RaceState raceState = RaceState.NoRace;
 
@@ -96,6 +113,12 @@ public class RaceGod : MonoBehaviour {
     public float timeSpawnMarbleDelay = 0.5f;
 
     public List<string> ircCommands = new List<string>{ "eat", "left", "right", "go", "back", "stop" };
+
+    public List<BirdStats> stats = new List<BirdStats>();
+
+
+    public List<int> playerPositions = new List<int>();
+    public int winningPlayer;
 
     private string debugUser = "DickDaddy43";
     private List<string> debugMessages = new List<string>{
@@ -324,7 +347,7 @@ public class RaceGod : MonoBehaviour {
                     }
 
                     raceState = RaceState.NoRace;
-                    SceneManager.LoadScene( "Results" );
+                    SceneManager.LoadScene( "Moon" );
                 }
                 break;
             default:

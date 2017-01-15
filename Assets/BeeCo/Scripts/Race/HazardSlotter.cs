@@ -23,7 +23,6 @@ public class HazardSlotter : MonoBehaviour {
         //      all are dropped frequently in the early game
         // but the player count ensures that players-1 always get dropped
         var maxSafeSpaces = 2;
-        var maxToDrop = rg.playersAlive;
         int numToDrop = Random.Range( maxSafeSpaces, rg.playersAlive );
 
         for( int i = 0; i < spawns.Count; i++ ) {

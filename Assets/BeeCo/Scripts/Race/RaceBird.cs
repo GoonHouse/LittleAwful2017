@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
+
+
 public class RaceBird : MonoBehaviour {
     private RaceGod rg;
     public PlayerGUI myGUI;
@@ -38,7 +40,6 @@ public class RaceBird : MonoBehaviour {
     private GameObject head;
     private GameObject headStartPosition;
     private Animator anims;
-    private GameObject anchorBusted;
     private GameObject anchorSpeech;
 
     public GameObject twitchMessage;
@@ -46,6 +47,11 @@ public class RaceBird : MonoBehaviour {
     public bool isTargeting = false;
     public Marble targetMarble;
     public bool isWinner = false;
+
+    public float timeRaceStart;
+    public float timeStopRunning;
+
+    public BirdStats myStats = new BirdStats();
 
     public float cokeMultiplier = 0.33f;
 
@@ -58,7 +64,6 @@ public class RaceBird : MonoBehaviour {
         head.AddComponent<Tweener>();
         anims = gameObject.GetComponentInChildren<Animator>();
 
-        anchorBusted = gameObject.transform.FindAllChildren( "BustedAnchor" ).gameObject;
         anchorSpeech = gameObject.transform.FindAllChildren( "SpeechAnchor" ).gameObject;
 
         // create an anchor for our head
@@ -67,6 +72,8 @@ public class RaceBird : MonoBehaviour {
         headStartPosition.transform.SetParent( headMate.transform );
         headStartPosition.transform.localPosition = head.transform.localPosition;
         headStartPosition.transform.localRotation = head.transform.localRotation;
+
+        myStats.cokeConsumed = 0;
 
         cokeCurrent = cokeMax;
         myGUI.score = cokeMax;
@@ -93,12 +100,11 @@ public class RaceBird : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         UpdateHUD();
-        if( Input.GetKey( KeyCode.G ) ) {
-            God.SpawnChild( objectBusted, anchorBusted );
-        }
+
         if( !alive || isWinner ) {
             return;
         }
+
         switch( rg.raceState ) {
             case RaceState.PreHungry:
                 // ???
@@ -119,6 +125,13 @@ public class RaceBird : MonoBehaviour {
                 anims.SetBool( "IsRunning", true );
                 break;
             case RaceState.Race:
+                if( timeRaceStart <= 0.0f ) {
+                    timeRaceStart = Time.time;
+                }
+                myStats.timeSpentRunning = Time.time - timeRaceStart;
+                var unityUnitsToFeetUsingAverageOsterichHeight = 10.0f / ( ( 6.9f + 9.2f ) / 2.0f );
+                myStats.distanceTraveled += Time.deltaTime * ( rg.hazardMoveSpeed * unityUnitsToFeetUsingAverageOsterichHeight );
+
                 anims.SetFloat( "RunSpeed", rg.hazardMoveSpeed );
                 InterpretBrainForRace();
                 CokeUpdate();
@@ -212,16 +225,24 @@ public class RaceBird : MonoBehaviour {
 
     void InterpretBrainForRace() {
         if( brain.BrainLeft() ) {
-            MoveIfPossible( 0, 1 );
+            if( MoveIfPossible( 0, 1 ) ) {
+                myStats.timesLanesSwitched++;
+            }
         } else if( brain.BrainRight() ) {
-            MoveIfPossible( 0, -1 );
+            if( MoveIfPossible( 0, -1 ) ) {
+                myStats.timesLanesSwitched++;
+            }
         }
 
 
         if( brain.BrainGo() ) {
-            CokeBoost();
+            if( CokeBoost() ) {
+                myStats.cokeConsumed++;
+            }
         } else if( brain.BrainStop() ) {
-            MoveIfPossible( -1, 0 );
+            if( MoveIfPossible( -1, 0 ) ) {
+                myStats.timesStoodStill++;
+            }
         }
     }
 
@@ -248,6 +269,7 @@ public class RaceBird : MonoBehaviour {
     void OnGetCoke() {
         if( cokeCurrent < cokeMax ) {
             cokeCurrent += 1;
+            myStats.cokeRegenerated += 1;
         }
     }
 
@@ -324,20 +346,28 @@ public class RaceBird : MonoBehaviour {
 
         isWinner = true;
 
+        rg.winningPlayer = playerID;
+        rg.stats.Add( myStats );
+        rg.playerPositions.Add( playerID );
+
         var t = gameObject.GetComponent<Tweener>();
         t.SetTarget( GameObject.Find( "WinAnchor" ) );
     }
 
     public void Arrested() {
-        // shit
-        Debug.Log( gameObject.name + ": I got arrested 'cause I'm a fuck." );
+        timeStopRunning = Time.time;
 
         cokeCurrent = 0;
 
         var ba = myGUI.transform.Find( "BustedAnchor" ).gameObject;
 
+        myStats.distanceTraveled += God.distanceToTheMoonInFeet;
+
         God.SpawnChild( objectBusted, ba );
-        // @TODO: make the BUSTED text appear on my HUD
+
+        // we're done so add our position to the list
+        rg.stats.Add( myStats );
+        rg.playerPositions.Add( playerID );
 
         var t = gameObject.GetComponent<Tweener>();
         t.SetTarget( GameObject.Find( "JailAnchor" ) );
@@ -354,6 +384,9 @@ public class RaceBird : MonoBehaviour {
             // guess what idiot we're busted
             Arrested();
         }
+
+        myStats.thingsCollidedWith++;
+
         if( !MoveIfPossible( -1, 0 ) ) {
             Debug.Log( gameObject.name + " could not move backwards from hitting a thing" );
         }
@@ -406,11 +439,16 @@ public class RaceBird : MonoBehaviour {
             }
             GetHit();
         } else if( other.gameObject.tag == "ForceForward" ) {
+            myStats.boostsUsed++;
             if( !MoveIfPossible( 1, 0 ) ) {
-                // we didn't move forward
+                // we didn't get to go anywhere
             }
         } else if( other.gameObject.tag == "CocainePickup" ) {
-            cokeCurrent = Mathf.Min( cokeMax, cokeCurrent + Mathf.CeilToInt( cokeMax * cokeMultiplier ) );
+            var newCokeAmount = Mathf.Min( cokeMax, cokeCurrent + Mathf.CeilToInt( cokeMax * cokeMultiplier ) );
+            var cokeGotten = newCokeAmount - cokeCurrent;
+
+            myStats.cokeFromHeaven += cokeGotten;
+
             Destroy( other.gameObject );
         }
     }

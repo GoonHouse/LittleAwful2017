@@ -227,6 +227,21 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
+  timeRaceStart: 0
+  timeStopRunning: 0
+  myStats:
+    cokeConsumed: 0
+    cokeRegenerated: 0
+    cokeFromHeaven: 0
+    thingsCollidedWith: 0
+    timesLanesSwitched: 0
+    timesStoodStill: 0
+    boostsUsed: 0
+    timeSpentRunning: 0
+    distanceTraveled: 0
+    garbageStrewn: 0
+    damageCaused: 0
+    caloriesBurned: 0
   cokeMultiplier: 0.1
 --- !u!114 &56449743
 MonoBehaviour:
@@ -1990,6 +2005,21 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
+  timeRaceStart: 0
+  timeStopRunning: 0
+  myStats:
+    cokeConsumed: 0
+    cokeRegenerated: 0
+    cokeFromHeaven: 0
+    thingsCollidedWith: 0
+    timesLanesSwitched: 0
+    timesStoodStill: 0
+    boostsUsed: 0
+    timeSpentRunning: 0
+    distanceTraveled: 0
+    garbageStrewn: 0
+    damageCaused: 0
+    caloriesBurned: 0
   cokeMultiplier: 0.1
 --- !u!114 &669633955
 MonoBehaviour:
@@ -3382,31 +3412,6 @@ Prefab:
       propertyPath: m_curveOrigin
       value: 
       objectReference: {fileID: 437478264}
-    - target: {fileID: 114000011933720802, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
-        type: 2}
-      propertyPath: m_curvature
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
-        type: 2}
-      propertyPath: loadedSave.playerUse.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
-        type: 2}
-      propertyPath: loadedSave.playerUse.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
-        type: 2}
-      propertyPath: loadedSave.playerUse.Array.data[3]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013307476828, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
-        type: 2}
-      propertyPath: marblesRoundTotal
-      value: 120
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec27c128e6bd2344a86e06f509d8ec1, type: 2}
   m_IsPrefabParent: 0
@@ -3979,6 +3984,21 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
+  timeRaceStart: 0
+  timeStopRunning: 0
+  myStats:
+    cokeConsumed: 0
+    cokeRegenerated: 0
+    cokeFromHeaven: 0
+    thingsCollidedWith: 0
+    timesLanesSwitched: 0
+    timesStoodStill: 0
+    boostsUsed: 0
+    timeSpentRunning: 0
+    distanceTraveled: 0
+    garbageStrewn: 0
+    damageCaused: 0
+    caloriesBurned: 0
   cokeMultiplier: 0.1
 --- !u!114 &1217649350
 MonoBehaviour:
@@ -4726,6 +4746,21 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
+  timeRaceStart: 0
+  timeStopRunning: 0
+  myStats:
+    cokeConsumed: 0
+    cokeRegenerated: 0
+    cokeFromHeaven: 0
+    thingsCollidedWith: 0
+    timesLanesSwitched: 0
+    timesStoodStill: 0
+    boostsUsed: 0
+    timeSpentRunning: 0
+    distanceTraveled: 0
+    garbageStrewn: 0
+    damageCaused: 0
+    caloriesBurned: 0
   cokeMultiplier: 0.1
 --- !u!114 &1469574964
 MonoBehaviour:

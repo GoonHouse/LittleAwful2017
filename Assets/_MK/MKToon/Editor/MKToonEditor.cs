@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.Linq;
@@ -74,7 +74,7 @@ namespace MKToon
         override public void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
         {
             Material targetMat = materialEditor.target as Material;
-            string[] keyWords = targetMat.shaderKeywords;
+            //string[] keyWords = targetMat.shaderKeywords;
             FindProperties(properties, targetMat);
             EditorGUI.BeginChangeCheck();
             materialEditor.ShaderProperty(cullMode, cullMode.displayName);

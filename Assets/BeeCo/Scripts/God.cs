@@ -8,6 +8,7 @@ public class HasteResponse : System.Object {
 
 public class God : MonoBehaviour {
     public static God main;
+    public static float distanceToTheMoonInFeet = 1.255f * Mathf.Pow(10, 9);
     private bool doLock = false;
 
     // == game object stuff ==

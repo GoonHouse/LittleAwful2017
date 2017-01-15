@@ -143,8 +143,8 @@ MonoBehaviour:
   policeLight: {fileID: 0}
   hudTime: {fileID: 0}
   cameraRaceAnchor: {fileID: 0}
-  cokeSpawnAnchor: {fileID: 0}
-  cokeSpawner: {fileID: 0}
+  cokeSpawnAnchors: {fileID: 0}
+  cokeSpawners: []
   timeForBirdsRelocate: 3
   timePreRaceStart: 0
   timePreRaceDuration: 3
@@ -167,6 +167,9 @@ MonoBehaviour:
   - go
   - back
   - stop
+  stats: []
+  playerPositions: 
+  winningPlayer: 0
 --- !u!114 &114000013395418298
 MonoBehaviour:
   m_ObjectHideFlags: 1
