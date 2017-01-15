@@ -69,13 +69,12 @@ public class RaceBird : MonoBehaviour {
         head.AddComponent<Tweener>();
         anims = gameObject.GetComponentInChildren<Animator>();
 
+        anchorSpeech = gameObject.transform.FindAllChildren( "SpeechAnchor" ).gameObject;
+
         if( winnerSize > 0 ) {
             var crown = God.SpawnChild( objectCrown, anchorSpeech );
             crown.transform.localScale = Vector3.one * winnerSize;
         }
-       
-
-        anchorSpeech = gameObject.transform.FindAllChildren( "SpeechAnchor" ).gameObject;
 
         // create an anchor for our head
         var headMate = head.transform.parent.gameObject;

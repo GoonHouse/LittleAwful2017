@@ -69,6 +69,9 @@ MonoBehaviour:
     ircChannel: sagamedev
     ircServer: irc.twitch.tv
     ircPort: 6667
+    hasSeenIntro: 0
+    lastBirdToWin: -1
+    lastBirdWinsConsecutive: 0
   defaultSaveName: slot_1
   savesFound: []
 --- !u!114 &114000011933720802
@@ -118,6 +121,7 @@ MonoBehaviour:
   chunkAnchor: {fileID: 1000013472144046, guid: 5807f1094f4555a4e956f59c80c05f2d,
     type: 2}
   cokeObject: {fileID: 1000014189543136, guid: a3cca014f1c3ce7418fdd95985ffe6bb, type: 2}
+  coolHat: {fileID: 0}
   playersAlive: 0
   startTime: 0
   spawnDistance: 28
