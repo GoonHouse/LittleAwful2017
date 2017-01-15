@@ -47,6 +47,8 @@ public class RaceBird : MonoBehaviour {
     public Marble targetMarble;
     public bool isWinner = false;
 
+    public float cokeMultiplier = 0.33f;
+
     // Use this for initialization
     void Start () {
         rg = God.main.GetComponent<RaceGod>();
@@ -407,6 +409,8 @@ public class RaceBird : MonoBehaviour {
             if( !MoveIfPossible( 1, 0 ) ) {
                 // we didn't move forward
             }
+        } else if( other.gameObject.tag == "CocainePickup" ) {
+            cokeCurrent = Mathf.Min( cokeMax, cokeCurrent + Mathf.CeilToInt( cokeMax * cokeMultiplier ) );
         }
     }
 }
