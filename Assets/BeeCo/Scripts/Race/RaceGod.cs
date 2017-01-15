@@ -350,11 +350,6 @@ public class RaceGod : MonoBehaviour {
 
                 // check if we are still hungry by time
                 if( Time.time > ( timePostRaceStart + timePostRaceDuration ) ) {
-                    if( twitchPlayers.Count > 0 ) {
-                        var twitch = God.main.GetComponent<TwitchIRC>();
-                        twitch.SendMsg( "Holy wow, somebody won! Horray!" );
-                    }
-
                     raceState = RaceState.NoRace;
                     SceneManager.LoadScene( "Moon" );
                 }
@@ -393,6 +388,11 @@ public class RaceGod : MonoBehaviour {
             theSave.lastBirdToWin = alivePlayers[0].playerID;
 
             sd.SaveFile();
+
+            if( twitchPlayers.Count > 0 ) {
+                var twitch = God.main.GetComponent<TwitchIRC>();
+                twitch.SendMsg( "Holy wow, player #" + (alivePlayers[0].playerID + 1) + " won! Great job, them!" );
+            }
 
             raceState = RaceState.PostRace;
         }
