@@ -227,7 +227,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
-  cokeMultiplier: 0.33
+  cokeMultiplier: 0.1
 --- !u!114 &56449743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
-  cokeMultiplier: 0.33
+  cokeMultiplier: 0.1
 --- !u!114 &669633955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3979,7 +3979,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
-  cokeMultiplier: 0.33
+  cokeMultiplier: 0.1
 --- !u!114 &1217649350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4726,7 +4726,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
-  cokeMultiplier: 0.33
+  cokeMultiplier: 0.1
 --- !u!114 &1469574964
 MonoBehaviour:
   m_ObjectHideFlags: 0
