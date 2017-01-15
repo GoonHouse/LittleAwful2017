@@ -382,7 +382,8 @@ public class RaceGod : MonoBehaviour {
         }
         if( alivePlayers.Count <= 1 ) {
             alivePlayers[0].WinGame();
-            var theSave = God.main.GetComponent<SaveData>().loadedSave;
+            var sd = God.main.GetComponent<SaveData>();
+            var theSave = sd.loadedSave;
 
             if( theSave.lastBirdToWin == alivePlayers[0].playerID ) {
                 theSave.lastBirdWinsConsecutive++;
@@ -390,7 +391,9 @@ public class RaceGod : MonoBehaviour {
                 theSave.lastBirdWinsConsecutive = 0;
             }
             theSave.lastBirdToWin = alivePlayers[0].playerID;
-            
+
+            sd.SaveFile();
+
             raceState = RaceState.PostRace;
         }
         playersAlive = alivePlayers.Count;
