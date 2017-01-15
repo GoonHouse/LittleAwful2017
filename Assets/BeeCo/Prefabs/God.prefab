@@ -62,7 +62,7 @@ MonoBehaviour:
     playerName: 
     musicVolume: 1
     effectsVolume: 1
-    playerUse: 02000000000000000000000000000000
+    playerUse: 02000000010000000100000001000000
     ircNick: CocaineOstrich
     ircPass: iL0v3Coca1ne!
     ircChannel: sagamedev
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_curveOrigin: {fileID: 0}
   m_referenceDirection: {fileID: 4000012858075888}
-  m_curvature: 34.35
+  m_curvature: 34
   m_xScale: 1
   m_zScale: 1
   m_flatMargin: 50
@@ -123,6 +123,7 @@ MonoBehaviour:
   spawnProtectionDistance: 10
   worldChunkWidth: 100
   worldChunkOffset: -1
+  worldHazardRange: 3
   worldUnitDims: {x: 12, y: 10}
   worldDimensions: {x: 7, y: 6}
   worldMargins: {x: 3.5, y: 2}
@@ -131,8 +132,10 @@ MonoBehaviour:
   worldSpawnSafetyDistance: 2
   world: {fileID: 0}
   motion: {fileID: 0}
+  intensity: 0
   spawnWaveCount: 0
   hazardMoveSpeed: 1
+  hazardIntensityFactor: 5
   players: []
   twitchPlayers: []
   playerGUIs: []
@@ -141,15 +144,20 @@ MonoBehaviour:
   hudTime: {fileID: 0}
   cameraRaceAnchor: {fileID: 0}
   cokeSpawnAnchor: {fileID: 0}
+  cokeSpawner: {fileID: 0}
   timeForBirdsRelocate: 3
   timePreRaceStart: 0
   timePreRaceDuration: 3
+  timePostRaceStart: 0
+  timePostRaceDuration: 10
   timeHungryStart: 0
   timeHungryDuration: 60
+  timeRaceStart: 0
+  timeRaceDuration: 180
   marblesTotal: 0
   marblesMinActive: 13
   marblesActive: 0
-  marblesRoundTotal: 60
+  marblesRoundTotal: 120
   timeLastSpawnedMarble: 0
   timeSpawnMarbleDelay: 0.5
   ircCommands:

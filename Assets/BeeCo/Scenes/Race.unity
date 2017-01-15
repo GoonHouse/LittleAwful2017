@@ -226,6 +226,7 @@ MonoBehaviour:
   twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
+  isWinner: 0
 --- !u!114 &56449743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,6 +1929,7 @@ MonoBehaviour:
   twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
+  isWinner: 0
 --- !u!114 &669633955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3339,6 +3341,11 @@ Prefab:
       propertyPath: loadedSave.playerUse.Array.data[3]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013307476828, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
+        type: 2}
+      propertyPath: marblesRoundTotal
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec27c128e6bd2344a86e06f509d8ec1, type: 2}
   m_IsPrefabParent: 0
@@ -3848,6 +3855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdbe47f59135d149a9f7052e39d35b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 0
 --- !u!114 &1217649349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3879,6 +3887,7 @@ MonoBehaviour:
   twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
+  isWinner: 0
 --- !u!114 &1217649350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4624,6 +4633,7 @@ MonoBehaviour:
   twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
+  isWinner: 0
 --- !u!114 &1469574964
 MonoBehaviour:
   m_ObjectHideFlags: 0
