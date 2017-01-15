@@ -16,6 +16,8 @@ public class LoadData : MonoBehaviour {
     public GameObject ui_ircServer = null;
     public GameObject ui_ircPort = null;
 
+    public GameObject[] ui_playerUse = null;
+
     // Use this for initialization
     void Start () {
 
@@ -36,6 +38,11 @@ public class LoadData : MonoBehaviour {
         ui_ircServer.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircServerChangeCheck(); });
         ui_ircPort.GetComponentInParent<InputField>().text = sd.ircPort.ToString();
         ui_ircPort.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircPortChangeCheck(); });
+
+        ui_playerUse [0].GetComponentInParent<Dropdown>().value = sd.playerUse [0];
+        ui_playerUse [1].GetComponentInParent<Dropdown>().value = sd.playerUse [1];
+        ui_playerUse [2].GetComponentInParent<Dropdown>().value = sd.playerUse [2];
+        ui_playerUse [3].GetComponentInParent<Dropdown>().value = sd.playerUse [3];
     }
 
     public void uiMusicVolumeChangeCheck() {
