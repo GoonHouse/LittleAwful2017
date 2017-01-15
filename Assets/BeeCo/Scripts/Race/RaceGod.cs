@@ -170,9 +170,15 @@ public class RaceGod : MonoBehaviour {
         foreach( RaceBird rb in raceBirds ) {
             rb.playerID = pid;
             rb.SetBrainFromInt( theSave.playerUse[pid] );
-            if( theSave.playerUse[pid] == 0 ) {
-                twitchPlayers.Add( rb.gameObject );
+            switch( theSave.playerUse[pid] ) {
+                case 0:
+                    twitchPlayers.Add( rb.gameObject );
+                    break;
+                case 2:
+                    rb.gameObject.GetComponent<RaceBrainHuman>().playerID = pid + 1;
+                    break;
             }
+            
             players.Add( rb.gameObject );
             pid++;
             playersAlive++;

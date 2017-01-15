@@ -393,7 +393,9 @@ public class RaceBird : MonoBehaviour {
     }
 
     void OnCollisionEnter( Collision other ) {
-        if( other.gameObject.tag == "ForceBack" ) {
+        if( !alive || isWinner ) {
+            // nothing at all
+        } else if( other.gameObject.tag == "ForceBack" ) {
             other.gameObject.tag = "Untagged";
             var rbs = other.gameObject.GetComponents<Rigidbody>();
             foreach( Rigidbody rb in rbs ) {
