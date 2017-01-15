@@ -411,6 +411,7 @@ public class RaceBird : MonoBehaviour {
             }
         } else if( other.gameObject.tag == "CocainePickup" ) {
             cokeCurrent = Mathf.Min( cokeMax, cokeCurrent + Mathf.CeilToInt( cokeMax * cokeMultiplier ) );
+            Destroy( other.gameObject );
         }
     }
 }
