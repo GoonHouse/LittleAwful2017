@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692576, g: 0.49678826, b: 0.57508695, a: 1}
+  m_IndirectSpecularColor: {r: 0.4469263, g: 0.49678856, b: 0.5750879, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
-  cokeMultiplier: 0.1
+  cokeMultiplier: 0.25
 --- !u!114 &56449743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
-  cokeMultiplier: 0.1
+  cokeMultiplier: 0.25
 --- !u!114 &669633955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3979,7 +3979,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
-  cokeMultiplier: 0.1
+  cokeMultiplier: 0.25
 --- !u!114 &1217649350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4726,7 +4726,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
-  cokeMultiplier: 0.1
+  cokeMultiplier: 0.25
 --- !u!114 &1469574964
 MonoBehaviour:
   m_ObjectHideFlags: 0
