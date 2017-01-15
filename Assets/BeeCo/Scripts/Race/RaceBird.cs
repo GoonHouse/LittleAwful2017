@@ -398,6 +398,10 @@ public class RaceBird : MonoBehaviour {
                 rb.AddForce( Vector3.up * rg.hazardMoveSpeed * 10000.0f );
             }
             GetHit();
+        } else if( other.gameObject.tag == "ForceForward" ) {
+            if( !MoveIfPossible( 1, 0 ) ) {
+                // we didn't move forward
+            }
         }
     }
 }
