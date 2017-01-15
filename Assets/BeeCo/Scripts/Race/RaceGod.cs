@@ -175,7 +175,7 @@ public class RaceGod : MonoBehaviour {
                     twitchPlayers.Add( rb.gameObject );
                     break;
                 case 2:
-                    rb.gameObject.GetComponent<RaceBrainHuman>().playerID = pid + 1;
+                    rb.gameObject.GetComponent<RaceBrainHuman>().playerID = (pid + 1);
                     break;
             }
             

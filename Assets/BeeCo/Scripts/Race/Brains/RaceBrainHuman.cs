@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RaceBrainHuman : RaceBrain {
 
-    public int playerID;
+    public int playerID = 1;
 
     public override bool BrainLeft() {
         return Input.GetButtonDown("Player" + playerID + "Left");
