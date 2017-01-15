@@ -3399,6 +3399,11 @@ Prefab:
       propertyPath: loadedSave.playerUse.Array.data[3]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013307476828, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
+        type: 2}
+      propertyPath: marblesRoundTotal
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec27c128e6bd2344a86e06f509d8ec1, type: 2}
   m_IsPrefabParent: 0
