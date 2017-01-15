@@ -22,7 +22,7 @@ public class HazardSlotter : MonoBehaviour {
         // the intensity of the round should map such that:
         //      all are dropped frequently in the early game
         // but the player count ensures that players-1 always get dropped
-        var maxToDrop = rg.playersAlive - 1;
+        var maxToDrop = rg.playersAlive - 2;
         int numToDrop = Random.Range( maxToDrop, maxToDrop + 2 );
 
         for( int i = 0; i < spawns.Count; i++ ) {
