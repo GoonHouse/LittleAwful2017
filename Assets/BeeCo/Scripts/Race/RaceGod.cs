@@ -96,7 +96,7 @@ public class RaceGod : MonoBehaviour {
     public float timePreRaceDuration = 3.0f;
 
     public float timePostRaceStart;
-    public float timePostRaceDuration = 10.0f;
+    public float timePostRaceDuration = 3.0f;
 
     // hungry game logic
     public float timeHungryStart;
