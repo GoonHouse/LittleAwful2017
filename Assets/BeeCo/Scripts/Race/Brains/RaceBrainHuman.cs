@@ -18,7 +18,7 @@ public class RaceBrainHuman : RaceBrain {
     }
 
     public override bool BrainStop() {
-        return Input.GetButtonDown( "Player" + playerID + "Stop" );
+        return Input.GetButtonDown( "Player" + playerID + "Back" );
     }
 
     public override void DoSignal( string signal ) {
