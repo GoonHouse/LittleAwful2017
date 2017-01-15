@@ -212,6 +212,8 @@ MonoBehaviour:
     type: 2}
   objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
     type: 2}
+  objectCrown: {fileID: 1000012127256932, guid: d5be755957949b74a862107f5e093196,
+    type: 2}
   gridPosition: {x: 0, y: 1}
   laneSwitchTime: 0.12
   playerID: 0
@@ -227,6 +229,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
+  winnerSize: 0
   timeRaceStart: 0
   timeStopRunning: 0
   sb: {fileID: 0}
@@ -2149,6 +2152,8 @@ MonoBehaviour:
     type: 2}
   objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
     type: 2}
+  objectCrown: {fileID: 1000012127256932, guid: d5be755957949b74a862107f5e093196,
+    type: 2}
   gridPosition: {x: 0, y: 2}
   laneSwitchTime: 0.12
   playerID: 0
@@ -2164,6 +2169,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
+  winnerSize: 0
   timeRaceStart: 0
   timeStopRunning: 0
   sb: {fileID: 0}
@@ -4270,6 +4276,8 @@ MonoBehaviour:
     type: 2}
   objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
     type: 2}
+  objectCrown: {fileID: 1000012127256932, guid: d5be755957949b74a862107f5e093196,
+    type: 2}
   gridPosition: {x: 0, y: 0}
   laneSwitchTime: 0.12
   playerID: 0
@@ -4285,6 +4293,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
+  winnerSize: 0
   timeRaceStart: 0
   timeStopRunning: 0
   sb: {fileID: 0}
@@ -5077,6 +5086,8 @@ MonoBehaviour:
     type: 2}
   objectBusted: {fileID: 1000014015771778, guid: b5e2f3250afbd7a4bafef23c760a6f7d,
     type: 2}
+  objectCrown: {fileID: 1000012127256932, guid: d5be755957949b74a862107f5e093196,
+    type: 2}
   gridPosition: {x: 0, y: 3}
   laneSwitchTime: 0.12
   playerID: 0
@@ -5092,6 +5103,7 @@ MonoBehaviour:
   isTargeting: 0
   targetMarble: {fileID: 0}
   isWinner: 0
+  winnerSize: 0
   timeRaceStart: 0
   timeStopRunning: 0
   sb: {fileID: 0}
