@@ -9,6 +9,7 @@ public class LoadData : MonoBehaviour {
 
     public GameObject ui_music_volume = null;
     public GameObject ui_effects_volume = null;
+    public GameObject ui_flashing_lights = null;
     public GameObject ui_ircNick = null;
     public GameObject ui_ircPass = null;
     public GameObject ui_ircChannel = null;
@@ -23,6 +24,7 @@ public class LoadData : MonoBehaviour {
 
         ui_music_volume.GetComponent<Slider>().normalizedValue = sd.musicVolume;
         ui_effects_volume.GetComponent<Slider>().normalizedValue = sd.effectsVolume;
+        ui_flashing_lights.GetComponent<Slider>().normalizedValue = sd.flashingLights;
 
         ui_ircNick.GetComponentInParent<InputField>().text = sd.ircNick;
         ui_ircNick.GetComponentInParent<InputField>().onValueChanged.AddListener(delegate { ircNickChangeCheck(); });
@@ -42,6 +44,10 @@ public class LoadData : MonoBehaviour {
 
     public void uiEffectsVolumeChangeCheck() {
         sd.effectsVolume = ui_effects_volume.GetComponent<Slider>().normalizedValue;
+    }
+
+    public void uiFlashingLightsCheck() {
+        sd.flashingLights = ui_flashing_lights.GetComponent<Slider>().normalizedValue;
     }
 
     public void ircNickChangeCheck() {

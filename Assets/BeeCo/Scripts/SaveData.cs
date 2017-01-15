@@ -24,6 +24,7 @@ public class SaveDatum {
     // Changes from the UI are not reflected in the God object, but via SetAudiolevels.SetMusicLevel()
     public float musicVolume = 1.0f;
     public float effectsVolume = 1.0f;
+    public float flashingLights = 1.0f;
 
     // Player Settings
     // 0 .. twitch, 1 .. AI, 2 .. human

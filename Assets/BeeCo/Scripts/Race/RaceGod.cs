@@ -188,6 +188,8 @@ public class RaceGod : MonoBehaviour {
         // @TODO: Announce Twitch Rules
         // twitch.SendMsg( "benis" );
 
+        policeLight.GetComponent<Animator>().SetFloat( "LightSpeed", theSave.flashingLights );
+
         var pid = 0;
         playersAlive = 0;
         var raceBirds = world.transform.Find( "BirdAnchors" ).gameObject.GetComponentsInChildren<RaceBird>();
