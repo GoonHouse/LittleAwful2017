@@ -6,16 +6,23 @@ public class RandomNoises : MonoBehaviour {
     public AudioSource audioSource;
 
     public bool playOnTime = false;
+    public bool forceUnique = false;
 
     public float minTimeToWait;
     public float maxTimeToWait;
 
     public List<AudioClip> soundsToPlay;
-    public int lastPlayedIndex;
+    public int lastPlayedIndex = -1;
     public float nextPlayTime;
 
     public void PlayAnySound() {
-        PlaySound( PickASound() );
+        var s = PickASound();
+        if( s >= 0 ) {
+            PlaySound( s );
+        } else {
+            Debug.LogWarning( "tried to play an empty noise" );
+        }
+        
     }
 
     void PlaySound( int index ) {
@@ -34,10 +41,16 @@ public class RandomNoises : MonoBehaviour {
     }
 
     int PickASound() {
-        int newSound = lastPlayedIndex;
-        while( newSound == lastPlayedIndex ) {
-            newSound = Random.Range( 0, soundsToPlay.Count );
+        int newSound = -1;
+        if( forceUnique ) {
+            newSound = lastPlayedIndex;
+            while( newSound == lastPlayedIndex ) {
+                newSound = Random.Range( 0, soundsToPlay.Count - 1 );
+            }
+        } else if( soundsToPlay.Count >= 1 ){
+            newSound = Random.Range( 0, soundsToPlay.Count - 1 );
         }
+        
         return newSound;
     }
 

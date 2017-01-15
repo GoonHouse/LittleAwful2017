@@ -35,10 +35,11 @@ public struct BirdStats {
     public int timesStoodStill; // X
     public int boostsUsed; // X 
     public float timeSpentRunning; // X
-    public float distanceTraveled; // how far you've gone -- winner gets the distance to the moon added
+    public float distanceTraveled; // how far you've gone -- winner gets the distance to the moon added // X
+    public int messagesReceived;
+
     public float garbageStrewn; // things hit * (1/7) * Random.value(2*3);
     public float damageCaused;
-    
     public float caloriesBurned;
 }
 
@@ -424,6 +425,7 @@ public class RaceGod : MonoBehaviour {
 
         // it's the cops
         policeLight.SetActive( true );
+        policeLight.GetComponent<RandomNoises>().PlayAnySound();
         var pt = policeLight.GetComponent<Tweener>();
         pt.SetTarget( GameObject.Find( "PoliceLightDestAnchor" ), timeForBirdsRelocate );
 

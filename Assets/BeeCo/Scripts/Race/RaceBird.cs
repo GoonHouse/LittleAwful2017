@@ -51,6 +51,8 @@ public class RaceBird : MonoBehaviour {
     public float timeRaceStart;
     public float timeStopRunning;
 
+    public SoundBoss sb;
+
     public BirdStats myStats = new BirdStats();
 
     public float cokeMultiplier = 0.33f;
@@ -58,6 +60,7 @@ public class RaceBird : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rg = God.main.GetComponent<RaceGod>();
+        sb = GetComponent<SoundBoss>();
 
         // find our head
         head = gameObject.transform.FindAllChildren( "Head" ).gameObject;
@@ -155,6 +158,9 @@ public class RaceBird : MonoBehaviour {
                 tw.SetTarget( closest, timeToSwoonce );
                 anims.SetBool( "MouthIsOpen", true );
                 tw.onDone += RetractHead;
+
+                sb.Play( "stretching" );
+
                 // head.transform.position = closest.transform.position;
             }
         }
@@ -171,6 +177,8 @@ public class RaceBird : MonoBehaviour {
             tw.onDone += EatCoke;
         }
 
+        sb.Play( "retracting" );
+
         isTargeting = false;
 
         tw.SetTarget( headStartPosition, timeToSwoonce );
@@ -180,15 +188,20 @@ public class RaceBird : MonoBehaviour {
         cokeMax += (int) targetMarble.value;
         cokeCurrent = cokeMax;
         // Debug.Log( gameObject.name + " is eating a coke: " + targetMarble.gameObject );
-        rg.marblesActive--;
         if( targetMarble && targetMarble.gameObject ) {
             Destroy( targetMarble.gameObject );
+            rg.marblesActive--;
+
+            // play eating noises
+            sb.Play( "eating" );
         }
         var tw = head.GetComponent<Tweener>();
         tw.onDone -= EatCoke;
     }
 
     public void TwitchMessage( string msg, string user ) {
+        myStats.messagesReceived++;
+        sb.Play( "chat_message" );
         twitchMessage = God.SpawnChild( objectSpeech, anchorSpeech, false );
         var text = twitchMessage.GetComponentInChildren<UnityEngine.UI.Text>();
         text.text = "<b>" + user + ":</b> " + msg;
@@ -226,10 +239,12 @@ public class RaceBird : MonoBehaviour {
     void InterpretBrainForRace() {
         if( brain.BrainLeft() ) {
             if( MoveIfPossible( 0, 1 ) ) {
+                sb.Play( "switch_lanes" );
                 myStats.timesLanesSwitched++;
             }
         } else if( brain.BrainRight() ) {
             if( MoveIfPossible( 0, -1 ) ) {
+                sb.Play( "switch_lanes" );
                 myStats.timesLanesSwitched++;
             }
         }
@@ -237,10 +252,12 @@ public class RaceBird : MonoBehaviour {
 
         if( brain.BrainGo() ) {
             if( CokeBoost() ) {
+                sb.Play( "coke_boost" );
                 myStats.cokeConsumed++;
             }
         } else if( brain.BrainStop() ) {
             if( MoveIfPossible( -1, 0 ) ) {
+                sb.Play( "stopped" );
                 myStats.timesStoodStill++;
             }
         }
@@ -340,15 +357,29 @@ public class RaceBird : MonoBehaviour {
         }
     }
 
+    public void FinalizeConditions() {
+        myStats.damageCaused = 0;
+        myStats.caloriesBurned = 133.0f * ( 1.0f / 5280.0f ); 
+
+        /*
+         * osteriches weigh 250 pounds on average,
+         * someone that weighs 250 pounds burns 133 calories per mile traveled
+         */
+
+        rg.stats.Add( myStats );
+        rg.playerPositions.Add( playerID );
+    }
+
     public void WinGame() {
         // woopie
         Debug.Log( gameObject.name + ": I won and everyone else is a fuck." );
 
         isWinner = true;
 
+        sb.Play( "win" );
+
         rg.winningPlayer = playerID;
-        rg.stats.Add( myStats );
-        rg.playerPositions.Add( playerID );
+        FinalizeConditions();
 
         var t = gameObject.GetComponent<Tweener>();
         t.SetTarget( GameObject.Find( "WinAnchor" ) );
@@ -359,15 +390,15 @@ public class RaceBird : MonoBehaviour {
 
         cokeCurrent = 0;
 
+        sb.Play( "busted" );
+
         var ba = myGUI.transform.Find( "BustedAnchor" ).gameObject;
 
         myStats.distanceTraveled += God.distanceToTheMoonInFeet;
 
         God.SpawnChild( objectBusted, ba );
 
-        // we're done so add our position to the list
-        rg.stats.Add( myStats );
-        rg.playerPositions.Add( playerID );
+        FinalizeConditions();
 
         var t = gameObject.GetComponent<Tweener>();
         t.SetTarget( GameObject.Find( "JailAnchor" ) );
@@ -433,12 +464,31 @@ public class RaceBird : MonoBehaviour {
         } else if( other.gameObject.tag == "ForceBack" ) {
             other.gameObject.tag = "Untagged";
             var rbs = other.gameObject.GetComponents<Rigidbody>();
+
+            // activate noise
+            sb.Play( "hit" );
+            var rn = other.gameObject.GetComponent<RandomNoises>();
+            if( rn ) {
+                rn.PlayAnySound();
+            } else {
+                Debug.LogWarning( other.gameObject.name + " did not have a RandomNoise to make noises with " );
+            }
+
             foreach( Rigidbody rb in rbs ) {
                 rb.constraints = RigidbodyConstraints.None;
                 rb.AddForce( Vector3.up * rg.hazardMoveSpeed * 10000.0f );
             }
             GetHit();
         } else if( other.gameObject.tag == "ForceForward" ) {
+
+            sb.Play( "coke_boost" );
+
+            var rn = other.gameObject.GetComponent<RandomNoises>();
+            if( rn ) {
+                rn.PlayAnySound();
+            } else {
+                Debug.LogWarning( other.gameObject.name + " did not have a RandomNoise to make noises with " );
+            }
             myStats.boostsUsed++;
             if( !MoveIfPossible( 1, 0 ) ) {
                 // we didn't get to go anywhere
@@ -446,6 +496,13 @@ public class RaceBird : MonoBehaviour {
         } else if( other.gameObject.tag == "CocainePickup" ) {
             var newCokeAmount = Mathf.Min( cokeMax, cokeCurrent + Mathf.CeilToInt( cokeMax * cokeMultiplier ) );
             var cokeGotten = newCokeAmount - cokeCurrent;
+
+            var rn = other.gameObject.GetComponent<RandomNoises>();
+            if( rn ) {
+                rn.PlayAnySound();
+            } else {
+                Debug.LogWarning( other.gameObject.name + " did not have a RandomNoise to make noises with " );
+            }
 
             myStats.cokeFromHeaven += cokeGotten;
 

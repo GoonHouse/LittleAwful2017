@@ -7,6 +7,7 @@ public class SpawnArea : MonoBehaviour {
     public float rateOfSpawn;
     public GameObject thingToSpawn;
     public float scaleRange = 2.0f;
+    public UnityEngine.Events.UnityEvent onSpawn;
 
     private float nextSpawn;
 
@@ -33,6 +34,9 @@ public class SpawnArea : MonoBehaviour {
         go.GetComponent<Rigidbody>().mass = 50.0f;
         if( randomRotation ) {
             go.transform.localRotation = Random.rotation;
+        }
+        if( onSpawn != null ) {
+            onSpawn.Invoke();
         }
         return go;
     }
