@@ -21,7 +21,8 @@ public class LoadData : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        var tsd = God.main.GetComponent<SaveData>();
+        tsd.LoadFile();
         sd = God.main.GetComponent<SaveData>().loadedSave;
         sd.playerUse [0] = 2; // Set player 1 to human
 

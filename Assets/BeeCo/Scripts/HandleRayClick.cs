@@ -42,8 +42,13 @@ public class HandleRayClick : MonoBehaviour {
 
     public void OnMouseUp() {
         if(this.IsActive()) {
-            if (target_state != "") {  
-                SceneManager.LoadScene(target_state);
+            if (target_state != "") {
+                var ts = God.main.GetComponent<SaveData>().loadedSave;
+                if( ts.showCutscene ) {
+                    SceneManager.LoadScene( "Cutscene" );
+                } else {
+                    SceneManager.LoadScene( target_state );
+                }
             }
             if(quit) {
                 Application.Quit();

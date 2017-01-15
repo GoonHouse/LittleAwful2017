@@ -133,7 +133,7 @@ public class SaveData : MonoBehaviour {
                 MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(data));
                 this.loadedSave = (SaveDatum)bf.Deserialize(ms);
             } else {
-                Debug.LogError("Could not load web file: " + filename);
+                // Debug.LogError("Could not load web file: " + filename);
                 return false;
             }
         } else {
@@ -142,7 +142,7 @@ public class SaveData : MonoBehaviour {
                 this.loadedSave = (SaveDatum)bf.Deserialize(file);
                 file.Close();
             } else {
-                Debug.LogError("Could not load file: " + filename);
+                // Debug.LogError("Could not load file: " + filename);
                 return false;
             }
         }
