@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4469263, g: 0.49678856, b: 0.5750879, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692576, g: 0.49678826, b: 0.57508695, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
+  isWinner: 0
 --- !u!114 &56449743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +373,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1939638436}
   m_RootOrder: 0
+--- !u!1 &85386391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 85386392}
+  - 65: {fileID: 85386394}
+  - 114: {fileID: 85386393}
+  m_Layer: 0
+  m_Name: CokeSpawnAnchor (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &85386392
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85386391}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.43, z: 0}
+  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1162708022}
+  m_RootOrder: 1
+--- !u!114 &85386393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85386391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3615afee0e738e944a917ae43ccc5854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldSpawn: 1
+  rateOfSpawn: 0.5
+  thingToSpawn: {fileID: 1000014189543136, guid: a3cca014f1c3ce7418fdd95985ffe6bb,
+    type: 2}
+  scaleRange: 2
+--- !u!65 &85386394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85386391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &90019206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,6 +1987,7 @@ MonoBehaviour:
   twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
+  isWinner: 0
 --- !u!114 &669633955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3433,6 +3493,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1018174163}
   m_RootOrder: 0
+--- !u!1 &1162708021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1162708022}
+  m_Layer: 0
+  m_Name: CokeSpawnAnchors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1162708022
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162708021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 2085445424}
+  - {fileID: 85386392}
+  m_Father: {fileID: 1535222068}
+  m_RootOrder: 8
 --- !u!1001 &1164896075
 Prefab:
   m_ObjectHideFlags: 0
@@ -3848,6 +3938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdbe47f59135d149a9f7052e39d35b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 1
 --- !u!114 &1217649349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3879,6 +3970,7 @@ MonoBehaviour:
   twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
+  isWinner: 0
 --- !u!114 &1217649350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4624,6 +4716,7 @@ MonoBehaviour:
   twitchMessage: {fileID: 0}
   isTargeting: 0
   targetMarble: {fileID: 0}
+  isWinner: 0
 --- !u!114 &1469574964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4830,8 +4923,8 @@ Transform:
   - {fileID: 1180379017}
   - {fileID: 904518173}
   - {fileID: 693685837}
-  - {fileID: 2085445424}
   - {fileID: 1667544805}
+  - {fileID: 1162708022}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &1594603237
@@ -5037,7 +5130,7 @@ Transform:
   - {fileID: 1479333609}
   - {fileID: 437478264}
   m_Father: {fileID: 1535222068}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1001 &1688966556
 Prefab:
   m_ObjectHideFlags: 0
@@ -7967,8 +8060,8 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 1535222068}
-  m_RootOrder: 7
+  m_Father: {fileID: 1162708022}
+  m_RootOrder: 0
 --- !u!65 &2085445425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7992,9 +8085,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3615afee0e738e944a917ae43ccc5854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldSpawn: 0
-  rateOfSpawn: 0
-  thingToSpawn: {fileID: 0}
+  shouldSpawn: 1
+  rateOfSpawn: 0.5
+  thingToSpawn: {fileID: 1000014189543136, guid: a3cca014f1c3ce7418fdd95985ffe6bb,
+    type: 2}
   scaleRange: 2
 --- !u!1 &2125157767
 GameObject:

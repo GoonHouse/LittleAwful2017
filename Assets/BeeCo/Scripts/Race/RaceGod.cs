@@ -69,8 +69,8 @@ public class RaceGod : MonoBehaviour {
     public GameObject policeLight;
     public Text hudTime;
     public GameObject cameraRaceAnchor;
-    public GameObject cokeSpawnAnchor;
-    public SpawnArea cokeSpawner;
+    public GameObject cokeSpawnAnchors;
+    public List<SpawnArea> cokeSpawners = new List<SpawnArea>();
 
     public float timeForBirdsRelocate = 3.0f;
 
@@ -152,8 +152,8 @@ public class RaceGod : MonoBehaviour {
         policeLight = world.transform.Find( "PoliceLight" ).gameObject;
         hudTime = GameObject.Find( "Canvas/TimeLabel/Time" ).GetComponent<Text>();
         cameraRaceAnchor = world.transform.Find( "CameraAnchors/CameraRaceAnchor" ).gameObject;
-        cokeSpawnAnchor = world.transform.Find( "CokeSpawnAnchor" ).gameObject;
-        cokeSpawner = cokeSpawnAnchor.GetComponent<SpawnArea>();
+        cokeSpawnAnchors = world.transform.Find( "CokeSpawnAnchors" ).gameObject;
+        cokeSpawners = new List<SpawnArea>( cokeSpawnAnchors.GetComponentsInChildren<SpawnArea>() );
 
         var guis = Camera.main.gameObject.GetComponentsInChildren<PlayerGUI>();
         foreach( PlayerGUI gui in guis ) {
@@ -265,7 +265,7 @@ public class RaceGod : MonoBehaviour {
 
                 hudTime.text = God.FormatTime(( timeHungryStart + timeHungryDuration ) - Time.time);
 
-                UpdateEnoughCoke();
+                // UpdateEnoughCoke();
 
                 // check if we are still hungry by time
                 if( Time.time > ( timeHungryStart + timeHungryDuration ) ) {
@@ -425,6 +425,10 @@ public class RaceGod : MonoBehaviour {
             playerID++;
         }
 
+        foreach( SpawnArea spa in cokeSpawners ) {
+            spa.shouldSpawn = false;
+        }
+
         // destroy all the coke
         var cokes = GameObject.FindObjectsOfType<Marble>();
         foreach( Marble coke in cokes ) {
@@ -484,7 +488,7 @@ public class RaceGod : MonoBehaviour {
     void UpdateEnoughCoke() {
         if( marblesActive < marblesMinActive && marblesRoundTotal > 0 && Time.time > ( timeLastSpawnedMarble + timeSpawnMarbleDelay ) ) {
             
-            var coke = cokeSpawner.SpawnA( cokeObject );
+            var coke = cokeSpawners[0].SpawnA( cokeObject );
             coke.name = "Coke #" + marblesRoundTotal;
             coke.transform.localRotation = Random.rotation;
 
