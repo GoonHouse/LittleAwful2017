@@ -8,10 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BeeCo/Scenes/Main.unity
   - enabled: 1
+    path: Assets/BeeCo/Scenes/Cutscene.unity
+  - enabled: 1
     path: Assets/BeeCo/Scenes/Race.unity
   - enabled: 1
+    path: Assets/BeeCo/Scenes/Moon.unity
+  - enabled: 0
     path: Assets/BeeCo/Scenes/Results.unity
   - enabled: 0
     path: Assets/BeeCo/Scenes/Hungry.unity
-  - enabled: 1
-    path: Assets/BeeCo/Scenes/Moon.unity

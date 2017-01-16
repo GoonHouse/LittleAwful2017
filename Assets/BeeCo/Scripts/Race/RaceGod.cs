@@ -118,9 +118,14 @@ public class RaceGod : MonoBehaviour {
 
     public List<BirdStats> stats = new List<BirdStats>();
 
+    public AudioClip musicCutscene;
+    public AudioClip musicRace;
+    public AudioClip musicMoon;
 
     public List<int> playerPositions = new List<int>();
     public int winningPlayer;
+
+    private AudioSource musicContainer;
 
     private string debugUser = "DickDaddy43";
     private List<string> debugMessages = new List<string>{
@@ -150,6 +155,7 @@ public class RaceGod : MonoBehaviour {
             world = GameObject.Find( "World" ).transform;
             motion = GameObject.Find( "Motion/Lanes" ).transform;
             worldSpawnTarget = GameObject.Find( "World/TileSpawns" );
+            musicContainer = GameObject.Find( "UI" ).GetComponent<AudioSource>();
 
             FindInstanceThings();
 
@@ -322,6 +328,10 @@ public class RaceGod : MonoBehaviour {
                 // check if we are still hungry by time
                 if( Time.time > ( timePreRaceStart + timePreRaceDuration ) ) {
                     // disable HUD text
+                    musicContainer.Stop();
+                    musicContainer.clip = musicRace;
+                    musicContainer.Play();
+
                     hudTime.text = "TO RUN!";
                     hudTime.transform.parent.GetComponent<Tweener>().SetTarget(
                         GameObject.Find( "TimeLabelAnchor" ),
@@ -393,6 +403,10 @@ public class RaceGod : MonoBehaviour {
                 var twitch = God.main.GetComponent<TwitchIRC>();
                 twitch.SendMsg( "Holy wow, player #" + (alivePlayers[0].playerID + 1) + " won! Great job, them!" );
             }
+
+            musicContainer.Stop();
+            musicContainer.clip = musicMoon;
+            musicContainer.Play();
 
             raceState = RaceState.PostRace;
         }
