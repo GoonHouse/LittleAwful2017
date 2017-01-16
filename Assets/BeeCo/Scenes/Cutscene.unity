@@ -403,7 +403,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 12800000, guid: 6922212173794794791add92e6707f5b, type: 3}
-    m_FontSize: 24
+    m_FontSize: 18
     m_FontStyle: 0
     m_Alignment: 7
     m_WordWrap: 0
@@ -420,8 +420,8 @@ MonoBehaviour:
   music: {fileID: 0}
   slides:
   - sub: "Kool White: You're late, BG Pea.\r\nBG Pea: Shut up. You know I have the
-      [coke].\r\nEarth Wind and Fire Grape: Quit your squawking. You got [coke]? I
-      need my fix.\r\nVillage Orange: Who picked this location?"
+      [coke].\r\nEW&F Grape: Quit your squawking. You got [coke]? I need my fix.\r\nVillage
+      Orange: Who picked this location?"
     sub_delay: 0
     voiceover: {fileID: 8300000, guid: 466e8a8058719f04ab0585950cbb1bb9, type: 3}
     override_voicever_length: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
     pan: 0
     music_volume: 0.1
   - sub: 'Kool White: I did.'
-    sub_delay: 12
+    sub_delay: 13
     voiceover: {fileID: 8300000, guid: 856ce958ad09e2643854e9915eaedd56, type: 3}
     override_voicever_length: 0
     backgrounds:
@@ -438,7 +438,7 @@ MonoBehaviour:
     pan: 4
     music_volume: 0
   - sub: 'Village Orange: This place is fucking awesome. Let''s trade [coke].'
-    sub_delay: 4
+    sub_delay: 5
     voiceover: {fileID: 8300000, guid: 3242ffbfc7e817c44b862e0d4ca0711d, type: 3}
     override_voicever_length: 0
     backgrounds:
@@ -454,10 +454,10 @@ MonoBehaviour:
     pan: 0
     music_volume: 0
   - sub: "Cheese it, it\u2019s the fuzz! Grab the [coke] with (W) and run!\\nDon\u2019t
-      fall behind, or the cops will catch you!\\nUse coke to go faster!\\nMove out
-      of the way of junk with (A) and (D),\\nand if any of those bird brains get in
-      the way, you can fall back with (S).\r\nKool White: It's a setup! The cops want
-      our [coke]!"
+      fall behind, or the cops will catch you!\\nUse the coke to go faster!\\nMove
+      out of the way of junk with (A) and (D),\\nand if any of those bird brains get
+      in the way,\\n you can fall back with (S).\r\nKool White: It's a setup! The
+      cops want our [coke]!"
     sub_delay: 0
     voiceover: {fileID: 8300000, guid: 6f462093c0d4c7f40baa5f6c99879a40, type: 3}
     override_voicever_length: 0
@@ -465,8 +465,7 @@ MonoBehaviour:
     - {fileID: 2800000, guid: ecbe7476c2d08a2499dc4ed4860ca5ba, type: 3}
     pan: 0
     music_volume: 0.1
-  - sub: 'Earth Wind and Fire Grape: The [coke]! Quick, get it before the cops get
-      here!'
+  - sub: 'EW&F Grape: The [coke]! Quick, get it before the cops get here!'
     sub_delay: 10
     voiceover: {fileID: 8300000, guid: b707d1b8a4490c34289d1757e32944cb, type: 3}
     override_voicever_length: 0
