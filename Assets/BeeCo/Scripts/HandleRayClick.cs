@@ -46,6 +46,7 @@ public class HandleRayClick : MonoBehaviour {
                 var ts = God.main.GetComponent<SaveData>().loadedSave;
                 if( ts.showCutscene ) {
                     SceneManager.LoadScene( "Cutscene" );
+                    ts.showCutscene = false;
                 } else {
                     SceneManager.LoadScene( target_state );
                 }
