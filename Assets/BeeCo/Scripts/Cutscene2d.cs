@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -160,6 +160,9 @@ public class Cutscene2d : MonoBehaviour {
         this.current_slide = 0;
         Debug.Log("End of cutscene.");
         if(this.onDoneScene != "") {
+            var sd = God.main.GetComponent<SaveData>();
+            sd.loadedSave.showCutscene = false;
+            sd.SaveFile();
             SceneManager.LoadScene(this.onDoneScene);
         }
     }

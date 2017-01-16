@@ -44,10 +44,11 @@ public class HandleRayClick : MonoBehaviour {
         if(this.IsActive()) {
             if (target_state != "") {
                 // HACKS HACKS HACKS HACKS 
-                var ts = God.main.GetComponent<SaveData>().loadedSave;
-                if( ts.showCutscene && target_state == "Race" ) {
+                var ts = God.main.GetComponent<SaveData>();
+                if( ts.loadedSave.showCutscene && target_state == "Race" ) {
+                    ts.loadedSave.showCutscene = false;
+                    ts.SaveFile();
                     SceneManager.LoadScene( "Cutscene" );
-                    ts.showCutscene = false;
                 } else {
                     SceneManager.LoadScene( target_state );
                 }
