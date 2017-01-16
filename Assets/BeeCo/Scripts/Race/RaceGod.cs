@@ -148,9 +148,54 @@ public class RaceGod : MonoBehaviour {
         SceneManager.sceneLoaded += TheLevelWasLoaded;
     }
 
+    void OhFuckMe() {
+        raceState = RaceState.NoRace;
+
+        grid = new Dictionary<string, GameObject>();
+        spawnedGrid = new Dictionary<string, GameObject>();
+        playersAlive = 0;
+        startTime = 0.0f;
+
+        intensity = 0.0f;
+        spawnWaveCount = 0;
+        hazardMoveSpeed = 1.0f;
+
+        players = new List<GameObject>();
+        twitchPlayers = new List<GameObject>();
+        playerGUIs = new List<GameObject>();
+
+        chatQueue = new List<ChatMessage>();
+
+        cokeSpawners = new List<SpawnArea>();
+
+        timePreRaceStart = 0.0f;
+
+        timePostRaceStart = 0.0f;
+
+        timeHungryStart = 0.0f;
+
+        timeRaceStart = 0.0f;
+
+        marblesTotal = 0;
+        marblesActive = 0;
+        marblesRoundTotal = 60;
+
+        timeLastSpawnedMarble = 0.0f;
+
+        ircCommands = new List<string>{ "eat", "left", "right", "go", "back", "stop" };
+
+        stats = new List<BirdStats>();
+        
+        playerPositions = new List<int>();
+        
+        winningPlayer = -1;
+    }
+
     void TheLevelWasLoaded(Scene scene, LoadSceneMode loadSceneMode) {
         ourScene = scene.name;
         if( scene.name == "Race" ) {
+            OhFuckMe();
+
             // shortcut transforms
             world = GameObject.Find( "World" ).transform;
             motion = GameObject.Find( "Motion/Lanes" ).transform;

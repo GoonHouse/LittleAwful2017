@@ -36,7 +36,10 @@ public class God : MonoBehaviour {
             CheckLock();
         }
         if( Input.GetKeyDown( KeyCode.F8 ) ) {
-            GetComponent<SaveData>().DeleteFile();
+            Debug.Log( "fuck you deleting your save lol" );
+            var sd = GetComponent<SaveData>();
+            sd.loadedSave = new SaveDatum();
+            sd.SaveFile();
         }
     }
 

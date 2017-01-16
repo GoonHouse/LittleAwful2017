@@ -10,6 +10,7 @@ public class HandleRayClick : MonoBehaviour {
 
     public string target_state = "";
     public bool quit = false;
+    public bool shouldDestroyUIForKicks = false;
     public GameObject toggle_panel = null;
     public GameObject [] disable_panels;
 
@@ -44,6 +45,10 @@ public class HandleRayClick : MonoBehaviour {
         if(this.IsActive()) {
             if (target_state != "") {
                 // HACKS HACKS HACKS HACKS 
+                if( shouldDestroyUIForKicks ) {
+                    Destroy( GameObject.Find( "UI" ) );
+                }
+
                 var ts = God.main.GetComponent<SaveData>();
                 if( ts.loadedSave.showCutscene && target_state == "Race" ) {
                     ts.loadedSave.showCutscene = false;
