@@ -21,6 +21,7 @@ public class LoadData : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         var tsd = God.main.GetComponent<SaveData>();
         tsd.LoadFile();
         sd = God.main.GetComponent<SaveData>().loadedSave;
@@ -51,6 +52,7 @@ public class LoadData : MonoBehaviour {
 
     public void uiMusicVolumeChangeCheck() {
         sd.musicVolume = ui_music_volume.GetComponent<Slider>().normalizedValue;
+        GameObject.Find("UI").GetComponent<PlayMusic>().forceVolume(sd.musicVolume);
     }
 
     public void uiEffectsVolumeChangeCheck() {

@@ -155,7 +155,7 @@ public class RaceGod : MonoBehaviour {
             world = GameObject.Find( "World" ).transform;
             motion = GameObject.Find( "Motion/Lanes" ).transform;
             worldSpawnTarget = GameObject.Find( "World/TileSpawns" );
-            musicContainer = GameObject.Find( "UI" ).GetComponent<AudioSource>();
+            //musicContainer = GameObject.Find( "UI" ).GetComponent<AudioSource>();
 
             FindInstanceThings();
 
@@ -335,9 +335,13 @@ public class RaceGod : MonoBehaviour {
                 // check if we are still hungry by time
                 if( Time.time > ( timePreRaceStart + timePreRaceDuration ) ) {
                     // disable HUD text
+
+                    /*
                     musicContainer.Stop();
                     musicContainer.clip = musicRace;
                     musicContainer.Play();
+                    */
+                    GameObject.Find("UI").GetComponent<PlayMusic>().Track("race");
 
                     hudTime.text = "TO RUN!";
                     hudTime.transform.parent.GetComponent<Tweener>().SetTarget(
@@ -411,9 +415,7 @@ public class RaceGod : MonoBehaviour {
                 twitch.SendMsg( "Holy wow, player #" + (alivePlayers[0].playerID + 1) + " won! Great job, them!" );
             }
 
-            musicContainer.Stop();
-            musicContainer.clip = musicMoon;
-            musicContainer.Play();
+            GameObject.Find("UI").GetComponent<PlayMusic>().Track("moon");
 
             raceState = RaceState.PostRace;
         }
