@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/BeeCo/Scenes/Splash.unity
+  - enabled: 1
     path: Assets/BeeCo/Scenes/Main.unity
   - enabled: 1
     path: Assets/BeeCo/Scenes/Cutscene.unity
