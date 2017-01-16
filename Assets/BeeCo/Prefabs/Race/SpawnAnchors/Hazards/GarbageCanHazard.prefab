@@ -544,10 +544,16 @@ MonoBehaviour:
   audioSource: {fileID: 82000013711302830}
   playOnTime: 0
   forceUnique: 0
+  randomPitch: 0
+  randomVolume: 0
+  minPitch: -3
+  maxPitch: 3
+  minVolume: 0.5
+  maxVolume: 1
   minTimeToWait: 0
   maxTimeToWait: 0
   soundsToPlay:
-  - {fileID: 8300000, guid: b5482e8b3effe3a45a38697abd771a2a, type: 3}
+  - {fileID: 8300000, guid: 16d40d8c32a8a7448afac31221449cfb, type: 3}
   lastPlayedIndex: -1
   nextPlayTime: 0
 --- !u!135 &135000010393886194
