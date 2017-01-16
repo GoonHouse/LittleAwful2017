@@ -48,7 +48,10 @@ public class HandleRayClick : MonoBehaviour {
                 if( shouldDestroyUIForKicks ) {
                     Destroy( GameObject.Find( "UI" ) );
                 }
-
+                var titles = GameObject.Find( "Titles" );
+                if( titles ) {
+                    Destroy( titles );
+                }
                 var ts = God.main.GetComponent<SaveData>();
                 if( ts.loadedSave.showCutscene && target_state == "Race" ) {
                     ts.loadedSave.showCutscene = false;
