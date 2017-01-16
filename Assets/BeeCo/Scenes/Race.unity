@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692576, g: 0.49678826, b: 0.57508695, a: 1}
+  m_IndirectSpecularColor: {r: 0.4469263, g: 0.49678856, b: 0.5750879, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1109,6 +1109,16 @@ Prefab:
       propertyPath: tween_location
       value: 
       objectReference: {fileID: 485900487}
+    - target: {fileID: 102000013530146050, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: m_Text
+      value: Player 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 102000013530146050, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: m_Color.rgba
+      value: 4289999060
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc011992804a7854cb364ec6f61e7344, type: 2}
   m_IsPrefabParent: 0
@@ -4099,6 +4109,16 @@ Prefab:
       propertyPath: tween_location
       value: 
       objectReference: {fileID: 1372504180}
+    - target: {fileID: 102000013530146050, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: m_Text
+      value: Player 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 102000013530146050, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279804374
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc011992804a7854cb364ec6f61e7344, type: 2}
   m_IsPrefabParent: 0
@@ -5107,6 +5127,16 @@ Prefab:
       propertyPath: player
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 102000013530146050, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: m_Text
+      value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 102000013530146050, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: m_Color.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc011992804a7854cb364ec6f61e7344, type: 2}
   m_IsPrefabParent: 0
@@ -5966,6 +5996,16 @@ Prefab:
       propertyPath: tween_location
       value: 
       objectReference: {fileID: 1508642762}
+    - target: {fileID: 102000013530146050, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: m_Text
+      value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 102000013530146050, guid: cc011992804a7854cb364ec6f61e7344,
+        type: 2}
+      propertyPath: m_Color.rgba
+      value: 4285968433
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc011992804a7854cb364ec6f61e7344, type: 2}
   m_IsPrefabParent: 0
