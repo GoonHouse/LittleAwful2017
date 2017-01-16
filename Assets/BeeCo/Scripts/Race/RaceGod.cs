@@ -449,7 +449,7 @@ public class RaceGod : MonoBehaviour {
             if( theSave.lastBirdToWin == alivePlayers[0].playerID ) {
                 theSave.lastBirdWinsConsecutive++;
             } else {
-                theSave.lastBirdWinsConsecutive = 0;
+                theSave.lastBirdWinsConsecutive = 1;
             }
             theSave.lastBirdToWin = alivePlayers[0].playerID;
 
