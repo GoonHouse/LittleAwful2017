@@ -13,6 +13,7 @@ public class Cutscene2d : MonoBehaviour {
     public float subtitleStylePadding = 32;
     private bool run = false;
     public string onDoneScene = "";
+    public AudioSource music = null;
 
     [System.Serializable]
     public struct slide {
@@ -23,6 +24,7 @@ public class Cutscene2d : MonoBehaviour {
         public int override_voicever_length;
         public Texture2D [] backgrounds;
         public direction pan;
+        public float music_volume;
     }
     [Header("Data")]
     public List<slide> slides = new List<slide>();
@@ -30,10 +32,14 @@ public class Cutscene2d : MonoBehaviour {
     private int current_slide;
     private AudioSource current_voiceover_source;
     private float dt;
+    private float music_init;
 
     // Use this for initialization
     void Start () {
-	    foreach( slide cslide in this.slides) {
+        music = GameObject.Find("UI").GetComponent<AudioSource>();
+        music_init = music.volume;
+
+        foreach ( slide cslide in this.slides) {
             foreach( Texture2D background in cslide.backgrounds) {
                 if( background.format != TextureFormat.RGB24) {
                     Debug.LogError("Texture2d `"+background.name+"` is not type `"+ TextureFormat.RGB24.ToString() + "` (Is currently `"+ background.format + "` - Change \"Texture Type\" to \"Sprite (2D and UI)\")");
@@ -99,6 +105,7 @@ public class Cutscene2d : MonoBehaviour {
                 this.current_slide++;
                 if (this.current_slide >= this.slides.Count) {
                     this.Stop();
+                    music.volume = music_init;
                 } else {
                     this.cleanupCurrentSlide();
                     this.initCurrentSlide();
@@ -132,6 +139,8 @@ public class Cutscene2d : MonoBehaviour {
     }
 
     private void initCurrentSlide() {
+        music.volume = this.getCurrentSlide().music_volume;
+        //Debug.Log("Setting volume to: " + music.volume);
         this.dt = 0;
         if (this.getCurrentSlide().voiceover != null) {
             this.current_voiceover_source = gameObject.AddComponent<AudioSource>();

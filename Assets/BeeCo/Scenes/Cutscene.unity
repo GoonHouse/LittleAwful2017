@@ -417,6 +417,7 @@ MonoBehaviour:
     m_StretchHeight: 0
   subtitleStylePadding: 32
   onDoneScene: Race
+  music: {fileID: 0}
   slides:
   - sub: "Kool White: You're late, BG Pea.\r\nBG Pea: Shut up. You know I have the
       [coke].\r\nEarth Wind and Fire Grape: Quit your squawking. You got [coke]? I
@@ -427,6 +428,7 @@ MonoBehaviour:
     backgrounds:
     - {fileID: 2800000, guid: 8c1f00855087eee4487d6aae083e5f40, type: 3}
     pan: 0
+    music_volume: 0.1
   - sub: 'Kool White: I did.'
     sub_delay: 12
     voiceover: {fileID: 8300000, guid: 856ce958ad09e2643854e9915eaedd56, type: 3}
@@ -434,6 +436,7 @@ MonoBehaviour:
     backgrounds:
     - {fileID: 2800000, guid: f54cb9f2a1326f84991d58f282e327fc, type: 3}
     pan: 4
+    music_volume: 0
   - sub: 'Village Orange: This place is fucking awesome. Let''s trade [coke].'
     sub_delay: 4
     voiceover: {fileID: 8300000, guid: 3242ffbfc7e817c44b862e0d4ca0711d, type: 3}
@@ -441,6 +444,7 @@ MonoBehaviour:
     backgrounds:
     - {fileID: 2800000, guid: 605c27b546c5bd148b58a2e0b6a01d7b, type: 3}
     pan: 3
+    music_volume: 0
   - sub: "[Phone Rings\r]"
     sub_delay: 0
     voiceover: {fileID: 8300000, guid: 59d9e1df8c054f646aae419aacbb6cc3, type: 3}
@@ -448,6 +452,7 @@ MonoBehaviour:
     backgrounds:
     - {fileID: 2800000, guid: 14be54953219f1d49b1c8b16f573871c, type: 3}
     pan: 0
+    music_volume: 0
   - sub: "Cheese it, it\u2019s the fuzz! Grab the [coke] with (W) and run!\\nDon\u2019t
       fall behind, or the cops will catch you!\\nUse coke to go faster!\\nMove out
       of the way of junk with (A) and (D),\\nand if any of those bird brains get in
@@ -459,6 +464,7 @@ MonoBehaviour:
     backgrounds:
     - {fileID: 2800000, guid: ecbe7476c2d08a2499dc4ed4860ca5ba, type: 3}
     pan: 0
+    music_volume: 0.1
   - sub: 'Earth Wind and Fire Grape: The [coke]! Quick, get it before the cops get
       here!'
     sub_delay: 10
@@ -467,6 +473,7 @@ MonoBehaviour:
     backgrounds:
     - {fileID: 2800000, guid: fe9a520cf742fa04c9daa413d563266a, type: 3}
     pan: 0
+    music_volume: 0.1
   - sub: 
     sub_delay: 0
     voiceover: {fileID: 8300000, guid: 2ae71d10392a49c4c952fd415c8fa71a, type: 3}
@@ -474,3 +481,4 @@ MonoBehaviour:
     backgrounds:
     - {fileID: 2800000, guid: 73bca7c6eabc01b4eab40ece5af59cea, type: 3}
     pan: 0
+    music_volume: 0.1
