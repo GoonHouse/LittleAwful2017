@@ -7,6 +7,14 @@ public class RandomNoises : MonoBehaviour {
 
     public bool playOnTime = false;
     public bool forceUnique = false;
+    public bool randomPitch = true;
+    public bool randomVolume = true;
+
+    public float minPitch = -3.0f;
+    public float maxPitch = 3.0f;
+
+    public float minVolume = 0.5f;
+    public float maxVolume = 1.0f;
 
     public float minTimeToWait;
     public float maxTimeToWait;
@@ -27,6 +35,14 @@ public class RandomNoises : MonoBehaviour {
 
     void PlaySound( int index ) {
         audioSource.Stop();
+        if( randomPitch ) {
+            audioSource.pitch = Random.Range( minPitch, maxPitch );
+        }
+
+        if( randomVolume ) {
+            audioSource.volume = Random.Range( minVolume, maxVolume );
+        }
+
         audioSource.clip = soundsToPlay[index];
         audioSource.Play();
     }
