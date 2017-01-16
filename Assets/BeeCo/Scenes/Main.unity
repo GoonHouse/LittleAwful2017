@@ -5230,7 +5230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460726755}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -108.47598, y: 167.32872, z: -453.77518}
+  m_LocalPosition: {x: -108.476, y: 167.32872, z: -453.77518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -19666,12 +19666,22 @@ Prefab:
     - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
         type: 2}
       propertyPath: loadedSave.playerUse.Array.data[3]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
         type: 2}
       propertyPath: loadedSave.showCutscene
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
+        type: 2}
+      propertyPath: loadedSave.playerUse.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010560708468, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
+        type: 2}
+      propertyPath: loadedSave.playerUse.Array.data[2]
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec27c128e6bd2344a86e06f509d8ec1, type: 2}
