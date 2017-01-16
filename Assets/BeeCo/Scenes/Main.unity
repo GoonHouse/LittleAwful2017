@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44624394, g: 0.49600875, b: 0.5746424, a: 1}
+  m_IndirectSpecularColor: {r: 0.44624454, g: 0.4960094, b: 0.57464296, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5428,6 +5428,7 @@ MonoBehaviour:
   click_mat: {fileID: 2100000, guid: bb04db21e95863d44900c52c4f2408b9, type: 2}
   target_state: 
   quit: 0
+  shouldDestroyUIForKicks: 0
   toggle_panel: {fileID: 226465297}
   disable_panels:
   - {fileID: 226465297}
@@ -9881,6 +9882,7 @@ MonoBehaviour:
   click_mat: {fileID: 2100000, guid: bb04db21e95863d44900c52c4f2408b9, type: 2}
   target_state: Race
   quit: 0
+  shouldDestroyUIForKicks: 0
   toggle_panel: {fileID: 0}
   disable_panels:
   - {fileID: 226465297}
@@ -11324,6 +11326,7 @@ MonoBehaviour:
   click_mat: {fileID: 2100000, guid: bb04db21e95863d44900c52c4f2408b9, type: 2}
   target_state: DoDrugs
   quit: 0
+  shouldDestroyUIForKicks: 0
   toggle_panel: {fileID: 0}
   disable_panels:
   - {fileID: 226465297}
@@ -19682,6 +19685,11 @@ Prefab:
         type: 2}
       propertyPath: loadedSave.playerUse.Array.data[2]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013307476828, guid: 2ec27c128e6bd2344a86e06f509d8ec1,
+        type: 2}
+      propertyPath: timeHungryDuration
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec27c128e6bd2344a86e06f509d8ec1, type: 2}
