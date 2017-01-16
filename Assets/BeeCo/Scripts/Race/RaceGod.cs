@@ -277,6 +277,13 @@ public class RaceGod : MonoBehaviour {
         }
         UpdateTwitchChat();
 
+        if( Input.GetKeyDown( KeyCode.G ) ) {
+            var p = players[Random.Range( 0, players.Count - 1 )];
+            var rb = p.GetComponent<RaceBird>();
+            if( rb.alive && !rb.isWinner ) {
+                rb.Arrested();
+            }
+        }
         if( Input.GetKeyDown( KeyCode.Q ) ) {
             var msg = debugMessages[Random.Range( 0, debugMessages.Count - 1 )];
             MessageHandler( msg, debugUser );
