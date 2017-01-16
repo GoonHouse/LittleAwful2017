@@ -45,7 +45,7 @@ public class StartOptions : MonoBehaviour {
 		//To change fade time, change length of animation "FadeToColor"
 		if (changeMusicOnStart) 
 		{
-			playMusic.FadeDown(fadeColorAnimationClip.length);
+			//playMusic.FadeDown(fadeColorAnimationClip.length);
 		}
 
 		//If changeScenes is true, start fading and change scenes halfway through animation when screen is blocked by FadeImage
@@ -73,7 +73,7 @@ public class StartOptions : MonoBehaviour {
 		//if changeMusicOnStart is true, call the PlayLevelMusic function of playMusic
 		if (changeMusicOnStart)
 		{
-			playMusic.PlayLevelMusic ();
+			//playMusic.PlayLevelMusic ();
 		}	
 	}
 
@@ -118,8 +118,8 @@ public class StartOptions : MonoBehaviour {
 	public void PlayNewMusic()
 	{
 		//Fade up music nearly instantly without a click 
-		playMusic.FadeUp (fastFadeIn);
+		//playMusic.FadeUp (fastFadeIn);
 		//Play music clip assigned to mainMusic in PlayMusic script
-		playMusic.PlaySelectedMusic (1);
+		//playMusic.PlaySelectedMusic (1);
 	}
 }

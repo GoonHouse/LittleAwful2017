@@ -5,76 +5,67 @@ using UnityEngine.SceneManagement;
 
 public class PlayMusic : MonoBehaviour {
 
+    [System.Serializable]
+    public struct MusicClip {
+        public string name;
+        public AudioClip music;
+    }
 
-	public AudioClip titleMusic;					//Assign Audioclip for title music loop
-	public AudioClip mainMusic;						//Assign Audioclip for main 
-	public AudioMixerSnapshot volumeDown;			//Reference to Audio mixer snapshot in which the master volume of main mixer is turned down
-	public AudioMixerSnapshot volumeUp;				//Reference to Audio mixer snapshot in which the master volume of main mixer is turned up
+    public MusicClip [] MusicClips;
 
+    private AudioSource current_from;
+    private AudioSource current_to;
 
-	private AudioSource musicSource;				//Reference to the AudioSource which plays music
-	private float resetTime = .01f;					//Very short time used to fade in near instantly without a click
+    private bool crossfade;
+    private float crossfade_t = 1;
+    private float crossfade_dt = 0;
+    private float crossfade_volume_from = 0;
+    private float crossfade_volume_to = 0;
 
+    public void Start() {
+    }
 
-	void Awake () 
-	{
-		//Get a component reference to the AudioSource attached to the UI game object
-		musicSource = GetComponent<AudioSource> ();
-		//Call the PlayLevelMusic function to start playing music
-	}
+    public void Track(string track) {
+        Debug.Log("Starting track " + track);
+        foreach(MusicClip mc in MusicClips) {
+            if(mc.name == track) {
+                if(current_to == null) {
+                    current_to = gameObject.AddComponent<AudioSource>();
+                }
+                if(current_from == null) {
+                    current_from = gameObject.AddComponent<AudioSource>();
+                }
+                Debug.Log("Found track, crossfading to "+track);
+                current_from.clip = current_to.clip;
+                crossfade_volume_from = God.main.GetComponent<SaveData>().loadedSave.musicVolume;
+                current_to.clip = mc.music;
+                crossfade_volume_to = God.main.GetComponent<SaveData>().loadedSave.musicVolume;
 
+                current_to.Play();
 
-	public void PlayLevelMusic()
-	{
-		//This switch looks at the last loadedLevel number using the scene index in build settings to decide which music clip to play.
-		switch (SceneManager.GetActiveScene().buildIndex)
-		{
-			//If scene index is 0 (usually title scene) assign the clip titleMusic to musicSource
-			case 0:
-				musicSource.clip = titleMusic;
-				break;
-			//If scene index is 1 (usually main scene) assign the clip mainMusic to musicSource
-			case 1:
-				musicSource.clip = mainMusic;
-				break;
-		}
-		//Fade up the volume very quickly, over resetTime seconds (.01 by default)
-		FadeUp (resetTime);
-		//Play the assigned music clip in musicSource
-		musicSource.Play ();
-	}
-	
-	//Used if running the game in a single scene, takes an integer music source allowing you to choose a clip by number and play.
-	public void PlaySelectedMusic(int musicChoice)
-	{
+                crossfade = true;
+                crossfade_dt = 0;
+                return;
+            }
+        }
+        Debug.Log("No such track `"+track+"`");
+    }
 
-		//This switch looks at the integer parameter musicChoice to decide which music clip to play.
-		switch (musicChoice) 
-		{
-		//if musicChoice is 0 assigns titleMusic to audio source
-		case 0:
-			musicSource.clip = titleMusic;
-			break;
-			//if musicChoice is 1 assigns mainMusic to audio source
-		case 1:
-			musicSource.clip = mainMusic;
-			break;
-		}
-		//Play the selected clip
-		musicSource.Play ();
-	}
+    public void forceVolume(float val) {
+        current_to.volume = val;
+    }
 
-	//Call this function to very quickly fade up the volume of master mixer
-	public void FadeUp(float fadeTime)
-	{
-		//call the TransitionTo function of the audioMixerSnapshot volumeUp;
-		volumeUp.TransitionTo (fadeTime);
-	}
+    public void Update() {
+        if (crossfade) {
+            crossfade_dt = Mathf.Min(1, crossfade_dt + Time.deltaTime);
+            current_from.volume = crossfade_volume_from * (1 - crossfade_dt) / crossfade_t;
+            current_to.volume = crossfade_volume_to * crossfade_dt / crossfade_t;
 
-	//Call this function to fade the volume to silence over the length of fadeTime
-	public void FadeDown(float fadeTime)
-	{
-		//call the TransitionTo function of the audioMixerSnapshot volumeDown;
-		volumeDown.TransitionTo (fadeTime);
-	}
+            if(current_from.volume <= 0) {
+                current_from.Stop();
+                crossfade = false;
+            }
+        }
+    }
+
 }
