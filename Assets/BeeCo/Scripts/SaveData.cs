@@ -107,6 +107,10 @@ public class SaveData : MonoBehaviour {
         }
     }
 
+    public void DeleteFile() {
+        DeleteFile( defaultSaveName );
+    }
+
     public void DeleteFile(string filename) {
         if (Application.isWebPlayer) {
             if (PlayerPrefs.HasKey(filename + ".save")) {

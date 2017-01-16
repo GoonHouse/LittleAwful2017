@@ -35,6 +35,9 @@ public class God : MonoBehaviour {
             doLock = !doLock;
             CheckLock();
         }
+        if( Input.GetKeyDown( KeyCode.F8 ) ) {
+            GetComponent<SaveData>().DeleteFile();
+        }
     }
 
     public static void SetClipboard(string text) {
