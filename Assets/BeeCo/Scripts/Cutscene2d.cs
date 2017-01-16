@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -10,6 +10,8 @@ public class Cutscene2d : MonoBehaviour {
     [Header("Global Cutscene Variables")]
     public bool debugInspectorRun = false;
     public GUIStyle subtitleStyle;
+    public GUIStyle subtitleDropshadowStyle;
+    public float subtitleDropshadowOffset = 1.0f;
     public float subtitleStylePadding = 32;
     private bool run = false;
     public string onDoneScene = "";
@@ -37,7 +39,9 @@ public class Cutscene2d : MonoBehaviour {
     // Use this for initialization
     void Start () {
         music = GameObject.Find("UI").GetComponent<AudioSource>();
-        music_init = music.volume;
+        if(music) {
+            music_init = music.volume;
+        }
 
         foreach ( slide cslide in this.slides) {
             foreach( Texture2D background in cslide.backgrounds) {
@@ -85,8 +89,14 @@ public class Cutscene2d : MonoBehaviour {
             if (this.dt > this.getCurrentSlide().sub_delay) {
                 GUI.Label(
                     new Rect(
+                        subtitleStylePadding + subtitleDropshadowOffset, subtitleStylePadding + subtitleDropshadowOffset,
+                        Screen.width - subtitleStylePadding * 2 + subtitleDropshadowOffset, Screen.height - subtitleStylePadding * 2 + subtitleDropshadowOffset),
+                    this.getCurrentSlide().sub.Replace("\\n", "\n"), this.subtitleDropshadowStyle);
+
+                GUI.Label(
+                    new Rect(
                         subtitleStylePadding, subtitleStylePadding,
-                        Screen.width-subtitleStylePadding*2, Screen.height-subtitleStylePadding*2),
+                        Screen.width - subtitleStylePadding * 2, Screen.height - subtitleStylePadding * 2),
                     this.getCurrentSlide().sub.Replace("\\n", "\n"), this.subtitleStyle);
             }
         }
@@ -139,7 +149,9 @@ public class Cutscene2d : MonoBehaviour {
     }
 
     private void initCurrentSlide() {
-        music.volume = this.getCurrentSlide().music_volume;
+        if(music) {
+            music.volume = this.getCurrentSlide().music_volume;
+        }
         //Debug.Log("Setting volume to: " + music.volume);
         this.dt = 0;
         if (this.getCurrentSlide().voiceover != null) {
