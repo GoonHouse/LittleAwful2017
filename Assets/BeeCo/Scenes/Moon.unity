@@ -2431,6 +2431,7 @@ MonoBehaviour:
   click_mat: {fileID: 2100000, guid: bb04db21e95863d44900c52c4f2408b9, type: 2}
   target_state: Main
   quit: 0
+  shouldDestroyUIForKicks: 1
   toggle_panel: {fileID: 0}
   disable_panels: []
 --- !u!65 &1867815788
