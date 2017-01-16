@@ -1530,10 +1530,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerText:
-  - {fileID: 256751195}
-  - {fileID: 1668972716}
-  - {fileID: 183633208}
   - {fileID: 1470634808}
+  - {fileID: 183633208}
+  - {fileID: 1668972716}
+  - {fileID: 256751195}
   positions:
   - Last Place ...
   - Third Place!
