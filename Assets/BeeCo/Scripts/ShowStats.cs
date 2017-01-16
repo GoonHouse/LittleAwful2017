@@ -36,9 +36,7 @@ public class ShowStats : MonoBehaviour {
             pt.text += "Collisions: " + ps [i].thingsCollidedWith + "\n";
             pt.text += "Switches: " + ps [i].timesLanesSwitched + "\n";
             pt.text += "Running: " + God.FormatTime(ps [i].timeSpentRunning) + "\n";
-            // This doesn't seem like it works.
-            // If you fix that bug, please uncomment this line
-            //pt.text += "Standing: " + God.FormatTime(ps [i].timesStoodStill) + "\n";
+            pt.text += "Standing: " + God.FormatTime(ps [i].timesStoodStill) + "\n";
 
         }
 
