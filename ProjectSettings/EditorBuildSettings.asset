@@ -13,6 +13,8 @@ EditorBuildSettings:
     path: Assets/BeeCo/Scenes/Race.unity
   - enabled: 1
     path: Assets/BeeCo/Scenes/Moon.unity
+  - enabled: 1
+    path: Assets/BeeCo/Scenes/DoDrugs.unity
   - enabled: 0
     path: Assets/BeeCo/Scenes/Results.unity
   - enabled: 0
