@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Cutscene2d : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class Cutscene2d : MonoBehaviour {
     public GUIStyle subtitleStyle;
     public float subtitleStylePadding = 32;
     private bool run = false;
+    public string onDoneScene = "";
 
     [System.Serializable]
     public struct slide {
@@ -148,6 +150,9 @@ public class Cutscene2d : MonoBehaviour {
         this.cleanupCurrentSlide();
         this.current_slide = 0;
         Debug.Log("End of cutscene.");
+        if(this.onDoneScene != "") {
+            SceneManager.LoadScene(this.onDoneScene);
+        }
     }
 
 }
