@@ -175,6 +175,7 @@ public class Cutscene2d : MonoBehaviour {
             var sd = God.main.GetComponent<SaveData>();
             sd.loadedSave.showCutscene = false;
             sd.SaveFile();
+            GameObject.Find("UI").GetComponent<PlayMusic>().Track("cutscene");
             SceneManager.LoadScene(this.onDoneScene);
         }
     }
