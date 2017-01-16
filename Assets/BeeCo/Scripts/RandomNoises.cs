@@ -7,8 +7,8 @@ public class RandomNoises : MonoBehaviour {
 
     public bool playOnTime = false;
     public bool forceUnique = false;
-    public bool randomPitch = true;
-    public bool randomVolume = true;
+    public bool randomPitch = false;
+    public bool randomVolume = false;
 
     public float minPitch = -3.0f;
     public float maxPitch = 3.0f;

@@ -6,6 +6,10 @@ using System.Collections.Generic;
 public struct SoundList {
     public string name;
     public List<AudioClip> clips;
+    public bool randomPitch;
+    public bool randomVolume; 
+    public Vector2 pitchExtents;
+    public Vector2 volumeExtents;
 }
 
 public class SoundBoss : MonoBehaviour {
@@ -23,6 +27,13 @@ public class SoundBoss : MonoBehaviour {
             var rn = gameObject.AddComponent<RandomNoises>();
             rn.soundsToPlay = sl.clips;
             rn.audioSource = aus;
+
+            rn.randomPitch = sl.randomPitch;
+            rn.randomVolume = sl.randomVolume;
+            rn.minPitch = sl.pitchExtents.x;
+            rn.maxPitch = sl.pitchExtents.y;
+            rn.minVolume = sl.volumeExtents.x;
+            rn.maxVolume = sl.volumeExtents.y;
 
             noiseLookup[sl.name] = rn;
         }

@@ -285,33 +285,73 @@ MonoBehaviour:
   - name: stretching
     clips:
     - {fileID: 8300000, guid: 1d845ffee9545b24ab37705f80d2a3b5, type: 3}
+    randomPitch: 1
+    randomVolume: 1
+    pitchExtents: {x: -3, y: 3}
+    volumeExtents: {x: 0.5, y: 1}
   - name: retracting
     clips:
     - {fileID: 8300000, guid: 2e2e6a0a308f37f4f988c609ce8db4ed, type: 3}
+    randomPitch: 1
+    randomVolume: 1
+    pitchExtents: {x: -3, y: 3}
+    volumeExtents: {x: 0.5, y: 1}
   - name: eating
     clips:
     - {fileID: 8300000, guid: d242c9b5ec373ba47b1a1b664c0fa7c3, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: coke_boost
     clips:
     - {fileID: 8300000, guid: fb4fea8480fc80349a8e775a847a9dc5, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: hit
     clips:
     - {fileID: 8300000, guid: b5482e8b3effe3a45a38697abd771a2a, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: win
     clips:
     - {fileID: 8300000, guid: 1d15ca1cb509ec34da157eae22571f5a, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: busted
     clips:
     - {fileID: 8300000, guid: 86e28a42a2be641488674b8cb16e6afc, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: switch_lanes
     clips:
     - {fileID: 8300000, guid: 19b5f6a8f1f07fa4fb45bd52e6d265bd, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: stopped
     clips:
     - {fileID: 8300000, guid: 21a8d584d3ace9f4dae8b453bfdf2b00, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: chat_message
     clips:
     - {fileID: 8300000, guid: 6448152ecdc7d2a469ab6a7f0cfa9be5, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
 --- !u!54 &56449745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2231,33 +2271,73 @@ MonoBehaviour:
   - name: stretching
     clips:
     - {fileID: 8300000, guid: 1d845ffee9545b24ab37705f80d2a3b5, type: 3}
+    randomPitch: 1
+    randomVolume: 1
+    pitchExtents: {x: -3, y: 3}
+    volumeExtents: {x: 0.5, y: 1}
   - name: retracting
     clips:
     - {fileID: 8300000, guid: 2e2e6a0a308f37f4f988c609ce8db4ed, type: 3}
+    randomPitch: 1
+    randomVolume: 1
+    pitchExtents: {x: -3, y: 3}
+    volumeExtents: {x: 0.5, y: 1}
   - name: eating
     clips:
     - {fileID: 8300000, guid: d242c9b5ec373ba47b1a1b664c0fa7c3, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: coke_boost
     clips:
     - {fileID: 8300000, guid: fb4fea8480fc80349a8e775a847a9dc5, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: hit
     clips:
     - {fileID: 8300000, guid: b5482e8b3effe3a45a38697abd771a2a, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: win
     clips:
     - {fileID: 8300000, guid: 1d15ca1cb509ec34da157eae22571f5a, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: busted
     clips:
     - {fileID: 8300000, guid: 86e28a42a2be641488674b8cb16e6afc, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: switch_lanes
     clips:
     - {fileID: 8300000, guid: 19b5f6a8f1f07fa4fb45bd52e6d265bd, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: stopped
     clips:
     - {fileID: 8300000, guid: 21a8d584d3ace9f4dae8b453bfdf2b00, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: chat_message
     clips:
     - {fileID: 8300000, guid: 6448152ecdc7d2a469ab6a7f0cfa9be5, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
 --- !u!54 &669633957
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4361,33 +4441,73 @@ MonoBehaviour:
   - name: stretching
     clips:
     - {fileID: 8300000, guid: 1d845ffee9545b24ab37705f80d2a3b5, type: 3}
+    randomPitch: 1
+    randomVolume: 1
+    pitchExtents: {x: -3, y: 3}
+    volumeExtents: {x: 0.5, y: 1}
   - name: retracting
     clips:
     - {fileID: 8300000, guid: 2e2e6a0a308f37f4f988c609ce8db4ed, type: 3}
+    randomPitch: 1
+    randomVolume: 1
+    pitchExtents: {x: -3, y: 3}
+    volumeExtents: {x: 0.5, y: 1}
   - name: eating
     clips:
     - {fileID: 8300000, guid: d242c9b5ec373ba47b1a1b664c0fa7c3, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: coke_boost
     clips:
     - {fileID: 8300000, guid: fb4fea8480fc80349a8e775a847a9dc5, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: hit
     clips:
     - {fileID: 8300000, guid: b5482e8b3effe3a45a38697abd771a2a, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: win
     clips:
     - {fileID: 8300000, guid: 1d15ca1cb509ec34da157eae22571f5a, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: busted
     clips:
     - {fileID: 8300000, guid: 86e28a42a2be641488674b8cb16e6afc, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: switch_lanes
     clips:
     - {fileID: 8300000, guid: 19b5f6a8f1f07fa4fb45bd52e6d265bd, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: stopped
     clips:
     - {fileID: 8300000, guid: 21a8d584d3ace9f4dae8b453bfdf2b00, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: chat_message
     clips:
     - {fileID: 8300000, guid: 6448152ecdc7d2a469ab6a7f0cfa9be5, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
 --- !u!54 &1217649352
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5171,33 +5291,73 @@ MonoBehaviour:
   - name: stretching
     clips:
     - {fileID: 8300000, guid: 1d845ffee9545b24ab37705f80d2a3b5, type: 3}
+    randomPitch: 1
+    randomVolume: 1
+    pitchExtents: {x: -3, y: 3}
+    volumeExtents: {x: 0.5, y: 1}
   - name: retracting
     clips:
     - {fileID: 8300000, guid: 2e2e6a0a308f37f4f988c609ce8db4ed, type: 3}
+    randomPitch: 1
+    randomVolume: 1
+    pitchExtents: {x: -3, y: 3}
+    volumeExtents: {x: 0.5, y: 1}
   - name: eating
     clips:
     - {fileID: 8300000, guid: d242c9b5ec373ba47b1a1b664c0fa7c3, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: coke_boost
     clips:
     - {fileID: 8300000, guid: fb4fea8480fc80349a8e775a847a9dc5, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: hit
     clips:
     - {fileID: 8300000, guid: b5482e8b3effe3a45a38697abd771a2a, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: win
     clips:
     - {fileID: 8300000, guid: 1d15ca1cb509ec34da157eae22571f5a, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: busted
     clips:
     - {fileID: 8300000, guid: 86e28a42a2be641488674b8cb16e6afc, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: switch_lanes
     clips:
     - {fileID: 8300000, guid: 19b5f6a8f1f07fa4fb45bd52e6d265bd, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: stopped
     clips:
     - {fileID: 8300000, guid: 21a8d584d3ace9f4dae8b453bfdf2b00, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
   - name: chat_message
     clips:
     - {fileID: 8300000, guid: 6448152ecdc7d2a469ab6a7f0cfa9be5, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
 --- !u!54 &1469574966
 Rigidbody:
   m_ObjectHideFlags: 0

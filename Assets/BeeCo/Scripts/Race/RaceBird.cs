@@ -366,8 +366,9 @@ public class RaceBird : MonoBehaviour {
     }
 
     public void FinalizeConditions() {
-        myStats.damageCaused = 0;
-        myStats.caloriesBurned = 133.0f * ( 1.0f / 5280.0f ); 
+        myStats.damageCaused = myStats.thingsCollidedWith * Random.Range(300, 420);
+        myStats.caloriesBurned = 133.0f * myStats.distanceTraveled;
+        myStats.distanceTraveled /= 5280.0f;
 
         /*
          * osteriches weigh 250 pounds on average,
@@ -387,6 +388,8 @@ public class RaceBird : MonoBehaviour {
         sb.Play( "win" );
 
         rg.winningPlayer = playerID;
+        myStats.distanceTraveled += God.distanceToTheMoonInFeet;
+
         FinalizeConditions();
 
         var t = gameObject.GetComponent<Tweener>();
@@ -401,8 +404,6 @@ public class RaceBird : MonoBehaviour {
         sb.Play( "busted" );
 
         var ba = myGUI.transform.Find( "BustedAnchor" ).gameObject;
-
-        myStats.distanceTraveled += God.distanceToTheMoonInFeet;
 
         God.SpawnChild( objectBusted, ba );
 
