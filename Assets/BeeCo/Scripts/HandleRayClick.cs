@@ -43,8 +43,9 @@ public class HandleRayClick : MonoBehaviour {
     public void OnMouseUp() {
         if(this.IsActive()) {
             if (target_state != "") {
+                // HACKS HACKS HACKS HACKS 
                 var ts = God.main.GetComponent<SaveData>().loadedSave;
-                if( ts.showCutscene ) {
+                if( ts.showCutscene && target_state == "Race" ) {
                     SceneManager.LoadScene( "Cutscene" );
                     ts.showCutscene = false;
                 } else {
