@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4469263, g: 0.49678856, b: 0.5750879, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692576, g: 0.49678826, b: 0.57508695, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2909,8 +2909,8 @@ MonoBehaviour:
   audioSource: {fileID: 904518178}
   playOnTime: 0
   forceUnique: 0
-  randomPitch: 1
-  randomVolume: 1
+  randomPitch: 0
+  randomVolume: 0
   minPitch: -3
   maxPitch: 3
   minVolume: 0.5
@@ -2935,7 +2935,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
