@@ -31,7 +31,7 @@ public class SaveDatum {
     public float musicVolume = 1.0f;
     public float effectsVolume = 1.0f;
     public float flashingLights = 1.0f;
-    public bool showCutscene = false;
+    public bool showCutscene = true;
 
     // Player Settings
     // 0 .. twitch, 1 .. AI, 2 .. human
