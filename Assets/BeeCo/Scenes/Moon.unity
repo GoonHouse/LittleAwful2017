@@ -1660,6 +1660,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000014290449258, guid: 490faa78fce8cda4a94cd2ea51d90038,
+        type: 2}
+      propertyPath: onSpawn.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010407271828, guid: 490faa78fce8cda4a94cd2ea51d90038, type: 2}
       propertyPath: m_LocalPosition.x
       value: 59.3
@@ -1710,7 +1715,34 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114000014290449258, guid: 490faa78fce8cda4a94cd2ea51d90038,
+        type: 2}
+      propertyPath: onSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014290449258, guid: 490faa78fce8cda4a94cd2ea51d90038,
+        type: 2}
+      propertyPath: onSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayAnySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014290449258, guid: 490faa78fce8cda4a94cd2ea51d90038,
+        type: 2}
+      propertyPath: onSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014290449258, guid: 490faa78fce8cda4a94cd2ea51d90038,
+        type: 2}
+      propertyPath: onSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014290449258, guid: 490faa78fce8cda4a94cd2ea51d90038,
+        type: 2}
+      propertyPath: onSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 82000013193652510, guid: 490faa78fce8cda4a94cd2ea51d90038, type: 2}
+    - {fileID: 114000014095770024, guid: 490faa78fce8cda4a94cd2ea51d90038, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 490faa78fce8cda4a94cd2ea51d90038, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1235471526

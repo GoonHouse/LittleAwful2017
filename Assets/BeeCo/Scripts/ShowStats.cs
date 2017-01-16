@@ -16,51 +16,64 @@ public class ShowStats : MonoBehaviour {
 
         PlayerText[wp].GetComponent<Text>().color = new Color(0.0f, 1f, 0.0f);
 
-        foreach( int i in pp ) {
+        for( int i = 0; i < 4; i++ ) {
             var pt = PlayerText [i].GetComponent<Text>();
-            pt.text += "\n";
+
+            // find the correct stats for this player
+            var pss = new BirdStats();
+            var ppp = -1;
+            var k = 0;
+            foreach( int j in pp ) {
+                if( j == i ) {
+                    pss = ps[k];
+                    ppp = pp.Count - k;
+                    break;
+                }
+                k++;
+            }
+
+            pt.text += "\n\nPosition\n";
             // Is this what square they are on, or the position that they are in the race?
-            //pt.text += positions[pp[i]] + "\n";
-            pt.text += "\n";
+            pt.text += ppp + "\n";
 
             pt.text += "Boosts Used\n";
-            pt.text += God.FormatNumber( ps[i].boostsUsed ) + "\n";
+            pt.text += God.FormatNumber( pss.boostsUsed ) + "\n";
 
             pt.text += "kcals Burned\n";
-            pt.text += God.FormatNumber( Mathf.Floor(ps [i].caloriesBurned*1000) ) + "\n";
+            pt.text += God.FormatNumber( Mathf.Floor( pss.caloriesBurned*1000) ) + "\n";
 
             pt.text += "Coke Snorted\n";
-            pt.text += God.FormatNumber( ps[i].cokeConsumed ) + "\n";
+            pt.text += God.FormatNumber( pss.cokeConsumed ) + "\n";
 
             pt.text += "Coke From Sky\n";
-            pt.text += God.FormatNumber( ps[i].cokeFromHeaven ) + "\n";
+            pt.text += God.FormatNumber( pss.cokeFromHeaven ) + "\n";
 
             pt.text += "Coke Regen'd\n";
-            pt.text += God.FormatNumber( ps[i].cokeRegenerated ) + "\n";
+            pt.text += God.FormatNumber( pss.cokeRegenerated ) + "\n";
 
             pt.text += "Damage Caused\n";
-            pt.text += God.FormatMoney( ps[i].damageCaused ) + "\n";
+            pt.text += God.FormatMoney( pss.damageCaused ) + "\n";
 
             pt.text += "Dist Traveled\n";
-            pt.text += God.FormatNumber( ps[i].distanceTraveled ) + "\n";
+            pt.text += God.FormatNumber( pss.distanceTraveled ) + "\n";
 
             pt.text += "Garbage Strewn\n";
-            pt.text += God.FormatNumber( ps[i].garbageStrewn ) + "\n";
+            pt.text += God.FormatNumber( pss.garbageStrewn ) + "\n";
 
             pt.text += "Chat Messages\n";
-            pt.text += God.FormatNumber( ps[i].messagesReceived ) + "\n";
+            pt.text += God.FormatNumber( pss.messagesReceived ) + "\n";
 
             pt.text += "Collisions\n";
-            pt.text += God.FormatNumber( ps[i].thingsCollidedWith ) + "\n";
+            pt.text += God.FormatNumber( pss.thingsCollidedWith ) + "\n";
 
             pt.text += "Lane Switch Academy\n";
-            pt.text += God.FormatNumber( ps[i].timesLanesSwitched ) + "\n";
+            pt.text += God.FormatNumber( pss.timesLanesSwitched ) + "\n";
 
             pt.text += "Run Time\n";
-            pt.text += God.FormatTime( ps[i].timeSpentRunning ) + "\n";
+            pt.text += God.FormatTime( pss.timeSpentRunning ) + "\n";
 
             pt.text += "Times Stood Still\n";
-            pt.text += God.FormatNumber( ps[i].timesStoodStill ) + "\n";
+            pt.text += God.FormatNumber( pss.timesStoodStill ) + "\n";
         }
     }
 }
