@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class QuitAfterTime : MonoBehaviour {
@@ -8,7 +8,10 @@ public class QuitAfterTime : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        var auses = GameObject.Find( "UI" ).GetComponents<AudioSource>();
+        foreach( AudioSource aus in auses ) {
+            aus.volume = 0.0f;
+        }
 	}
 	
 	// Update is called once per frame
