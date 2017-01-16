@@ -57,8 +57,8 @@ public class ShowStats : MonoBehaviour {
             pt.text += "Dist Traveled\n";
             pt.text += God.FormatNumber( pss.distanceTraveled ) + "\n";
 
-            pt.text += "Garbage Strewn\n";
-            pt.text += God.FormatNumber( pss.garbageStrewn ) + "\n";
+            // pt.text += "Garbage Strewn\n";
+            // pt.text += God.FormatNumber( pss.garbageStrewn ) + "\n";
 
             pt.text += "Chat Messages\n";
             pt.text += God.FormatNumber( pss.messagesReceived ) + "\n";

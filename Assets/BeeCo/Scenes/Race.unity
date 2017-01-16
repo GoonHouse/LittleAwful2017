@@ -370,6 +370,13 @@ MonoBehaviour:
     randomVolume: 0
     pitchExtents: {x: 0, y: 0}
     volumeExtents: {x: 0, y: 0}
+  - name: heavenly_coke
+    clips:
+    - {fileID: 8300000, guid: d133ceeb40b05914589d02f16e033518, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
 --- !u!54 &56449745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2370,6 +2377,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7381773bab9d5f24285f7a042ec8a888, type: 3}
     - {fileID: 8300000, guid: 07fcb7567c9aa8d45a1d8e08d46efb3e, type: 3}
     - {fileID: 8300000, guid: 0b3feac8dbb79e54abf5e4a52ebd7a0b, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
+  - name: heavenly_coke
+    clips:
+    - {fileID: 8300000, guid: d133ceeb40b05914589d02f16e033518, type: 3}
     randomPitch: 0
     randomVolume: 0
     pitchExtents: {x: 0, y: 0}
@@ -4562,6 +4576,13 @@ MonoBehaviour:
     randomVolume: 0
     pitchExtents: {x: 0, y: 0}
     volumeExtents: {x: 0, y: 0}
+  - name: heavenly_coke
+    clips:
+    - {fileID: 8300000, guid: d133ceeb40b05914589d02f16e033518, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
 --- !u!54 &1217649352
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5426,6 +5447,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7381773bab9d5f24285f7a042ec8a888, type: 3}
     - {fileID: 8300000, guid: 07fcb7567c9aa8d45a1d8e08d46efb3e, type: 3}
     - {fileID: 8300000, guid: 0b3feac8dbb79e54abf5e4a52ebd7a0b, type: 3}
+    randomPitch: 0
+    randomVolume: 0
+    pitchExtents: {x: 0, y: 0}
+    volumeExtents: {x: 0, y: 0}
+  - name: heavenly_coke
+    clips:
+    - {fileID: 8300000, guid: d133ceeb40b05914589d02f16e033518, type: 3}
     randomPitch: 0
     randomVolume: 0
     pitchExtents: {x: 0, y: 0}

@@ -9,7 +9,7 @@ public class HasteResponse : System.Object {
 public class God : MonoBehaviour {
     public static God main;
     public static float distanceToTheMoonInFeet = 1.255f * Mathf.Pow(10, 9);
-    private bool doLock = false;
+    private bool doLock = true;
 
     // == game object stuff ==
     void Awake() {
@@ -35,12 +35,14 @@ public class God : MonoBehaviour {
             doLock = !doLock;
             CheckLock();
         }
+        /*
         if( Input.GetKeyDown( KeyCode.F8 ) ) {
             Debug.Log( "fuck you deleting your save lol" );
             var sd = GetComponent<SaveData>();
             sd.loadedSave = new SaveDatum();
             sd.SaveFile();
         }
+        */
     }
 
     public static void SetClipboard(string text) {
@@ -53,8 +55,8 @@ public class God : MonoBehaviour {
     // == necessary == 
     void CheckLock() {
         if (doLock) {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
         } else {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

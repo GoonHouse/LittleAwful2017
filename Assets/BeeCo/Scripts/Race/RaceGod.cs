@@ -322,6 +322,7 @@ public class RaceGod : MonoBehaviour {
         }
         UpdateTwitchChat();
 
+        /*
         if( Input.GetKeyDown( KeyCode.G ) ) {
             var p = players[Random.Range( 0, players.Count - 1 )];
             var rb = p.GetComponent<RaceBird>();
@@ -336,6 +337,7 @@ public class RaceGod : MonoBehaviour {
         if( Input.GetKeyDown( KeyCode.Y ) && raceState < RaceState.PostHungry ) {
             raceState = RaceState.PostHungry;
         }
+        */
 
         switch( raceState ) {
             case RaceState.NoRace:
@@ -344,6 +346,10 @@ public class RaceGod : MonoBehaviour {
             case RaceState.PreHungry:
                 // everything that sets the scene up better goes here
                 policeLight.SetActive( false );
+                if( twitchPlayers.Count > 0 ) {
+                    var twitch = God.main.GetComponent<TwitchIRC>();
+                    twitch.SendMsg( "Eating Controls: \"go\" or \"eat\" to eat some coke!" );
+                }
 
                 raceState = RaceState.Hungry;
                 break;
@@ -562,7 +568,7 @@ public class RaceGod : MonoBehaviour {
         // tell the chat how to play
         if( twitchPlayers.Count > 0 ) {
             var twitch = God.main.GetComponent<TwitchIRC>();
-            twitch.SendMsg( "Controls: \"go\" or \"boost\" to use coke to boost, \"stop\" to stand still, and \"left/right\" to switch lanes!" );
+            twitch.SendMsg( "Racing Controls: \"go\" or \"boost\" to use coke to boost, \"stop\" to stand still, and \"left/right\" to switch lanes!" );
         }
 
         // visualize the grid

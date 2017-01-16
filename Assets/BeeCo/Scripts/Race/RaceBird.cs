@@ -505,12 +505,7 @@ public class RaceBird : MonoBehaviour {
             var newCokeAmount = Mathf.Min( cokeMax, cokeCurrent + Mathf.CeilToInt( cokeMax * cokeMultiplier ) );
             var cokeGotten = newCokeAmount - cokeCurrent;
 
-            var rn = other.gameObject.GetComponent<RandomNoises>();
-            if( rn ) {
-                rn.PlayAnySound();
-            } else {
-                Debug.LogWarning( other.gameObject.name + " did not have a RandomNoise to make noises with " );
-            }
+            sb.Play( "heavenly_coke" );
 
             myStats.cokeFromHeaven += cokeGotten;
 
