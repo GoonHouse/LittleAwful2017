@@ -72,6 +72,32 @@ public class God : MonoBehaviour {
         return string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
     }
 
+    public static string FormatMoney( float amount, bool showPlus = false ) {
+        var prefix = "";
+
+        if( amount < 0 ) {
+            prefix = "-";
+        } else if( amount > 0 && showPlus ) {
+            prefix = "+";
+        }
+
+        
+
+        return prefix + "$" + System.String.Format( "{0:n}", Mathf.Abs( amount ) );
+    }
+
+    public static string FormatNumber( float amount, bool showPlus = false ) {
+        var prefix = "";
+
+        if( amount < 0 ) {
+            prefix = "-";
+        } else if( amount > 0 && showPlus ) {
+            prefix = "+";
+        }
+
+        return prefix + System.String.Format( "{0:n}", Mathf.Abs( amount ) );
+    }
+
     public static float Scale(float valueIn, float baseMin, float baseMax, float limitMin, float limitMax) {
         return ((limitMax - limitMin) * (valueIn - baseMin) / (baseMax - baseMin)) + limitMin;
     }
