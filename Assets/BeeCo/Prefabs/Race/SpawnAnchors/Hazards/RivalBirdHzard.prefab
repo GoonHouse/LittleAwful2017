@@ -674,7 +674,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012398438320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 332.52063, y: 520.4822, z: -600.234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1459,10 +1459,16 @@ MonoBehaviour:
   audioSource: {fileID: 82000010728118056}
   playOnTime: 0
   forceUnique: 0
+  randomPitch: 0
+  randomVolume: 0
+  minPitch: -3
+  maxPitch: 3
+  minVolume: 0.5
+  maxVolume: 1
   minTimeToWait: 0
   maxTimeToWait: 0
   soundsToPlay:
-  - {fileID: 8300000, guid: b5482e8b3effe3a45a38697abd771a2a, type: 3}
+  - {fileID: 8300000, guid: 16d40d8c32a8a7448afac31221449cfb, type: 3}
   lastPlayedIndex: -1
   nextPlayTime: 0
 --- !u!135 &135000010135751624

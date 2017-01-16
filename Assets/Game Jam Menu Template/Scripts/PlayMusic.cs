@@ -31,9 +31,11 @@ public class PlayMusic : MonoBehaviour {
             if(mc.name == track) {
                 if(current_to == null) {
                     current_to = gameObject.AddComponent<AudioSource>();
+                    current_to.loop = true;
                 }
                 if(current_from == null) {
                     current_from = gameObject.AddComponent<AudioSource>();
+                    current_from.loop = true;
                 }
                 Debug.Log("Found track, crossfading to "+track);
                 current_from.clip = current_to.clip;
