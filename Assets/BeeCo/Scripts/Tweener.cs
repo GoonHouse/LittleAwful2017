@@ -64,21 +64,24 @@ public class Tweener : MonoBehaviour {
 
                 transform.position = pos;
                 */
-
-                if( local ) {
-                    transform.localPosition = ApplyEase( startPosition, targetTransform.localPosition, travelRatio );
-                    transform.localRotation = ApplyEase( startRotation, targetTransform.localRotation, travelRatio );
-                } else {
-                    transform.position = ApplyEase( startPosition, targetTransform.position, travelRatio );
-                    transform.rotation = ApplyEase( startRotation, targetTransform.rotation, travelRatio );
+                if( targetTransform ) {
+                    if( local ) {
+                        transform.localPosition = ApplyEase( startPosition, targetTransform.localPosition, travelRatio );
+                        transform.localRotation = ApplyEase( startRotation, targetTransform.localRotation, travelRatio );
+                    } else {
+                        transform.position = ApplyEase( startPosition, targetTransform.position, travelRatio );
+                        transform.rotation = ApplyEase( startRotation, targetTransform.rotation, travelRatio );
+                    }
                 }
             } else {
-                if( local ) {
-                    transform.localPosition = targetTransform.localPosition;
-                    transform.localRotation = targetTransform.localRotation;
-                } else {
-                    transform.position = targetTransform.position;
-                    transform.rotation = targetTransform.rotation;
+                if( targetTransform ) {
+                    if( local ) {
+                        transform.localPosition = targetTransform.localPosition;
+                        transform.localRotation = targetTransform.localRotation;
+                    } else {
+                        transform.position = targetTransform.position;
+                        transform.rotation = targetTransform.rotation;
+                    }
                 }
 
                 if( childOnComplete && targetTransform != null ) {

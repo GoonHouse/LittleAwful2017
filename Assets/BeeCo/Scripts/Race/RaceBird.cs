@@ -131,7 +131,6 @@ public class RaceBird : MonoBehaviour {
                 anims.SetBool( "MouthIsOpen", false );
                 break;
             case RaceState.PreRace:
-                RetractHead();
                 anims.SetBool( "IsRunning", true );
                 break;
             case RaceState.Race:

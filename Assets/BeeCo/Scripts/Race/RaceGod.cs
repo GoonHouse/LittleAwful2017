@@ -485,7 +485,7 @@ public class RaceGod : MonoBehaviour {
         }
 
         foreach( SpawnArea spa in cokeSpawners ) {
-            spa.shouldSpawn = false;
+            Destroy( spa.gameObject );
         }
 
         // destroy all the coke
